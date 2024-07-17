@@ -42,17 +42,17 @@ export default function Navigation() {
                         <div className={styles.dropdown}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/darklan"><h4>다르크란?</h4></Link>
-                                    <Link href="/schedule">Schedule</Link>
+                                    <Link href="/about"><h4>다르크란?</h4></Link>
+                                    <Link href="/about/schedule">Schedule</Link>
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/review"><h4>Review</h4></Link>
-                                    <Link href="/experience">경험담</Link>
-                                    <Link href="/recommendation">추천서</Link>
+                                    <Link href="/review/experience">경험담</Link>
+                                    <Link href="/review/recommend">추천서</Link>
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/living"><h4>Living</h4></Link>
-                                    <Link href="/facility">시설안내</Link>
+                                    <Link href="/living/facility">시설안내</Link>
                                 </div>
                             </div>
                         </div>
@@ -62,13 +62,19 @@ export default function Navigation() {
                         <div className={styles.dropdown}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/darklan"><h4>12단계 치료</h4></Link>
-                                    <Link href="/schedule">치료 내용</Link>
+                                    <Link href="/treatment/rehabilitation"><h4>중독 재활 치료</h4></Link>
+                                    <Link href="/treatment/rehabilitation/personal">개인 치료</Link>
+                                    <Link href="/treatment/rehabilitation/family">가족 치료</Link>
+                                    <Link href="/treatment/rehabilitation/group">집단 치료</Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/review"><h4>외부 활동</h4></Link>
-                                    <Link href="/experience">연극 치유</Link>
-                                    <Link href="/recommendation">미술 치료</Link>
+                                    <Link href="/treatment/program"><h4>프로그램</h4></Link>
+                                    <Link href="/treatment/program/reading">독서</Link>
+                                    <Link href="/treatment/program/theater">연극</Link>
+                                    <Link href="/treatment/program/art">미술</Link>
+                                </div>
+                                <div className={styles.column}>
+                                    <Link href="/treatment/law"><h4>사법지원</h4></Link>
                                 </div>
                             </div>
                         </div>
@@ -78,45 +84,45 @@ export default function Navigation() {
                         <div className={styles.dropdown}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/darklan"><h4>치료약물</h4></Link>
-                                    <Link href="/schedule">각성제</Link>
-                                    <Link href="/schedule">진정, 마취제</Link>
-                                    <Link href="/schedule">환각제</Link>
-                                    <Link href="/schedule">기타 약물</Link>
+                                    <Link href="/addictions/medicine"><h4>치료 약물</h4></Link>
+                                    <Link href="/addictions/medicine/1">각성제</Link>
+                                    <Link href="/addictions/medicine/2">진정, 마취제</Link>
+                                    <Link href="/addictions/medicine/3">환각제</Link>
+                                    <Link href="/addictions/medicine/4">기타 약물</Link>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <Link href="/donation">Donation</Link>
+                        <Link href="/donations">Donations</Link>
                         <div className={styles.dropdown}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/darklan"><h4>자원봉사</h4></Link>
+                                    <Link href="/donations/volunteer"><h4>자원봉사</h4></Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/review"><h4>기부</h4></Link>
+                                    <Link href="/donations/support"><h4>기부</h4></Link>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li>
-                        <Link href="/about">About us</Link>
+                        <Link href="/aboutus">About us</Link>
                         <div className={styles.dropdown}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/darklan"><h4>이사장님 말씀</h4></Link>
+                                    <Link href="/aboutus/chairman"><h4>이사장님 말씀</h4></Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/review"><h4>미션</h4></Link>
+                                    <Link href="/aboutus/mission"><h4>미션</h4></Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/living"><h4>역사</h4></Link>
-                                    <Link href="/facility">Korea</Link>
-                                    <Link href="/facility">Japan</Link>
+                                    <Link href="/aboutus/his"><h4>역사</h4></Link>
+                                    <Link href="/aboutus/his/korea">Korea</Link>
+                                    <Link href="/aboutus/his/japan">Japan</Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/living"><h4>조직도</h4></Link>
+                                    <Link href="/aboutus/chart"><h4>조직도</h4></Link>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +132,7 @@ export default function Navigation() {
                         <div className={styles.dropdown}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/darklan"><h4>Contact us</h4></Link>
+                                    <Link href="/contact/contactus"><h4>Contact us</h4></Link>
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/review"><h4>Resources</h4></Link>
