@@ -1,5 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 .main {
-  /* justify-content: space-between;
-  align-items: center; */
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
+.content {
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 160px); /* Assuming 160px is the height of the Navigation */
+}
+
+.first {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.firstLeft {
+  flex: 1;
+  font-family: "Tinos", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Make sure this div takes the full available height */
+  width: 100%; /* Ensure it takes the full available width */
+  margin-top: 10px;
+}
+
+.curved {
+  margin-top: -275px;
+}
+
+.firstRight {
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  flex: 1;
+  height: 100%; /* Make sure this div takes the full available height */
+  width: 100%;
+}
+
+.picture {
+  background-color: #e0ebf6;
+  height: 75%;
+  width: 95%;
+  border-top-left-radius: 150px; /* Apply border-radius to the top-left corner */
+  border-bottom-left-radius: 150px; /* Apply border-radius to the bottom-left corner */
+  margin-top: 20px;
+}
+
+.second {
+  background-color: #f3f3f3;
+  flex: 1;
+  position: relative; /* Set the parent element to relative positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  position: absolute; /* Set the cards div to absolute positioning */
+  top: -25px; /* Move the cards div 25px above the second div */
+  left: 0; /* Adjust these values as needed to position the cards div */
+  width: 100%; /* Adjust width as needed */
+  display: flex;
+  justify-content: center; /* Center the cards horizontally */
+  gap: 20px; /* Set gap between cards */
+}
+
+.card {
+  width: 300px;
+  height: 220px;
+  z-index: 2; /* Ensure it appears on top of the cards container */
+  background-color: white;
+  border-radius: 15px; /* Add border radius */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Add card shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card h4 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.icon1 {
+  width: 85px;
+  height: 85px;
+  margin-top: 10px;
+  margin-bottom: -20px;
+}
+
+.cardHead {
+  font-family: "Tinos", serif;
+  color: #406da1;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.cardtext2 {
+  color: #406da1;
+  margin: 0;
+  margin-top: -15px;
+  font-size: 15px;
+}
+
+.cardtext3 {
+  font-size: 11px;
+  text-align: center;
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+  margin-top: 20px;
+}
+
+.textbox {
+  margin-top: 200px; /* Ensure enough space for cards sticking out */
+  text-align: center;
+}
+
+.font1 {
+  font-size: 20px;
+  margin-bottom: -10px;
+  font-weight: 600;
+}
+
+.font2 {
+  font-family: "Tinos", serif;
+  color: #4e73ac;
+  font-weight: 600;
+}
+
+.content2 {
+  width: 100%;
+  height: calc(100vh - 60px);
+}
+
+
+.content3 {
+  background-color: beige;
+  width: 100%;
+  height: calc(100vh - 60px);
+}

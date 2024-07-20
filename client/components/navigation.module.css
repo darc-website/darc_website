@@ -12,6 +12,11 @@
     flex-direction: column; /* Align children vertically */
     border-bottom: 2px solid #4274b1; /* Add bottom border */
     background-color: white; /* Set background color */
+    transition: height 0.3s;
+}
+
+.nav.scrolled {
+    height: 60px; /* Only show the bottom part */
 }
 
 .top {
@@ -21,6 +26,14 @@
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
     position: relative;
+    margin-bottom: 20px;
+    transition: opacity 0.3s, height 0.3s;
+}
+
+.nav.scrolled .top {
+    opacity: 0; /* Hide the top part */
+    height: 0; /* Collapse the height */
+    overflow: hidden; /* Ensure it doesn't take up space */
 }
 
 .logo {
@@ -104,17 +117,18 @@
 }
 
 .search button:hover {
-    color:  #4274b1;
+    color: #4274b1;
 }
 
 .bottom {
     margin: 0;
-    height: 40px; /* Adjust height to accommodate only the bottom part */
+    height: 60px; /* Adjust height to accommodate only the bottom part */
     display: flex;
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
     font-size: 18px;
     background-color: white;
+    transition: height 0.3s;
 }
 
 .bottom ul {
@@ -124,8 +138,11 @@
     padding: 0; /* Remove default padding */
 }
 
+.nav.scrolled .bottom ul {
+    margin-bottom: 14px; /* Add margin-bottom when scrolled */
+}
+
 .bottom li {
-    margin-top: 25px;
     position: relative; /* For positioning dropdown */
 }
 
@@ -137,7 +154,6 @@
 }
 
 /* Change background and text color on hover */
-
 
 .dropdown {
     display: none; /* Hide by default */
@@ -151,10 +167,15 @@
     color: white;
     text-align: center;
     padding-top: 20px; /* Adjust for content alignment */
+    transition: top 0.3s;
+}
+
+/* Adjust dropdown position when nav is scrolled */
+.nav.scrolled .dropdown {
+    top: 60px;
 }
 
 /* Show the dropdown menu on hover of a specific link */
-
 
 .dropdown a {
     display: inline-block; /* Allow the border to match text length */
@@ -171,11 +192,11 @@
     /* text-shadow: 2px 2px black; */
     font-weight: 700;
 }
+
 .linkbox {
     margin-left: 18%;
     width: 60%;
     height: 220px;
-
     gap: 110px;
     display: flex;
     flex-direction: row;
@@ -205,7 +226,6 @@
 .bottom li:hover .dropdown,
 .bottom li:focus-within .dropdown {
     display: block;
-    position: fixed; /* Ensure the dropdown stays in place */
 }
 
 /* Maintain highlight on the bottom link */
@@ -218,5 +238,4 @@
 /* Hide dropdown when mouse leaves */
 .bottom li .dropdown:hover {
     display: block;
-    position: fixed; /* Ensure the dropdown stays in place */
 }

@@ -1,12 +1,21 @@
 import Navigation from "../../../../components/navigation";
-import styles from "../../page.module.css"
+import styles from "./medicine.module.css"
+import Link from "next/link";
 
 export default function Medicine() {
     return (
         <main className={styles.main}>
             <Navigation />
-            <div style={{ marginTop: '400px', textAlign: 'center' }}>
-                <h1>치료 약물</h1>
+            <div className={styles.content}>
+                <div className={styles.header}>
+                    <div className={styles.title}>
+
+                    </div>
+                    <div className={styles.link}>
+                        <Link href="/addictions"><h4>Addictions</h4></Link>
+                    </div>
+                </div>
+
             </div>
         </main>
     );
