@@ -1,0 +1,41 @@
+.whole {
+    display: flex;
+    flex-direction: column;
+}
+
+.closed {
+    display: flex;
+    flex-direction: row;
+    gap: 40px; /* Use gap on the flex container to add space between children */
+    justify-content: center;
+}
+
+.card {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+}
+
+.card h1 {
+    color: gray;
+}
+
+.down {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+}
+
+.hiddenCard {
+    width: 500px;
+    height: 60px; 
+    text-align: left;
+    padding-left: 20px;
+}

@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+.main {
+    font-family: "Noto Sans KR", sans-serif;
+    /* overflow: hidden; */
+    height: 100vh;
+}
+
+.content {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 1200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    height: 100%;
+    width: 50%; /* Ensure it takes up half of the header */
+    font-family: 'Times New Roman', Times, serif;
+    color: #24355f;
+    margin: 0;
+}
+
+.title > h3 {
+    margin-top: -10px;
+    margin-left: 15px;
+}
+
+.link {
+    height: 100%;
+    width: 50%; /* Ensure it takes up half of the header */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    font-size: 18px; /* Adjust the font size as needed */
+    text-align: right;
+}
+
+.link p {
+    margin: 0 10px; /* Add some space around the ">" symbol */
+}
+
+.link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link a:hover {
+    color: #4e73ac; /* Change to desired hover color */
+}
+
+.link h4 {
+    margin: 0;
+    transition: color 0.3s; /* Add transition for smooth color change */
+}
+
+.link h4:hover {
+    color: #4e73ac; /* Change to desired hover color */
+}
+
+.scheduler {
+    font-size: 16px;
+    margin-top: 60px;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.blankBlock {
+    width: 180px;
+    height: 60px;
+}
+
+.dayBlock {
+    width: 180px;
+    height: 60px;
+    border: 1px solid black; /* Add border width and color */
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a subtle effect */
+    background-color: #546894;
+    padding-left: 18px;
+    font-weight: 700;
+    color: #1f1f1f;
+}
+
+.dayBlock > p {
+    margin-top: 10px;
+}
+
+.timeBlock {
+    font-family: 'Times New Roman', Times, serif;
+    width: 180px;
+    height: 120px;
+    border: 1px solid black; /* Add border width and color */
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a subtle effect */
+    background-color: #f2f2f2;
+    font-weight: 600;
+    padding-left: 18px;
+    color: #1f1f1f;
+}
+
+.timeBlock > p {
+    margin-top: 15px;
+}
+
+.scheduleBlock {
+    width: 180px;
+    height: 120px;
+    border: 1px solid black; /* Add border width and color */
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a subtle effect */
+}
+
+.textBlockR1 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 10px;
+    color: #1f1f1f;
+}
+
+.textBlockR2 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 6px;
+    border-left: 6px solid #4273b1;
+    color: #1f1f1f;
+}
+
+.textBlockR2_2 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 10px;
+    color: #1f1f1f;
+}
+
+.textBlockR3 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 10px;
+    color: #1f1f1f;
+}
+.textBlockR4 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 10px;
+    color: #1f1f1f;
+}
+.textBlockR5 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 6px;
+    border-left: 6px solid #ffff54;
+    color: #1f1f1f;
+}
+.textBlockR5_2 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 6px;
+    border-left: 6px solid #4fad5b;
+    color: #1f1f1f;
+}
+.textBlockR6 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 10px;
+    color: #1f1f1f;
+}
+.textBlockR7 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 6px;
+    border-left: 6px solid #4fad5b;
+    color: #1f1f1f;
+}
+.textBlockR7_2 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 10px;
+    color: #1f1f1f;
+}
+.textBlockR8 {
+    margin-top: -3px;
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    padding-left: 10px;
+    color: #1f1f1f;
+}
+
+.bottom {
+    width: 1200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    color: #808080;
+    margin-bottom: 70px;
+}

@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import Navigation from "../../components/navigation";
 import ReactCurvedText from 'react-curved-text';
-
+import YouTube from 'react-youtube';
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
               reversed={true}
               text='"One of the hardest things was learning'
               textProps={{ "style": { "fontSize": 26 } }}
-              textPathProps={{ "fill": "#73808e" }}
+              textPathProps={{ "fill": "#47525e" }}
               tspanProps={null}
               ellipseProps={null}
               svgProps={null} />
@@ -36,7 +36,7 @@ export default function Home() {
                 reversed={true}
                 text='that I was worth recovery."'
                 textProps={{ "style": { "fontSize": 26 } }}
-                textPathProps={{ "fill": "#73808e" }}
+                textPathProps={{ "fill": "#47525e" }}
                 tspanProps={null}
                 ellipseProps={null}
                 svgProps={null} />
@@ -52,7 +52,7 @@ export default function Home() {
                 reversed={true}
                 text='from Another diamond'
                 textProps={{ "style": { "fontSize": 16 } }}
-                textPathProps={{ "fill": "#73808e" }}
+                textPathProps={{ "fill": "#5f6d7d" }}
                 tspanProps={null}
                 ellipseProps={null}
                 svgProps={null} />
@@ -61,10 +61,20 @@ export default function Home() {
           </div>
           <div className={styles.firstRight}>
             <div className={styles.picture}>
+              <img src="/picture3.jpg" alt="" />
             </div>
           </div>
         </div>
         <div className={styles.second}>
+
+        </div>
+
+      </div>
+      <div className={styles.content2}>
+        <div className={styles.third}>
+
+        </div>
+        <div className={styles.forth}>
           <div className={styles.cards}>
             <div className={styles.card}>
               <img className={styles.icon1} src="/icon1.svg" alt="not found" />
@@ -113,14 +123,27 @@ export default function Home() {
           </div>
 
         </div>
-      </div>
-      <div className={styles.content2}>
-
-        <h1>페이지 2</h1>
 
       </div>
       <div className={styles.content3}>
-        <h1>페이지 3</h1>
+        <h1>회복자들의 경험담</h1>
+        <p>DARC 멤버들의 회복관련 이야기</p>
+
+        <div className={styles.youtube1}>
+          <YouTube
+            videoId="lOpRTaRlFFk" //동영상 주소
+            opts={{
+              width: "500px",
+              height: "270px",
+              playerVars: {
+                autoplay: 0, //자동 재생 여부 
+                modestbranding: 1, //컨트롤 바에 유튜브 로고 표시 여부
+                loop: 1, //반복 재생
+                playlist: "lOpRTaRlFFk", //반복 재생으로 재생할 플레이 리스트
+              },
+            }}
+          />
+        </div>
       </div>
 
 

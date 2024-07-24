@@ -54,7 +54,9 @@ export default function Navigation() {
         <nav className={`${styles.nav} ${scrollPosition > 0 ? styles.scrolled : ""}`}>
             <div className={styles.top}>
                 <Link href="/">
-                    <div className={styles.logo}></div>
+                    <div className={styles.logo}>
+                        <img src="/logo2.png" alt="" />
+                    </div>
                 </Link>
                 <div className={styles.link}>
                     <a href="https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw">Youtube</a>
@@ -89,38 +91,11 @@ export default function Navigation() {
                                     <Link href="/about/schedule" onClick={(e) => handleLinkClick(e, "/about/schedule")}>Schedule</Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/review" onClick={(e) => handleLinkClick(e, "/review")}><h4>Review</h4></Link>
-                                    <Link href="/review/experience" onClick={(e) => handleLinkClick(e, "/review/experience")}>경험담</Link>
+                                    <Link href="/review" onClick={(e) => handleLinkClick(e, "/review")}><h4>회복수기</h4></Link>
                                     <Link href="/review/recommend" onClick={(e) => handleLinkClick(e, "/review/recommend")}>추천서</Link>
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/living" onClick={(e) => handleLinkClick(e, "/living")}><h4>Living</h4></Link>
-                                    <Link href="/living/facility" onClick={(e) => handleLinkClick(e, "/living/facility")}>시설안내</Link>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li
-                        onMouseEnter={() => handleMouseEnter("treatment")}
-                        onMouseLeave={() => handleMouseLeave("treatment")}
-                    >
-                        <Link href="/treatment" onClick={(e) => handleLinkClick(e, "/treatment")}>Treatment</Link>
-                        <div className={styles.dropdown} ref={el => dropdownRefs.current.treatment = el}>
-                            <div className={styles.linkbox}>
-                                <div className={styles.column}>
-                                    <Link href="/treatment/rehabilitation" onClick={(e) => handleLinkClick(e, "/treatment/rehabilitation")}><h4>중독 재활 치료</h4></Link>
-                                    <Link href="/treatment/rehabilitation/personal" onClick={(e) => handleLinkClick(e, "/treatment/rehabilitation/personal")}>개인 치료</Link>
-                                    <Link href="/treatment/rehabilitation/family" onClick={(e) => handleLinkClick(e, "/treatment/rehabilitation/family")}>가족 치료</Link>
-                                    <Link href="/treatment/rehabilitation/group" onClick={(e) => handleLinkClick(e, "/treatment/rehabilitation/group")}>집단 치료</Link>
-                                </div>
-                                <div className={styles.column}>
-                                    <Link href="/treatment/program" onClick={(e) => handleLinkClick(e, "/treatment/program")}><h4>프로그램</h4></Link>
-                                    <Link href="/treatment/program/reading" onClick={(e) => handleLinkClick(e, "/treatment/program/reading")}>독서</Link>
-                                    <Link href="/treatment/program/theater" onClick={(e) => handleLinkClick(e, "/treatment/program/theater")}>연극</Link>
-                                    <Link href="/treatment/program/art" onClick={(e) => handleLinkClick(e, "/treatment/program/art")}>미술</Link>
-                                </div>
-                                <div className={styles.column}>
-                                    <Link href="/treatment/law" onClick={(e) => handleLinkClick(e, "/treatment/law")}><h4>사법지원</h4></Link>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +117,26 @@ export default function Navigation() {
                             </div>
                         </div>
                     </li>
+                    <li
+                        onMouseEnter={() => handleMouseEnter("treatment")}
+                        onMouseLeave={() => handleMouseLeave("treatment")}
+                    >
+                        <Link href="/treatment" onClick={(e) => handleLinkClick(e, "/treatment")}>Treatment</Link>
+                        <div className={styles.dropdown} ref={el => dropdownRefs.current.treatment = el}>
+                            <div className={styles.linkbox}>
+                                <div className={styles.column}>
+                                    <Link href="/treatment/rehabilitation" onClick={(e) => handleLinkClick(e, "/treatment/rehabilitation")}><h4>중독 재활 치료</h4></Link>
+                                </div>
+                                <div className={styles.column}>
+                                    <Link href="/treatment/program" onClick={(e) => handleLinkClick(e, "/treatment/program")}><h4>프로그램</h4></Link>
+                                </div>
+                                <div className={styles.column}>
+                                    <Link href="/treatment/law" onClick={(e) => handleLinkClick(e, "/treatment/law")}><h4>사법지원</h4></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
                     <li
                         onMouseEnter={() => handleMouseEnter("donations")}
                         onMouseLeave={() => handleMouseLeave("donations")}
@@ -194,8 +189,6 @@ export default function Navigation() {
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/review" onClick={(e) => handleLinkClick(e, "/review")}><h4>Resources</h4></Link>
-                                    <a href="https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw">Youtube</a>
-                                    <a href="https://www.instagram.com/mass9bro/">Instagram</a>
                                 </div>
                             </div>
                         </div>

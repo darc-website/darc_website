@@ -24,13 +24,9 @@
     height: 100%;
     width: 1000px; /* Ensure it takes up half of the header */
     font-family: 'Times New Roman', Times, serif;
-    color: #4e73ac;
+    color: #24355f;
 }
 
-
-.link h4:hover {
-    color: #4e73ac; /* Change to desired hover color */
-}
 
 .chart {
     margin-top: -100px;
@@ -46,4 +42,10 @@
     text-align: left;
     width: 1200px;
     color: gray;
+}
+
+.margin {
+    background-color: white;
+    width: 100%;
+    height: 70px;
 }
