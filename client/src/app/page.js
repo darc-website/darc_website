@@ -3,8 +3,16 @@ import styles from "./page.module.css";
 import Navigation from "../../components/navigation";
 import ReactCurvedText from 'react-curved-text';
 import YouTube from 'react-youtube';
+import EmblaCarousel from "../../components/EmblaCarousel";
 
 export default function Home() {
+  const OPTIONS = {};
+  const SLIDES = [
+    { type: 'youtube', videoId: 'lOpRTaRlFFk' },  // First YouTube video
+    { type: 'youtube', videoId: 'ito63ooLnsE' },  // Second YouTube video
+    { type: 'text', content: 'This is third video' },
+  ];
+
   return (
     <main className={styles.main}>
       <Navigation />
@@ -57,7 +65,6 @@ export default function Home() {
                 ellipseProps={null}
                 svgProps={null} />
             </div>
-
           </div>
           <div className={styles.firstRight}>
             <div className={styles.picture}>
@@ -66,87 +73,53 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.second}>
-
-        </div>
-
-      </div>
-      <div className={styles.content2}>
-        <div className={styles.third}>
-
-        </div>
-        <div className={styles.forth}>
           <div className={styles.cards}>
             <div className={styles.card}>
-              <img className={styles.icon1} src="/icon1.svg" alt="not found" />
-              <p className={styles.cardHead}>Stimulant</p>
-              <p className={styles.cardtext2}>(각성제)</p>
-              <p className={styles.cardtext3}>
-                “중추신경을 자극하여 불안감을 없애고 집중력을 향상시킵니다. <br />
-                과다 복용 시, 초조, 불안, 의심, 망상, 환청 등이 나타나고 <br />
-                혼수상태에 이를 수도 있습니다.”
-              </p>
+              <img className={styles.icon} src="/icon1.svg" alt="not found" />
+              <p className={styles.cardHead}>약물 치료</p>
+              <p className={styles.cardtext2}>중독 전문 병원과 연계를 통해 전문적인 치료를 진행합니다.”</p>
             </div>
             <div className={styles.card}>
               <img className={styles.icon} src="/icon2.svg" alt="not found" />
-              <p className={styles.cardHead}>Marijuana</p>
-              <p className={styles.cardtext2}>(대마초)</p>
-              <p className={styles.cardtext3}>
-                “항경련, 항염증에 의료용 목적으로 사용되지만, 중추신경을 <br />
-                자극하여 정신 장애, 신경 장애, 심혈관 및 호흡 능력 악화 <br />
-                등의 부작용을 일으킵니다.”
-              </p>
+              <p className={styles.cardHead}>약물 인식 교육</p>
+              <p className={styles.cardtext2}>"마약류 중독 전문가들이 당사자와 <br />가족들에게 마약류 중독에 대한 체계적인 교육을 실시합니다.”</p>
             </div>
             <div className={styles.card}>
               <img className={styles.icon} src="/icon3.svg" alt="not found" />
-              <p className={styles.cardHead}>Opioid</p>
-              <p className={styles.cardtext2}>(아편)</p>
-              <p className={styles.cardtext3}>
-                “진정, 통감 감소 등의 효과를 불러일으키지만, 단기적으로 <br />
-                오한, 구토 등의 부작용 장기복용시 말초신경장애, 척수염 등 <br />
-                신경계의 손상을 일으킵니다.”
+              <p className={styles.cardHead}>직업 재활</p>
+              <p className={styles.cardtext2}>“재활을 통해 건강한 사회 구성원이 <br />될 수 있도록 돕습니다.”
               </p>
             </div>
             <div className={styles.card}>
               <img className={styles.icon} src="/icon4.svg" alt="not found" />
-              <p className={styles.cardHead}>Benzodiazepine</p>
-              <p className={styles.cardtext2}>(신경안정제)</p>
-              <p className={styles.cardtext3}>
-                행동의 억제를 해제 시키며 알코올과 비슷하게 평안과 <br />
-                이완의 효과를 주지만 금단증상으로는 불안, <br />
-                불면, 복통, 간질 섬망 등이 나타납니다.
+              <p className={styles.cardHead}>자기 검토 / 자아 성찰</p>
+              <p className={styles.cardtext2}>“12단계 프로그램 실천으로 삶에 대한 태도변화와 가치관을 변화시킵니다。”
+              </p>
+            </div>
+            <div className={styles.card}>
+              <img className={styles.icon} src="/icon5.svg" alt="not found" />
+              <p className={styles.cardHead}>미래 비전 제시</p>
+              <p className={styles.cardtext2}>“미래에 대한 고민을 함께합니다。”
               </p>
             </div>
           </div>
           <div className={styles.textbox}>
-            <p className={styles.font1}>"약물 사용은 한번도 너무 많고 천 번도 너무 부족한 것임을 우리는 압니다."</p>
+            <p className={styles.font1}>"지독한 약물 중독자일지라도 <span className={styles.specialText}>'회복할 수 있다'</span> 라는 희망의 메세지를 얻게 됩니다."</p>
             <p className={styles.font2}>From DARC</p>
           </div>
-
         </div>
-
+      </div>
+      <div className={styles.content2}>
+        <div className={styles.real}>
+          <h1>회복자들의 경험담</h1>
+          <p>DARC 멤버들의 회복관련 이야기</p>
+          <div>
+            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+          </div>
+        </div>
       </div>
       <div className={styles.content3}>
-        <h1>회복자들의 경험담</h1>
-        <p>DARC 멤버들의 회복관련 이야기</p>
-
-        <div className={styles.youtube1}>
-          <YouTube
-            videoId="lOpRTaRlFFk" //동영상 주소
-            opts={{
-              width: "500px",
-              height: "270px",
-              playerVars: {
-                autoplay: 0, //자동 재생 여부 
-                modestbranding: 1, //컨트롤 바에 유튜브 로고 표시 여부
-                loop: 1, //반복 재생
-                playlist: "lOpRTaRlFFk", //반복 재생으로 재생할 플레이 리스트
-              },
-            }}
-          />
-        </div>
       </div>
-
-
     </main>
   );
 }

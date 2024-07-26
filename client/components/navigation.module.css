@@ -159,6 +159,8 @@
     color: black; /* Text color */
     padding: 15px 20px; /* Add padding to the links */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
 }
 
 /* Change background and text color on hover */

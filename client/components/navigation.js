@@ -108,7 +108,7 @@ export default function Navigation() {
                         <div className={styles.dropdown} ref={el => dropdownRefs.current.addictions = el}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/addictions/medicine" onClick={(e) => handleLinkClick(e, "/addictions/medicine")}><h4>치료 약물</h4></Link>
+                                    <Link href="/addictions/medicine/1" onClick={(e) => handleLinkClick(e, "/addictions/medicine")}><h4>치료 약물</h4></Link>
                                     <Link href="/addictions/medicine/1" onClick={(e) => handleLinkClick(e, "/addictions/medicine/1")}>각성제</Link>
                                     <Link href="/addictions/medicine/2" onClick={(e) => handleLinkClick(e, "/addictions/medicine/2")}>진정, 마취제</Link>
                                     <Link href="/addictions/medicine/3" onClick={(e) => handleLinkClick(e, "/addictions/medicine/3")}>환각제</Link>
@@ -121,14 +121,14 @@ export default function Navigation() {
                         onMouseEnter={() => handleMouseEnter("treatment")}
                         onMouseLeave={() => handleMouseLeave("treatment")}
                     >
-                        <Link href="/treatment" onClick={(e) => handleLinkClick(e, "/treatment")}>Treatment</Link>
+                        <Link href="/treatment/rehabilitation/1" onClick={(e) => handleLinkClick(e, "/treatment/rehabilitation/1")}>Treatment</Link>
                         <div className={styles.dropdown} ref={el => dropdownRefs.current.treatment = el}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/treatment/rehabilitation" onClick={(e) => handleLinkClick(e, "/treatment/rehabilitation")}><h4>중독 재활 치료</h4></Link>
+                                    <Link href="/treatment/rehabilitation/1" onClick={(e) => handleLinkClick(e, "/treatment/rehabilitation/1")}><h4>중독 재활 치료</h4></Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/treatment/program" onClick={(e) => handleLinkClick(e, "/treatment/program")}><h4>프로그램</h4></Link>
+                                    <Link href="/treatment/program/1" onClick={(e) => handleLinkClick(e, "/treatment/program/1")}><h4>프로그램</h4></Link>
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/treatment/law" onClick={(e) => handleLinkClick(e, "/treatment/law")}><h4>사법지원</h4></Link>
