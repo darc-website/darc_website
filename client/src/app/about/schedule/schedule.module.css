@@ -25,7 +25,7 @@
     height: 100%;
     width: 50%; /* Ensure it takes up half of the header */
     font-family: 'Times New Roman', Times, serif;
-    color: #24355f;
+    color: #19428b;
     margin: 0;
 }
 
@@ -93,7 +93,7 @@
     border: 1px solid black; /* Add border width and color */
     border-radius: 5px; /* Optional: Add border-radius for rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a subtle effect */
-    background-color: #546894;
+    background-color: #8295bc;
     padding-left: 18px;
     font-weight: 700;
     color: #1f1f1f;

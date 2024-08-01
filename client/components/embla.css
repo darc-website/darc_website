@@ -1,68 +1,80 @@
 .embla {
-  max-width: 48rem;
+  max-width: 44rem;
   margin: auto;
-  --slide-height: 19rem;
-  --video-slide-height: 25rem; /* Add variable for video slide height */
-  --slide-spacing: 1rem;
-  --slide-size: 100%;
 }
+
 .embla__viewport {
   overflow: hidden;
 }
+
 .embla__container {
   backface-visibility: hidden;
   display: flex;
   touch-action: pan-y pinch-zoom;
-  margin-left: calc(var(--slide-spacing) * -1);
+  margin-left: -1rem; /* Slide spacing */
 }
+
 .embla__slide {
-  flex: 0 0 var(--slide-size);
+  flex: 0 0 100%; /* Slide size */
   min-width: 0;
-  padding-left: var(--slide-spacing);
+  padding-left: 1rem; /* Slide spacing */
 }
+
 .embla__slide__inner {
   width: 100%;
-  height: var(--slide-height);
+  height: 15.5rem; /* Slide height */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 0.15rem solid #808080; /* Lighter border around the content */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure the content stays inside the border */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
-.embla__slide--video .embla__slide__inner { /* Apply different height for video slides */
-  height: var(--video-slide-height);
+
+.embla__slide--video .embla__slide__inner {
+  height: 15.5rem; /* Video slide height */
 }
-.embla__slide__img,
+
 .embla__slide__video {
   max-width: 100%;
   max-height: 100%;
+  width: 80%; /* Set the width of the video element */
+  height: auto; /* Maintain aspect ratio */
 }
+
 .embla__slide__text {
   font-size: 20px;
   text-align: center;
   padding: 20px;
 }
+
 .embla__slide__youtube {
   width: 100%;
-  height: var(--video-slide-height);
+  height: 100%; /* Use full height of the slide inner */
 }
+
 .embla__controls {
   display: grid;
   grid-template-columns: auto 1fr;
   justify-content: space-between;
   gap: 1.2rem;
-  margin-top: 1.8rem;
+  margin-top: 0.4rem;
 }
+
 .embla__buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
+  gap: 0.4rem; /* Reduced gap between buttons */
   align-items: center;
 }
+
 .embla__button {
-  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.5);
   -webkit-appearance: none;
   appearance: none;
-  background-color: transparent;
+  background-color: rgb(242, 242, 242);
   touch-action: manipulation;
   display: inline-flex;
   text-decoration: none;
@@ -70,32 +82,37 @@
   border: 0;
   padding: 0;
   margin: 0;
-  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-  width: 3.6rem;
-  height: 3.6rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card-style shadow */
+  width: 2.8rem; /* Reduced width */
+  height: 2.8rem; /* Reduced height */
   z-index: 1;
   border-radius: 50%;
-  color: var(--text-body);
+  color: #333; /* Text body */
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 0.1rem solid #ccc; /* Lighter border */
 }
+
 .embla__button:disabled {
-  color: var(--detail-high-contrast);
+  color: #999; /* Detail high contrast */
 }
+
 .embla__button__svg {
-  width: 35%;
-  height: 35%;
+  width: 25%; /* Reduced SVG size */
+  height: 25%;
 }
+
 .embla__dots {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+  margin-right: calc((2.6rem - 1.2rem) / 2 * -1);
 }
+
 .embla__dot {
-  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.5);
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
@@ -106,22 +123,26 @@
   border: 0;
   padding: 0;
   margin: 0;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.2rem; /* Reduced width */
+  height: 2.2rem; /* Reduced height */
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
 }
+
 .embla__dot:after {
-  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-  width: 1.4rem;
-  height: 1.4rem;
+  box-shadow: inset 0 0 0 0.15rem #808080; /* Reduced border size */
+  width: 0.9rem; /* Reduced inner dot size */
+  height: 0.9rem; /* Reduced inner dot size */
   border-radius: 50%;
   display: flex;
   align-items: center;
   content: '';
+  background-color: #808080;
 }
+
 .embla__dot--selected:after {
-  box-shadow: inset 0 0 0 0.2rem var(--text-body);
+  box-shadow: inset 0 0 0 0.15rem #333; /* Text body */
+  background-color: #244186;
 }

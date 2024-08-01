@@ -25,7 +25,7 @@
     height: 100%;
     width: 50%; /* Ensure it takes up half of the header */
     font-family: 'Times New Roman', Times, serif;
-    color: #24355f;
+    color: #19428b;
 }
 
 .link {
@@ -75,7 +75,7 @@
 }
 
 .textbox > h2 {
-    color: #24355f;
+    color: #19428b;
 }
 
 .textbox > p {

@@ -204,145 +204,25 @@ font-family: 'SF_HambakSnow';
   /* Third section styles */
   .content2 {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #727EAF;
   }
   
   .real {
-    margin-top: 60px;
   width: 1330px;
-  display: flex;
-  flex-direction: row;
-  }
-
-  .carousel {
-    margin-top: 20px;
-    width: 35%;
-    margin-left: 190px;
-  }
-
-  .texts {
-    margin-left: 100px;
-    text-align: right;
-    display: flex; /* Set the container as a flexbox */
-    flex-direction: column;
-    align-items: flex-end; /* Align items to the right */
-}
-  
-.divider1 {
-  height: calc(50% + 20px);
-  background-image: url("/background.jpg");
-  width: 100%;
-  background-position: center -20px; /* Example positioning */
-  background-size: cover;
-  position: relative; /* Positioning context for .design */
-}
-  
-  .texts h3 {
-  font-size: 35px;
-  font-family: 'SF_HambakSnow';
-    color: #c5996e;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-  }
-
-  .texts p {
-    margin-top: -30px;
-    color: gray;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
   }
   
-  .texts a {
-    text-decoration: none;
-    color: #333;
+  .content2 h1 {
+  color: #D3A518;
+  font-size: 60px;
   }
-
-  .texts button {
-    width: 120px;
-    height: 45px;
-    border: 1px solid black;
-    background-color: transparent;
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    box-sizing: border-box; /* Include padding and border in width and height */
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card-style shadow */
-  }
-
-  .texts button:hover {
-    background-color: rgb(237, 237, 237);
-  }
-  
-  .texts h4 {
-    margin: 0; /* Remove margin from h4 */
-    padding: 0; /* Remove padding from h4 */
-    text-align: center; /* Ensure text is centered within h4 */
-  }
-
-  .design {
-    position: absolute; /* Position relative to .devider1 */
-    bottom: -5px; /* 10px from the bottom of .devider1 */
-    right: 10px; /* 10px from the right of .devider1 */
-
-  }
-
-  .design p {
-    font-size: 11px;
-    color: white; 
-  }
-
-  .texts2 a {
-    text-decoration: none;
-    color: #333;
-  }
-
-  .texts2 button {
-    width: 120px;
-    height: 45px;
-    border: 1px solid black;
-    background-color: transparent;
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    box-sizing: border-box; /* Include padding and border in width and height */
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card-style shadow */
-  }
-
-  .texts2 h3 {
-    font-size: 35px;
-    font-family: 'SF_HambakSnow';
-      color: #c5996e;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-    }
-  
-    .texts2 p {
-      margin-top: -30px;
-      color: gray;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-    }
-
-    .texts2 button:hover {
-      background-color: rgb(237, 237, 237);
-    }
-    
-    .texts2 h4 {
-      margin: 0; /* Remove margin from h4 */
-      padding: 0; /* Remove padding from h4 */
-      text-align: center; /* Ensure text is centered within h4 */
-    }
   
   .content3 {
-    width: 100%;
-    height: 100%;
-    padding-top: 50px;
+  background-color: beige;
+  width: 100%;
+  height: calc(100vh - 50px);
   }
-
-
   
