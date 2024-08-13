@@ -1,10 +1,9 @@
-'use client';
 import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton, useDotButton } from './EmblaCarouselDotButton';
 import { PrevButton, NextButton, usePrevNextButtons } from './EmblaCarouselArrowButtons';
 import YouTube from 'react-youtube';
-import './embla.css';
+import './embla2.css';
 
 const EmblaCarousel = ({ slides, options }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -21,34 +20,20 @@ const EmblaCarousel = ({ slides, options }) => {
                             className={`embla__slide ${slide.type === 'youtube' ? 'embla__slide--video' : ''}`}
                             key={index}
                         >
-                            <div className="embla__slide__inner">
-                                {slide.type === 'image' && (
-                                    <img src={slide.src} alt={`Slide ${index + 1}`} className="embla__slide__img" />
-                                )}
-                                {slide.type === 'video' && (
-                                    <video controls className="embla__slide__video">
-                                        <source src={slide.src} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                    </video>
-                                )}
+                            <div
+                                className="embla__slide__inner"
+                                style={{
+                                    backgroundImage: `url(${slide.image})`,
+                                }}
+                            >
                                 {slide.type === 'text' && (
-                                    <div className="embla__slide__text">{slide.content}</div>
+                                    <div className="embla__slide__text">
+                                        <h4>{slide.content.h4}</h4>
+                                        <h2>{slide.content.h2}</h2>
+                                        <p>{slide.content.p}</p>
+                                    </div>
                                 )}
-                                {slide.type === 'youtube' && (
-                                    <YouTube
-                                        videoId={slide.videoId}
-                                        opts={{
-                                            width: "100%",
-                                            height: "100%",
-                                            playerVars: {
-                                                autoplay: 0,
-                                                modestbranding: 1,
-                                                rel: 0,
-                                            },
-                                        }}
-                                        className="embla__slide__youtube"
-                                    />
-                                )}
+                                {/* Handle other types like image, video, youtube if needed */}
                             </div>
                         </div>
                     ))}
@@ -73,7 +58,7 @@ const EmblaCarousel = ({ slides, options }) => {
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

@@ -75,7 +75,7 @@
 }
 
 .rightnow p {
-    color:#24355f;
+    color:#19428b;
     font-weight: 700;
 }
 
@@ -113,6 +113,10 @@
     display: flex;
     align-items: center;
     color: gray;
+    /* background-image: url(/Picture1.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .picturein {

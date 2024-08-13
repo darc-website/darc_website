@@ -1,13 +1,73 @@
+'use client'
+import React, { useState } from 'react';
 import Navigation from "../../../../../components/navigation";
-import styles from "../../../page.module.css"
+import styles from "../korea/history.module.css";
+import Link from "next/link";
+import { GoX } from "react-icons/go";
 
-export default function Japan() {
+export default function Mission() {
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handlePopup = () => {
+        setShowPopup(true);
+    };
+
+    const closePopup = () => {
+        setShowPopup(false);
+    };
+
     return (
-        <main className={styles.main}>
-            <Navigation />
-            <div style={{ marginTop: '400px', textAlign: 'center' }}>
-                <h1>Japan</h1>
-            </div>
-        </main>
+        <div className={styles['main-container']}>
+            <main className={styles.main}>
+                <Navigation />
+                <div className={styles.content}>
+                    <div className={styles.header}>
+                        <div className={styles.title}>
+                            <h1>History of DARC.</h1>
+                        </div>
+                        <div className={styles.link}>
+                            <Link href="/aboutus/his/korea">About us</Link>
+                            <p>&gt;</p>
+                            <Link href="/aboutus/his/korea"><h4>다르크의 역사</h4></Link>
+                        </div>
+                    </div>
+                    <div className={styles.anotherLink}>
+                        <Link href="/aboutus/his/korea" className={styles.other}><p>Korea</p></Link>
+                        <p>|</p>
+                        <Link href="/aboutus/his/japan" className={styles.rightnow}><p>Japan</p></Link>
+                    </div>
+
+
+
+                    <div className={styles.contentBox}>
+                        <div className={styles.left}>
+                            <img src="/japanMap.png" alt="" />
+                        </div>
+                        <div className={styles.right}>
+                            <h1>DARC Japan.</h1>
+                            <p>
+                                1985년, 도쿄, 니포리에 최초로 Group Home이 설립되었습니다. <br />
+                                <br />23년 6월 기준, 현재 95개 넘는 다르크 시설, 1,500명 이상의 중독자들이 단약 및 건강한 사회구성원으로의 복귀를 위해 입소해 있습니다.
+
+                            </p>
+                            <button onClick={handlePopup}>자세히 보기</button>
+                        </div>
+                    </div>
+
+
+
+                    {showPopup && (
+                        <div className={styles.popupContent}>
+                            <h1>History of DARC Japan.</h1>
+                            <div className={styles.photo2}>
+                                <img src="/japan.png" alt="" />
+
+                            </div>
+                            <button onClick={closePopup}><GoX /></button>
+                        </div>
+                    )}
+                </div>
+            </main>
+        </div>
     );
 }

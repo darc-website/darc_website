@@ -161,7 +161,7 @@ export default function Navigation({ activeIndex }) {
                                     <Link href="/aboutus/mission"><h4>미션</h4></Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/aboutus/his"><h4>역사</h4></Link>
+                                    <Link href="/aboutus/his/korea"><h4>역사</h4></Link>
                                     <Link href="/aboutus/his/korea">Korea</Link>
                                     <Link href="/aboutus/his/japan">Japan</Link>
                                 </div>

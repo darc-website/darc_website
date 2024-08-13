@@ -24,7 +24,7 @@
     font-family: 'Times New Roman', Times, serif;
     height: 100%;
     width: 50%; /* Ensure it takes up half of the header */
-    color: #24355f;
+    color: #19428b;
 }
 
 .link {
@@ -96,13 +96,21 @@
 .box {
     width: 45%; /* Initially smaller width */
     height: 400px;
-    background-color: whitesmoke;
     padding: 10px 30px;
     border-radius: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     position: relative;
     transition: width 0.5s ease-in-out; /* Only animate width */
     overflow: hidden;
+    /* background-image: url(/Picture2.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box h2 {
+    color: #19428b;
+    font-size: 23px;
 }
 
 .box.expanded {
@@ -111,6 +119,11 @@
     padding: 10px 30px;
     border-radius: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    /* background-image: url(/Picture3.jpg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
 .buttonContainer {
