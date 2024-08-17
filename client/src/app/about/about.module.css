@@ -2,20 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
 
 .main {
-    overflow: hidden;
-    height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
+    background-color: #fafafa;
 }
 
 .content {
-    margin-top: 160px;
+    margin-top: 150px;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .header {
-    width: 1200px;
+    width: 80%;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -63,9 +63,9 @@
 .textbox {
     position: relative; /* Add position relative to parent box */
     height: 520px;
-    width: 1200px;
+    width: 80%;
     background-color: white;
-    border-radius: 30px; /* Add border radius */
+    border-radius: 15px; /* Add border radius */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45); /* Add card shadow */
     display: flex;
     flex-direction: column;
@@ -83,11 +83,12 @@
 }
 
 .textbox > img {
+    position: absolute;
+    bottom: -100px;
+    right: 0;
     width: 400px;
     height: 400px;
-    margin-top: -145px;
-    display: block; /* Ensure the image behaves like a block element */
-    margin-left: 800px; /* Push the image to the right */
+    
 }
 
 .textboxin {
@@ -95,7 +96,7 @@
     top: -505px; /* Adjust top position */
     left: 15px; /* Adjust left position */
     height: 520px;
-    width: 1200px;
+    width: 80%;
     background-color: white;
     border-radius: 30px; /* Add border radius */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45); /* Add card shadow */

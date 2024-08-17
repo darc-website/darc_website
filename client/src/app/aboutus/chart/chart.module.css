@@ -1,0 +1,152 @@
+/* General Page Styles */
+.main {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #fafafa;
+}
+
+.content {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Allows the popup to be positioned relative to the content */
+}
+
+.header {
+    width: 1200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    height: 100%;
+    width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    color: #19428b;
+}
+
+.link {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 18px;
+    text-align: right;
+}
+
+.link p {
+    margin: 0 10px;
+}
+
+.link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link a:hover {
+    color: #4e73ac;
+}
+
+.anotherLink {
+    width: 1200px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: -15px;
+    font-size: 18px;
+}
+
+.anotherLink a {
+    text-decoration: none;
+    color: #3b3b3b;
+}
+
+.rightnow p {
+    color: #19428b;
+    font-weight: 700;
+}
+
+.other:hover p {
+    color: gray;
+}
+
+.onemoreLink {
+    margin-left: 10px;
+    width: 1200px;
+    height: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.onemoreLink p {
+    margin-top: -13px;
+}
+
+.cityButton {
+    margin-top: -12px;
+    background-color: transparent;
+    border: none;
+    color: #3b3b3b;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.cityButton:hover {
+    color: gray;
+}
+
+.selectedCity {
+    color: #19428b;
+    font-weight: 700;
+}
+
+.selectedCity:hover {
+    color: #19428b; /* Keep the same color on hover */
+}
+
+.contentBox {
+    width: 1200px;
+    height: 1300px;
+    border-radius: 20px;
+    margin-top: 20px;
+
+    margin-bottom: 20px;
+    display: flex; /* Enable Flexbox */
+    align-items: top; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    position: relative;
+}
+
+.photobox {
+    display: flex; /* Enable Flexbox */
+    align-items: top; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 70%; /* Make sure it takes up the full width of the parent */
+    height: 90%;
+    margin-top: -30px;
+}
+
+.photobox img {
+    max-width: 100%;  /* Ensure the image scales to fit within the box */
+    max-height: 100%; /* Ensure the image scales to fit within the box */
+    object-fit: contain; /* Ensure the image maintains aspect ratio */
+    margin-left: 20px;
+}
+
+.watermark {
+    position: absolute;
+    bottom: -70px;
+    right: -40px;
+    
+}
+
+.watermark img {
+    transform: rotate(-20deg); 
+}

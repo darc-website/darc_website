@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .nav {
     overflow: hidden;
@@ -14,9 +15,9 @@
     display: flex;
     flex-direction: column; /* Align children vertically */
     border-bottom: 2px solid #19428b; 
-    background-color: white; /* Set background color */
+    background-color: #fafafa; /* Set background color */
     transition: height 0.3s;
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .nav.scrolled {
@@ -24,7 +25,7 @@
 }
 
 .top {
-    background-color: white;
+    background-color: #fafafa;
     height: 100px; /* Adjust height to accommodate only the top part */
     display: flex;
     align-items: center; /* Center content vertically */
@@ -130,7 +131,7 @@
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
     font-size: 18px;
-    background-color: white;
+    background-color: #fafafa;
     transition: height 0.3s;
 }
 
@@ -139,7 +140,7 @@
     display: flex; /* Lay out list items in a row */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .nav.scrolled .bottom ul {
@@ -155,16 +156,16 @@
     color: black; /* Text color */
     padding: 15px 20px; /* Add padding to the links */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-    font-weight: 100;
+    font-weight: 300;
     font-size: 17px;
     margin-top: -20px;
-    font-family: "Archivo", sans-serif;
+    /* font-family: "Archivo", sans-serif; */
     cursor: pointer; /* Change cursor to pointer */
 }
 
 .bottom span:hover {
     background-color: #19428b; /* Change background color on hover */
-    color: white; /* Change text color on hover */
+    color: #f3f3f5; /* Change text color on hover */
 }
 
 .dropdown {
@@ -176,7 +177,7 @@
     height: 220px;
     background-color: #19428b; 
     z-index: 999; /* Ensure it appears above other content */
-    color: white;
+    color: #f3f3f5;
     text-align: center;
     padding-top: 20px; /* Adjust for content alignment */
     transition: top 0.3s;
@@ -200,7 +201,7 @@
 .dropdown a:hover {
     background-color: transparent; /* No background color change */
     color: inherit; /* No text color change */
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #f3f3f5;
     font-weight: 600;
 }
 
@@ -246,5 +247,5 @@
 .bottom li:hover .dropdown,
 .bottom li:focus-within .dropdown {
     background-color: #19428b; 
-    color: white; /* Text color */
+    color: #f3f3f5; /* Text color */
 }

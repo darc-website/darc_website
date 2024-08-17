@@ -182,7 +182,7 @@ export default function Navigation({ activeIndex }) {
                                     <Link href="/contact/contactus"><h4>Contact us</h4></Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/review"><h4>Resources</h4></Link>
+                                    <Link href="/contact/resources"><h4>Resources</h4></Link>
                                 </div>
                             </div>
                         </div>

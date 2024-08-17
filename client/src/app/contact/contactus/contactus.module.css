@@ -1,0 +1,109 @@
+/* General Page Styles */
+.main {
+    height: 100vh;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.content {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Allows the popup to be positioned relative to the content */
+}
+
+.header {
+    width: 1200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    height: 100%;
+    width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    color: #19428b;
+    margin-bottom: 0;
+}
+
+.link {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 18px;
+    text-align: right;
+}
+
+.link p {
+    margin: 0 10px;
+}
+
+.link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link a:hover {
+    color: #4e73ac;
+}
+
+
+.textbox {
+    width: 1200px;
+    height: 180px;
+    margin-top: -10px;
+    color: rgb(65, 65, 65);
+}
+
+
+.effect {
+    height: 200px;
+    width: 1200px;
+}
+
+.oneline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(65, 65, 65);
+}
+
+.toggleButton {
+    position: relative;
+    right: 0;
+    background-color: #375194;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.toggleButton:hover {
+    background-color: #4e73ac;
+}
+
+.effectsContent {
+    margin-top: -20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    padding: 0 0;
+    color: rgb(65, 65, 65);
+}
+
+.effectsContent.show {
+    max-height: 400px; /* Adjust as needed */
+    padding: 4px 0; /* Adjust as needed */
+}
+
+.effectsContent li {
+    margin-bottom: 8px;
+}

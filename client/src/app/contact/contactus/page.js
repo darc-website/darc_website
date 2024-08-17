@@ -1,13 +1,72 @@
+'use client'
+import React, { useState } from 'react';
 import Navigation from "../../../../components/navigation";
-import styles from "../../page.module.css"
+import styles from "./contactus.module.css";
+import Link from "next/link";
+import { GoX } from "react-icons/go";
+import { SlArrowUp } from "react-icons/sl";
+import { SlArrowDown } from "react-icons/sl";
 
-export default function ContactUs() {
+export default function Mission() {
+    const [showEffects, setShowEffects] = useState(false);
+
+    const toggleEffects = () => {
+        console.log("Toggling effects", !showEffects);
+        setShowEffects(!showEffects);
+    }
+
     return (
-        <main className={styles.main}>
-            <Navigation />
-            <div style={{ marginTop: '400px', textAlign: 'center' }}>
-                <h1>Contact us</h1>
-            </div>
-        </main>
+        <div className={styles['main-container']}>
+            <main className={styles.main}>
+                <Navigation />
+                <div className={styles.content}>
+                    <div className={styles.header}>
+                        <div className={styles.title}>
+                            <h1>Contact Us.</h1>
+                        </div>
+                        <div className={styles.link}>
+                            <Link href="/contact/contactus">Contact</Link>
+                            <p>&gt;</p>
+                            <Link href="/contact/contactus"><h4>Contact Us.</h4></Link>
+                        </div>
+                    </div>
+
+                    <div className={styles.textbox}>
+                        <h2>운영시간: 10:00 - 18:00</h2>
+                        <ul>
+                            <li>전화 문의: 070-4046-1445</li>
+                            <li>모든 상담 내용은 비밀 보장이 되며, 모든 문의 및 상담 내용은 원활한 문의 및 상담 내용 목적으로만 사용됩니다.</li>
+                            <li>공휴일은 휴무입니다.</li>
+                        </ul>
+                    </div>
+
+                    <div className={styles.effect}>
+                        <hr class={styles.solid} />
+                        <div className={styles.oneline}>
+                            <div>
+                                <h2>개인정보 수집 및 이용에 대한 안내</h2>
+                            </div>
+                            <button className={styles.toggleButton} onClick={toggleEffects}>
+                                {showEffects ? <SlArrowUp /> : <SlArrowDown />}
+                            </button>
+
+                        </div>
+                        <div className={`${styles.effectsContent} ${showEffects ? styles.show : ''}`}>
+                            <p>다르크협회 기업/단체 및 개인의 정보 수집 및 이용 등 처리에 있어 아래의 사항을 관계법령에 따라 고지하고 안내드립니다. <br />
+                            </p>
+                            <ol>
+                                <li>정보수집의 이용 목적: 온라인 문의/신청</li>
+                                <li>수집/이용 항목: 성함, 성별, 연락처, 이메일</li>
+                                <li>보유 및 이용기간: 프로그램 종료 후 6개월, 정보제공자의 삭제 요청시 즉시</li>
+                                <li>개인정보처리담당: 전화: / 이메일: koreadarc01@gmail.com</li>
+                            </ol>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </main>
+        </div>
     );
 }

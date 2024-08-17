@@ -1,0 +1,90 @@
+/* General Page Styles */
+.main {
+    height: 100vh;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.content {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Allows the popup to be positioned relative to the content */
+}
+
+.header {
+    width: 1200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    height: 100%;
+    width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    color: #19428b;
+    margin-bottom: 0;
+}
+
+.link {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 18px;
+    text-align: right;
+}
+
+.link p {
+    margin: 0 10px;
+}
+
+.link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link a:hover {
+    color: #4e73ac;
+}
+
+
+.textbox {
+    width: 1200px;
+    height: 80px;
+    margin-top: -10px;
+    color: rgb(65, 65, 65);
+}
+
+.divbox {
+    width: 1200px;
+    height: 470px;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+
+.leftLink,
+.rightLink {
+    width: 49.5%;
+    height: 100%;
+    border: solid 2px #19428b;
+    border-radius: 20px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    color: rgb(65, 65, 65);
+    background-color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leftLink:hover,
+.rightLink:hover {
+    background-color: #dcdcdc; /* Change text color to white on hover */
+    transform: translateY(-5px); /* Slightly lift the div on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+
+
