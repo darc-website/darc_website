@@ -1,0 +1,83 @@
+/* Container for the slider */
+.container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+/* Custom slide styling */
+.slide {
+    width: 360px;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 4px 12px #00000014;
+    margin: 10px;
+    padding: 20px 40px;
+}
+
+.slide h4 {
+    color: #19428b;
+    font-size: 19px;
+}
+
+.slide h2 {
+    margin-top: -15px;
+    font-size: 28px;
+}
+
+.slide p {
+    margin-top: -10px;
+    font-size: 16px;
+    color: gray;
+}
+
+/* Custom navigation button styling */
+.swiperButtonPrev, .swiperButtonNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e2e2e4;
+    color: #646465;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 34px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    opacity: 0; /* Start with invisible buttons */
+    visibility: hidden; /* Hide the buttons initially */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.swiperButtonPrev {
+    left: 0px;
+}
+
+.swiperButtonNext {
+    right: 0px;
+}
+
+.container:hover .swiperButtonPrev, 
+.container:hover .swiperButtonNext {
+    opacity: 0.7; /* Make buttons visible */
+    visibility: visible; /* Ensure buttons are displayed */
+}
+
+.swiper-scrollbar {
+    display: none;
+}
+
+.swiperButtonPrev:hover, .swiperButtonNext:hover {
+    background-color: #e8e8ea;
+    color: #545455;
+}
+
+/* Hide scrollbar but allow scrolling */
+.swiper-scrollbar {
+    display: none;
+}

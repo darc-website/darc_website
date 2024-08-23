@@ -47,7 +47,7 @@ export default function Home() {
           setActiveIndex={setActiveIndex}
         >
           <FullpageSection name="first">
-            <div style={{ width: '100%', height: '100vh' }}>
+            <div style={{ width: '100%', height: '100vh' }} className={styles.firstScreen}>
               <div className={styles.first}>
                 <div className={styles.firstLeft}>
                   <ReactCurvedText width='472'
@@ -93,7 +93,7 @@ export default function Home() {
                 </div>
                 <div className={styles.firstRight}>
                   <div className={styles.picture}>
-                    <img src="/picture3.jpg" alt="" />
+                    <img src="/home1.jpeg" alt="" />
                   </div>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export default function Home() {
             </div>
           </FullpageSection>
           <FullpageSection name="second">
-            <div style={{ width: '100%', height: '100vh', background: '#d6eae2' }}>
+            <div style={{ width: '100%', height: '100vh' }}>
               <div className={styles.content2}>
                 <div className={styles.divider1}>
                   <div className={styles.real}>

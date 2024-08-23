@@ -3,7 +3,6 @@
 
 
 .main {
-    height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -15,7 +14,7 @@
 }
 
 .header {
-    width: 1200px;
+    width: 80%;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -61,5 +60,50 @@
 }
 
 .carousel {
-    width: 1200px;
+    width: 80%;
+}
+
+.itemContainer {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.slider {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.leftBtn, .rightBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.leftBtn {
+    left: 10px;
+}
+
+.rightBtn {
+    right: 10px;
+}
+
+.item {
+    width: calc(100% / 4); /* Adjust width dynamically based on slidesVisible */
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    margin-right: 10px;
+}
+
+.slide {
+    width: 80%;
 }

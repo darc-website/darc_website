@@ -6,6 +6,8 @@ import styles from "./navigation.module.css";
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import { FaYoutube } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Navigation({ activeIndex }) {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -50,13 +52,13 @@ export default function Navigation({ activeIndex }) {
             <div className={styles.top}>
                 <Link href="/">
                     <div className={styles.logo}>
-                        <img src="/logo_new.png" alt="Logo" />
+                        <img src="/logo2.png" alt="Logo" />
                     </div>
                 </Link>
                 <div className={styles.link}>
-                    <a href="https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw">YouTube</a>
+                    <a href="https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw"><FaYoutube /></a>
                     <p> | </p>
-                    <a href="https://www.instagram.com/mass9bro/">Instagram</a>
+                    <a href="https://www.instagram.com/mass9bro/"><FaInstagram /></a>
                     <div className={styles.search}>
                         <input
                             type="text"
@@ -120,14 +122,12 @@ export default function Navigation({ activeIndex }) {
                         <div className={styles.dropdown} ref={el => dropdownRefs.current.treatment = el}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/treatment/rehabilitation/1"><h4>중독 재활 치료</h4></Link>
+                                    <Link href="/treatment/rehabilitation/1"><h4>중독 재활</h4></Link>
+                                    <Link href="/treatment/rehabilitation/1">치료</Link>
+                                    <Link href="/treatment/program/1">프로그램</Link>
+                                    <Link href="/treatment/law">사법지원</Link>
                                 </div>
-                                <div className={styles.column}>
-                                    <Link href="/treatment/program/1"><h4>프로그램</h4></Link>
-                                </div>
-                                <div className={styles.column}>
-                                    <Link href="/treatment/law"><h4>사법지원</h4></Link>
-                                </div>
+
                             </div>
                         </div>
                     </li>

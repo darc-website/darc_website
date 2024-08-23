@@ -114,7 +114,7 @@
 .contentBox {
     width: 1200px;
     height: 500px;
-    border: solid 2px #1a428b;
+    border: solid 1.5px #1a428b;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
@@ -155,7 +155,7 @@
     right: 30px; /* Adjust as needed */
     padding: 10px 30px;
     background-color: white;
-    border: solid 2px #19428b;
+    border: solid 1.5px #19428b;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -172,20 +172,19 @@
     height: 820px;
     border-radius: 20px;
     padding: 10px 30px;
-    border: solid 2px #19428b;
+    border: solid 1.5px #19428b;
     position: absolute;
     top: 10px; /* Position it right below the navbar */
     left: 50%;
     transform: translateX(-50%); /* Center it horizontally */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45); /* Add some shadow for emphasis */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);  */
     overflow-y: auto; /* Make the popup scrollable */
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+}   
 
 .popupContent h1 {
-    font-family: 'Times New Roman', Times, serif;
     margin-bottom: 28px;
     color: #19428b;
     align-self: flex-start; /* Align the h1 to the start (left) */

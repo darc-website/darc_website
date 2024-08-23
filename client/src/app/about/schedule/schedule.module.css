@@ -94,10 +94,10 @@
     border: 1px solid black; /* Add border width and color */
     border-radius: 5px; /* Optional: Add border-radius for rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a subtle effect */
-    background-color: #798aaa;
+    background-color: #5c6f9f;
     padding-left: 18px;
-    font-weight: 700;
-    color: #1f1f1f;
+    font-weight: 400;
+    color: white;
 }
 
 .dayBlock > p {
