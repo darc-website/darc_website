@@ -421,6 +421,7 @@
     font-size: 18px;
     box-sizing: border-box; /* Ensure padding and borders are included in width calculation */
     height: 130px;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
 .lastbox {
@@ -493,7 +494,6 @@
 }
 
 .submit {
-    
     width: 150px;
     height: 40px;
     margin-top: 20px;
@@ -511,4 +511,17 @@
 .errorMessage {
     color: red;
     margin-bottom: 10px;
+}
+
+.submittedPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
 }

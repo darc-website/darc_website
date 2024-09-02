@@ -11,29 +11,32 @@ export default function Rehabilitation1() {
         {
             content: (
                 <div>
-                    <h4>연극 프로그램.</h4>
+                    <h4>프로그램.</h4>
+                    <h2>연극</h2>
                     <p>연극속의 역할에 몰입해 타인의 심리, 행동 이해 능력 향상 시킬 수 있습니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab1.jpg", // Background image URL for slide 1
+            backgroundImage: "/act.png", // Background image URL for slide 1
         },
         {
             content: (
                 <div>
-                    <h4>독서 프로그램.</h4>
+                    <h4>프로그램.</h4>
+                    <h2>독서</h2>
                     <p>다양한 지식을 책으로 배우고 토론을 통해 타인의 관점을 배워 넓은 시야를 가질 수 있습니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab1.jpg", // Background image URL for slide 1
+            backgroundImage: "/book.png", // Background image URL for slide 1
         },
         {
             content: (
                 <div>
-                    <h4>미술 프로그램.</h4>
+                    <h4>프로그램.</h4>
+                    <h2>미술</h2>
                     <p>심리 상태를 다양한 형태로 표현하며 올바른 가치관을 형성 시킵니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab1.jpg", // Background image URL for slide 1
+            backgroundImage: "/art.png", // Background image URL for slide 1
         },
 
     ];

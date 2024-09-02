@@ -101,3 +101,8 @@
     background-color: #2e4986; /* Change the background color on hover */
 }
 
+.error {
+    margin-top: 20px;
+    color: red;
+    font-size: 14px;
+}

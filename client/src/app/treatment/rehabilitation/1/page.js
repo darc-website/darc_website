@@ -16,7 +16,7 @@ export default function Rehabilitation1() {
                     <p>개인의 문제를 명확히 이해할 수 있도록 상담합니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab1.jpg", // Background image URL for slide 1
+            backgroundImage: "/individual1.png", // Background image URL for slide 1
         },
         {
             content: (
@@ -26,7 +26,7 @@ export default function Rehabilitation1() {
                     <p>중독을 유발시킨 부적응적/비관적 심리구조를 밝혀 적응/긍정으로 대치합니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab1.jpg", // Background image URL for slide 1
+            backgroundImage: "/individual2.png", // Background image URL for slide 1
         },
         {
             content: (
@@ -36,7 +36,7 @@ export default function Rehabilitation1() {
                     <p>전문적으로 훈련된 상담자의 지도와 동료들과의 교류를 통해 집단 내 자신을 성숙한 사람으로 향상시킵니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab1.jpg", // Background image URL for slide 1
+            backgroundImage: "/group1.png", // Background image URL for slide 1
         },
         {
             content: (

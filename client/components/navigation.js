@@ -56,22 +56,11 @@ export default function Navigation({ activeIndex }) {
                     </div>
                 </Link>
                 <div className={styles.link}>
-                    <a href="https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw"><FaYoutube /></a>
-                    <p> | </p>
-                    <a href="https://www.instagram.com/mass9bro/"><FaInstagram /></a>
-                    <div className={styles.search}>
-                        <input
-                            type="text"
-                            name="searchWord"
-                            className="keyword"
-                            title="Search"
-                            defaultValue=""
-                            placeholder="통합검색"
-                        />
-                        <button type="submit" className="btnSubmit">
-                            <i className="pi pi-search" style={{ fontSize: '18px' }}></i>
-                        </button>
-                    </div>
+                    <a href="https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw">YouTube</a>
+                    {/* <p> | </p>  <FaYoutube />   <FaInstagram />*/}
+                    <span className={styles.lineb}><p> | </p></span>
+
+                    <a href="https://www.instagram.com/mass9bro/">Instagram</a>
                 </div>
             </div>
             <div className={styles.bottom}>

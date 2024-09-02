@@ -1,0 +1,74 @@
+.slider {
+    height: 60px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+  
+  .slider::before,
+  .slider::after {
+    position: absolute;
+    background-image: linear-gradient(to right, #e2ebf5 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100%;
+    width: 25%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  
+  .slide-track {
+    width: calc(150px * 20); /* Adjust based on the number of logos */
+    display: flex;
+    animation: scroll 20s linear infinite;
+  }
+  
+  .slide {
+    width: 150px; /* Adjust according to your logo size */
+    height: 60px;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    color: black; /* Text color */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(calc(-150px * 10)); /* Adjust based on the number of original slides */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .slide-track {
+      width: calc(80px * 20);
+    }
+  
+    .slide {
+      width: 80px;
+    }
+  
+    @keyframes scroll {
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(calc(-80px * 10));
+      }
+    }
+  }

@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.footer {
+    background-color: #244186; /* Dark background for the footer */
+    color: #fff; /* White text for visibility */
+    padding: 40px 0; /* Top and bottom padding */
+    width: 100%; /* Full width */
+    position: relative;
+    bottom: 0; /* Stick to the bottom */
+    font-family: 'Pretendard-Regular';
+  }
+  
+  .footerContainer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footerLinks {
+    margin-bottom: 20px; /* Space between links and other sections */
+  }
+  
+  .footerLinks a {
+    color: #fff; /* White links */
+    margin: 0 15px; /* Space between links */
+    text-decoration: none; /* No underline */
+    font-size: 16px; /* Adjust font size */
+  }
+  
+  .footerLinks a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  .footerSocials {
+    margin-bottom: 20px; /* Space between social icons and info */
+  }
+  
+  .footerSocials a {
+    margin: 0 10px; /* Space between social icons */
+  }
+  
+  .icon {
+    width: 24px; /* Icon size */
+    height: 24px;
+    filter: brightness(0) invert(1); /* Make icons white */
+  }
+
+  .footerInfo2 {
+    display: flex; /* Flexbox layout to align items in a row */
+    justify-content: center; /* Center the items */
+    align-items: center; /* Vertically align items */
+    gap: 15px; /* Space between the text items */
+    margin-bottom: 10px; /* Space between footerInfo2 and footerInfo */
+  }
+  
+  .footerInfo {
+    font-size: 14px; /* Smaller text for copyright info */
+    color: #ccc; /* Slightly lighter text */
+  }
+  
+  .footerInfo p {
+    margin: 0;
+  }
+
+
+  .homeButton {
+    width: 100px;
+    background-color: transparent;
+    border: solid 1px white;
+    color: white;
+    border-radius: 20px;
+  }

@@ -3,6 +3,11 @@ import React from 'react';
 import Navigation from "../../../../components/navigation";
 import styles from "./resources.module.css";
 import Link from "next/link";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
+
 
 export default function Mission() {
     return (
@@ -30,13 +35,29 @@ export default function Mission() {
                             className={styles.leftLink}
                             onClick={() => window.open("https://instagram.com/mass9bro/", "_blank")}
                         >
-                            <h2>Instagram</h2>
+                            <h1><FaInstagram /></h1>
+                            <h3>Instagram</h3>
                         </div>
                         <div
-                            className={styles.rightLink}
+                            className={styles.leftLink}
                             onClick={() => window.open("https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw", "_blank")}
                         >
-                            <h2>Youtube</h2>
+                            <h1><FaYoutube /></h1>
+                            <h3>YouTube</h3>
+                        </div>
+                        <div
+                            className={styles.leftLink}
+                            onClick={() => window.open("https://instagram.com/mass9bro/", "_blank")}
+                        >
+                            <h1><FaTwitter /></h1>
+                            <h3>Twitter</h3>
+                        </div>
+                        <div
+                            className={styles.leftLink}
+                            onClick={() => window.open("https://instagram.com/mass9bro/", "_blank")}
+                        >
+                            <h1><FaTelegramPlane /></h1>
+                            <h3>Telegram</h3>
                         </div>
                     </div>
                 </div>

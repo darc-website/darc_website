@@ -14,6 +14,7 @@ import { RadioButton } from "primereact/radiobutton";
 
 export default function Program1() {
     const [showPopup, setShowPopup] = useState(false);
+
     const [name, setName] = useState("");
     const [vms, setVms] = useState("");
     const [address, setAddress] = useState("");
@@ -117,7 +118,7 @@ export default function Program1() {
         clear: '지우기' // "Clear" in Korean
     });
 
-    const handleFormSubmit = () => {
+    const handleFormSubmit = async () => {
         // Check if all required fields are filled out
         if (!name || !phoneNumber || !domain || !address || !startdate || !enddate || !starttime || !endtime || volunteerContent.length === 0) {
             setErrorMessage("* 필수입력사항을 모두 입력해주세요.");
@@ -139,7 +140,7 @@ export default function Program1() {
         // Create the form data JSON
         const formData = {
             name,
-            vms,
+            vms, // Default to an empty string if vms is undefined or empty
             phoneNumber,
             address,
             email: fullEmail,
@@ -148,17 +149,35 @@ export default function Program1() {
             enddate: enddate ? enddate.toLocaleDateString() : "",
             starttime: starttime ? starttime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "",
             endtime: endtime ? endtime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "",
-            detailedContent: text,
+            detailedContent: text || '', // Default to an empty string if detailedContent (text) is undefined or empty
             consent: {
                 firstconsent,
                 secondconsent
             }
         };
 
-        // Log form data to the console
-        console.log(JSON.stringify(formData, null, 2));
+        try {
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData), // Send the formData JSON
+            });
 
-        alert("Form submitted successfully! Check the console for form data.");
+            const result = await response.json();
+
+            if (response.ok) {
+                alert('자원봉사 신청서가 제출되었습니다!');
+                setTimeout(() => {
+                    window.location.reload(); // Refresh the page
+                }, 3000);
+            } else {
+                setErrorMessage('Error sending email: ' + result.error);
+            }
+        } catch (error) {
+            setErrorMessage('Error sending email: ' + error.message);
+        }
     };
 
 
@@ -313,7 +332,7 @@ export default function Program1() {
                                 <select className="box" id="domain-list" onChange={handleDomainChange}>
                                     <option value="type">직접 입력</option>
                                     <option value="naver.com">naver.com</option>
-                                    <option value="google.com">google.com</option>
+                                    <option value="gmail.com">gmail.com</option>
                                     <option value="hanmail.net">hanmail.net</option>
                                     <option value="nate.com">nate.com</option>
                                     <option value="kakao.com">kakao.com</option>
@@ -405,7 +424,7 @@ export default function Program1() {
                                 className={styles.textarea}
                                 value={text} // Bind the textarea value to the state
                                 onChange={(e) => setText(e.target.value)} // Update the state inline when the user types
-                                placeholder="세부 내용을 입력해 주세요."
+                                placeholder="세부 내용을 입력해주세요."
                             ></textarea>
                         </div>
                         <div className={styles.lastbox}>
