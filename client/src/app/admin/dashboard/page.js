@@ -32,6 +32,10 @@ export default function Dashboard() {
     const [newName, setNewName] = useState(''); // State to track the new name during editing
     const [newText, setNewText] = useState(''); // State to track the new text during editing
     const [newJob, setNewJob] = useState(''); // State to track the new job during editing
+    const [selectedReview, setSelectedReview] = useState(null);
+    const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+    const [filterOption, setFilterOption] = useState('모두');
+    const [filterOption2, setFilterOption2] = useState('모두');
 
     const router = useRouter();
 
@@ -295,6 +299,90 @@ export default function Dashboard() {
         return null;
     };
 
+    const openReviewModal = (review) => {
+        setSelectedReview(review);
+        setIsReviewModalOpen(true);
+    };
+
+    const closeReviewModal = () => {
+        setSelectedReview(null);
+        setIsReviewModalOpen(false);
+    };
+
+    const filterVideos = () => {
+        const now = new Date();
+        let filteredVideos = videos;
+
+        if (filterOption === '오늘') {
+            filteredVideos = videos.filter(video => {
+                const videoDate = new Date(video.storedDate);
+                return videoDate.toDateString() === now.toDateString();
+            });
+        } else if (filterOption === '이번주') {
+            const startOfWeek = new Date(now.setDate(now.getDate() - now.getDay()));
+            filteredVideos = videos.filter(video => {
+                const videoDate = new Date(video.storedDate);
+                return videoDate >= startOfWeek;
+            });
+        } else if (filterOption === '이번달') {
+            const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+            filteredVideos = videos.filter(video => {
+                const videoDate = new Date(video.storedDate);
+                return videoDate >= startOfMonth;
+            });
+        } else if (filterOption === '3달이내') {
+            const threeMonthsAgo = new Date(now.setMonth(now.getMonth() - 3));
+            filteredVideos = videos.filter(video => {
+                const videoDate = new Date(video.storedDate);
+                return videoDate >= threeMonthsAgo;
+            });
+        } else if (filterOption === '6달이내') {
+            const sixMonthsAgo = new Date(now.setMonth(now.getMonth() - 6));
+            filteredVideos = videos.filter(video => {
+                const videoDate = new Date(video.storedDate);
+                return videoDate >= sixMonthsAgo;
+            });
+        }
+        return filteredVideos;
+    };
+
+    const filterReviews = () => {
+        const now = new Date();
+        let filteredReviews = reviews;
+
+        if (filterOption2 === '오늘') {
+            filteredReviews = reviews.filter(review => {
+                const reviewDate = new Date(review.storedDate);
+                return reviewDate.toDateString() === now.toDateString();
+            });
+        } else if (filterOption2 === '이번주') {
+            const startOfWeek = new Date(now.setDate(now.getDate() - now.getDay()));
+            filteredReviews = reviews.filter(review => {
+                const reviewDate = new Date(review.storedDate);
+                return reviewDate >= startOfWeek;
+            });
+        } else if (filterOption2 === '이번달') {
+            const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+            filteredReviews = reviews.filter(review => {
+                const reviewDate = new Date(review.storedDate);
+                return reviewDate >= startOfMonth;
+            });
+        } else if (filterOption2 === '3달이내') {
+            const threeMonthsAgo = new Date(now.setMonth(now.getMonth() - 3));
+            filteredReviews = reviews.filter(review => {
+                const reviewDate = new Date(review.storedDate);
+                return reviewDate >= threeMonthsAgo;
+            });
+        } else if (filterOption2 === '6달이내') {
+            const sixMonthsAgo = new Date(now.setMonth(now.getMonth() - 6));
+            filteredReviews = reviews.filter(review => {
+                const reviewDate = new Date(review.storedDate);
+                return reviewDate >= sixMonthsAgo;
+            });
+        }
+        return filteredReviews;
+    };
+
     return (
         <div className={styles.dashboard}>
             <aside className={styles.sidebar}>
@@ -311,7 +399,7 @@ export default function Dashboard() {
                     className={`${styles.sidebarLink} ${selectedSection === '회복수기' ? styles.active : ''}`}
                     onClick={() => handleSectionSelect('회복수기')}
                 >
-                    회복수기
+                    추천서
                 </button>
                 <button
                     className={`${styles.sidebarLink} ${selectedSection === '시간표' ? styles.active : ''}`}
@@ -359,12 +447,28 @@ export default function Dashboard() {
                                 />
                                 <button type="submit" className={styles.submitButton}>추가</button>
                             </form>
-                            <button
-                                className={styles.refreshButton}
-                                onClick={handleRefresh}
-                            >
-                                <HiRefresh className={isRefreshing ? styles.spinning : ''} /> &nbsp; 새로고침
-                            </button>
+
+                            <div className={styles.rightAlignedControls}>
+                                <select
+                                    value={filterOption}
+                                    onChange={(e) => setFilterOption(e.target.value)}
+                                    className={styles.filterDropdown}
+                                >
+                                    <option value="모두">모두</option>
+                                    <option value="오늘">오늘</option>
+                                    <option value="이번주">이번 주</option>
+                                    <option value="이번달">이번 달</option>
+                                    <option value="3달이내">3달 이내</option>
+                                    <option value="6달이내">6달 이내</option>
+                                </select>
+
+                                <button
+                                    className={styles.refreshButton}
+                                    onClick={handleRefresh}
+                                >
+                                    <HiRefresh className={isRefreshing ? styles.spinning : ''} /> &nbsp; 새로고침
+                                </button>
+                            </div>
                         </div>
                         {/* Form and other elements */}
                         {globalError && (
@@ -373,8 +477,9 @@ export default function Dashboard() {
                             </div>
                         )}
 
+
                         <div className={styles.videoList}>
-                            {videos.map((video) => {
+                            {filterVideos().map((video) => {
                                 const videoDate = new Date(video.storedDate);
                                 const today = new Date();
                                 const isToday = videoDate.toDateString() === today.toDateString();
@@ -399,7 +504,7 @@ export default function Dashboard() {
                                             <div className={styles.videoNameRow}>
                                                 <span className={styles.videoName}>{video.name}</span>
                                             </div>
-                                            <div className={styles.buttonRow}>
+                                            <div className={styles.buttonRow1}>
                                                 <span className={styles.videoDate}>{formattedDate}</span>
                                                 {editingId === video._id ? (
                                                     <>
@@ -430,12 +535,28 @@ export default function Dashboard() {
                     <>
                         <div className={styles.reviewSectionHeader}>
                             <button onClick={toggleReviewModal} className={styles.addButton}><AiOutlineFileAdd /> &nbsp; 추가</button>
-                            <button
-                                className={styles.refreshButton}
-                                onClick={handleRefresh}
-                            >
-                                <HiRefresh className={isRefreshing ? styles.spinning : ''} /> &nbsp; 새로고침
-                            </button>
+
+                            <div className={styles.rightAlignedControls}>
+                                <select
+                                    value={filterOption2}
+                                    onChange={(e) => setFilterOption2(e.target.value)}
+                                    className={styles.filterDropdown}
+                                >
+                                    <option value="모두">모두</option>
+                                    <option value="오늘">오늘</option>
+                                    <option value="이번주">이번 주</option>
+                                    <option value="이번달">이번 달</option>
+                                    <option value="3달이내">3달 이내</option>
+                                    <option value="6달이내">6달 이내</option>
+                                </select>
+
+                                <button
+                                    className={styles.refreshButton}
+                                    onClick={handleRefresh}
+                                >
+                                    <HiRefresh className={isRefreshing ? styles.spinning : ''} /> &nbsp; 새로고침
+                                </button>
+                            </div>
                         </div>
                         {/* Form and other elements */}
                         {globalError && (
@@ -443,10 +564,11 @@ export default function Dashboard() {
                                 {globalError}
                             </div>
                         )}
+
                         <p className={styles.testimonialsText}>Testimonials</p>
 
                         <div className={styles.reviewList}>
-                            {reviews.map((review) => {
+                            {filterReviews().map((review) => {
                                 const reviewDate = new Date(review.storedDate);
                                 const today = new Date();
                                 const isToday = reviewDate.toDateString() === today.toDateString();
@@ -463,40 +585,56 @@ export default function Dashboard() {
                                     });
 
                                 return (
-                                    <div key={review._id} className={styles.reviewItem}>
+                                    <div
+                                        key={review._id}
+                                        className={styles.reviewItem}
+                                        onClick={() => openReviewModal(review)} // Open modal on click
+                                        style={{ cursor: 'pointer' }} // Make it clear it's clickable
+                                    >
                                         <div className={styles.reviewDetails}>
                                             {editingId === review._id ? (
-                                                <>
+                                                <div className={styles.editingReviewBox}>
                                                     <input
                                                         type="text"
                                                         value={newName}
                                                         onChange={(e) => setNewName(e.target.value)}
-                                                        className={styles.inputnew}
                                                         placeholder="이름"
                                                     />
                                                     <input
                                                         type="text"
                                                         value={newJob}
                                                         onChange={(e) => setNewJob(e.target.value)}
-                                                        className={styles.inputnew}
                                                         placeholder="직업"
                                                     />
                                                     <textarea
                                                         value={newText}
                                                         onChange={(e) => setNewText(e.target.value)}
-                                                        className={styles.inputnew}
                                                         placeholder="리뷰"
                                                     />
-                                                    <button onClick={() => handleSaveEditReview(review._id)} className={styles.saveButton}>저장</button>
-                                                </>
+                                                    <div className={styles.buttonRow}>
+                                                        <button onClick={() => handleSaveEditReview(review._id)} className={styles.saveEditButton}>저장</button>
+                                                        <button onClick={() => setEditingId(null)} className={styles.cancelEditButton}>취소</button>
+                                                    </div>
+                                                </div>
                                             ) : (
                                                 <>
-                                                    <span className={styles.reviewName}>{review.name} ({review.job})</span>
-                                                    <p className={styles.reviewText}>{review.text}</p>
-                                                    <div className={styles.buttonRow}>
-                                                        <span className={styles.reviewDate}>{formattedDate}</span>
-                                                        <button onClick={() => handleEditReview(review._id, review.name, review.text, review.job)} className={styles.editButton}><FaEdit /> &nbsp; 수정</button>
-                                                        <button onClick={() => handleDeleteReview(review._id)} className={styles.deleteButton}><FaDeleteLeft /> &nbsp; 삭제</button>
+                                                    <div className={styles.reviewBox}>
+                                                        <div className={styles.reviewHeader}>
+                                                            <img src="/star.png" alt="Star Icon" className={styles.star} />
+                                                            <span className={styles.reviewDate}>{formattedDate}</span>
+                                                        </div>
+                                                        <div className={styles.userCard}>
+                                                            <img src="/userTest.png" alt="User" className={styles.user} />
+                                                            <div className={styles.name}>
+                                                                <p>{review.name}</p>
+                                                                <label>{review.job}</label>
+                                                            </div>
+                                                        </div>
+                                                        <p className={styles.reviewText}>{review.text}</p>
+                                                        <div className={styles.buttonRow}>
+                                                            <button onClick={() => handleEditReview(review._id, review.name, review.text, review.job)} className={styles.editButton}><FaEdit /> &nbsp; 수정</button>
+                                                            <button onClick={() => handleDeleteReview(review._id)} className={styles.deleteButton}><FaDeleteLeft /> &nbsp; 삭제</button>
+                                                        </div>
                                                     </div>
                                                 </>
                                             )}
@@ -590,6 +728,39 @@ export default function Dashboard() {
                         <button className={styles.closeButton} onClick={toggleReviewModal}>
                             닫기
                         </button>
+                    </div>
+                </div>
+            )}
+
+            {isReviewModalOpen && selectedReview && (
+                <div className={styles.modal} onClick={closeReviewModal}>
+                    <div
+                        className={styles.modalContent}
+                        style={{ maxHeight: '80vh', overflowY: 'auto' }}
+                        onClick={(e) => e.stopPropagation()}  // Prevent closing when clicking inside the modal
+                    >
+                        <div className={styles.reviewHeader}>
+                            <img src="/star.png" alt="Star Icon" className={styles.star} />
+                            <span className={styles.reviewDate}>
+                                {new Date(selectedReview.storedDate).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: '2-digit',
+                                    day: '2-digit',
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                    hour12: true,
+                                })}
+                            </span>
+                        </div>
+                        <div className={styles.userCard}>
+                            <img src="/userTest.png" alt="User" className={styles.user} />
+                            <div className={styles.name}>
+                                <p>{selectedReview.name}</p>
+                                <label>{selectedReview.job}</label>
+                            </div>
+                        </div>
+                        <p className={styles.fullReviewText}>{selectedReview.text}</p>
+                        <button onClick={closeReviewModal} className={styles.closeButton2}>닫기</button>
                     </div>
                 </div>
             )}

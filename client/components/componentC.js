@@ -4,11 +4,10 @@ function ComponentC() {
     return (
         <div className={styles.whole}>
             <div className={styles.closed}>
-                <div className={styles.card}>
-                    <h1>숙소 사진</h1>
+                <div className={styles.cardC1}>
+
                 </div>
-                <div className={styles.card}>
-                    <h1>숙소 사진</h1>
+                <div className={styles.cardC2}>
                 </div>
             </div>
             <div className={styles.down}>

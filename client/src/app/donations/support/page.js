@@ -29,26 +29,30 @@ export default function Program1() {
                             <li>후원은 마약중독자들에게 양질의 지원을 꾸준히 제공할 수 있게 해주는 중요한 원동력입니다.</li>
                             <li>많은 중독자들이 건강하게 사회에 복귀할 수 있도록 당신의 도움이 필요합니다.</li>
                         </ul>
+
                         <div className={styles.out}>
                             <div className={styles.just}>
-                                <div className={styles.picture}>
-                                    <h1>기업 <br />사진</h1>
+                                <p className={styles.text}>기업</p>
+                                <div className={styles.picture1}>
+
                                 </div>
                                 <div className={styles.picturein}>
 
                                 </div>
                             </div>
                             <div className={styles.just}>
-                                <div className={styles.picture}>
-                                    <h1>개인<br />사진</h1>
+                                <p className={styles.text}>개인</p>
+                                <div className={styles.picture2}>
+
                                 </div>
                                 <div className={styles.picturein}>
 
                                 </div>
                             </div>
                             <div className={styles.just}>
-                                <div className={styles.picture}>
-                                    <h1>단체<br />사진</h1>
+                                <p className={styles.text}>기관/단체</p>
+                                <div className={styles.picture3}>
+
                                 </div>
                                 <div className={styles.picturein}>
 

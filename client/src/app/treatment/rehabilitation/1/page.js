@@ -46,7 +46,7 @@ export default function Rehabilitation1() {
                     <p>약물 인식 교육 및 전염병 교육을 실시해 약물이 타인에게 미치는 문제를 교육합니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab2.jpg", // Background image URL for slide 2
+            backgroundImage: "/group2.png", // Background image URL for slide 2
         },
         {
             content: (
@@ -56,7 +56,7 @@ export default function Rehabilitation1() {
                     <p>자신이 가족에게 미친 영향을 제대로 알 수 있도록 상담합니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab3.jpg", // Background image URL for slide 3
+            backgroundImage: "/family1.png", // Background image URL for slide 3
         },
         {
             content: (
@@ -66,7 +66,7 @@ export default function Rehabilitation1() {
                     <p>가족 구성원 전체가 하나로 융합될 수 있도록 돕습니다.</p>
                 </div>
             ),
-            backgroundImage: "/images/rehab4.jpg", // Background image URL for slide 4
+            backgroundImage: "/family2.png", // Background image URL for slide 4
         },
     ];
 

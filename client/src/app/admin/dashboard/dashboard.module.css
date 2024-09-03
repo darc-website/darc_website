@@ -327,11 +327,21 @@
     color: #333;
 }
 
+.buttonRow1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
 .buttonRow {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+    position: absolute;
+    bottom: 17px; /* Position 10px from the bottom */
+    left: 8px; 
 }
 
 .videoDate {
@@ -411,11 +421,18 @@
 
 
 
+.rightAlignedControls {
+    display: flex;
+    align-items: center;
+}
 
-
-
-
-
+.filterDropdown {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
 
 .refreshButton {
     display: flex;
@@ -432,7 +449,6 @@
 .refreshButton:hover {
     background-color: #0363c9;
 }
-
 .spinning {
     animation: spin 1s linear infinite;
 }
@@ -513,7 +529,8 @@
 .reviewList {
     display: grid;
     grid-template-columns: repeat(1, 1fr); /* Initially one column */
-    margin-top: 30px;
+    padding-left: 20px;
+    
 }
 
 @media (min-width: 768px) {
@@ -527,3 +544,189 @@
         grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
     }
 }
+
+.reviewBox {
+    width: 360px;
+    height: 500px; /* Adjusted height for the truncated view */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    position: relative; /* Position relative to place the buttonRow at the bottom */
+    cursor: pointer; /* Indicate that the box is clickable */
+    overflow: hidden;
+}
+
+.reviewBox:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.star {
+    width: 100px;
+}
+
+.reviewDate {
+    font-size: 14px;
+    color: #777;
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.userCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Make the user image circular */
+    object-fit: cover; /* Ensure the image fits within the bounds */
+}
+
+.reviewBox .name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.reviewBox .name p {
+    margin-top: 0;
+    margin-bottom: 2px; /* Small gap between name and job label */
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.reviewBox .name label {
+    color: gray;
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+.modalContent .name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.modalContent .name p {
+    margin-top: 0;
+    margin-bottom: 2px; /* Small gap between name and job label */
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.modalContent .name label {
+    color: gray;
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+.reviewText {   
+    font-size: 16px;
+    color: #555;
+    line-height: 1.45;   
+    text-align: left;
+    max-height: 375px; /* Adjust max-height to fit the desired number of lines */
+    overflow: hidden; /* Hide any text that overflows */
+    text-overflow: ellipsis; /* Show ellipsis when text overflows */
+    display: -webkit-box;
+    -webkit-line-clamp: 14; /* Show up to 14 lines of text */
+    -webkit-box-orient: vertical;
+    margin-bottom: 60px; /* Ensure space for the buttonRow */
+}
+
+.editingReviewBox {
+    width: 360px;
+    height: 500px; /* Allow the box to expand with content */
+    background-color: #f0f0f0; /* Lighter background to indicate editing mode */
+    border: 2px solid #5187c2; /* Highlighted border to indicate editing mode */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Position relative to place the buttonRow at the bottom */
+    overflow: hidden;
+}
+
+.editingReviewBox input,
+.editingReviewBox textarea {
+    width: calc(100% - 14px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.editingReviewBox input:focus,
+.editingReviewBox textarea:focus {
+    border-color: #5187c2; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(81, 135, 194, 0.5); /* Add a subtle shadow */
+    outline: none; /* Remove default browser outline */
+}
+
+.editingReviewBox textarea {
+    height: 300px; /* Height for the textarea */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+
+.saveEditButton,
+.cancelEditButton {
+    background-color: #5187c2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between buttons */
+}
+
+.cancelEditButton {
+    background-color: #ccc;
+}
+
+.saveEditButton:hover {
+    background-color: #0363c9;
+}
+
+.cancelEditButton:hover {
+    background-color: #999;
+}
+
+.closeButton2 {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.closeButton2:hover {
+    background-color: #999;
+}
+
+.fullReviewText {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.45;   
+    text-align: left;
+}
+

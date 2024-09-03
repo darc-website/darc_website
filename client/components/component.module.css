@@ -26,6 +26,38 @@
     color: gray;
 }
 
+.cardC1 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    background-image: url(/livingHome1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cardC2 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    background-image: url(/livingHome2.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
 .down {
     display: flex;
     flex-direction: row;

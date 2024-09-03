@@ -159,6 +159,7 @@
 
 .cardSlot h3 {
   margin: 0;
+  font-weight: 200;
 }
 
 .secPage {
@@ -175,7 +176,6 @@
     background-image: url(/watermark.svg);
     background-position: center center; /* Position the background image to show the bottom */
     background-size: cover;
-    font-family: 'Pretendard-Regular';
     width: 90%;
     height: 85%;
   display: flex;
@@ -342,7 +342,28 @@
     width: 40%; /* Set videoTextBox to take up 40% of the width */
     padding-left: 20px; /* Add some padding between the video and the text */
   }
-  
+
+.Specificbutton {
+    width: 130px; /* Customize width */
+    height: 40px; /* Customize height */
+    background-color: transparent; /* No background color */
+    border: solid 1.5px black;
+    border-radius: 20px;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    font-size: inherit; /* Inherit font size */
+    color: inherit; /* Inherit text color */
+    cursor: pointer; /* Custom cursor on hover */
+    outline: none; /* Remove outline on focus */
+    display: flex; /* Allow flexbox layout */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    text-align: center; /* Center text */
+}
+
+.Specificbutton:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Example hover background */
+}
 
   .housing {
     position: relative; /* Ensure the child elements are positioned relative to this container */
@@ -368,28 +389,6 @@
     color: black; /* Change text color to contrast with the image */
   }
 
-  .Specificbutton {
-    width: 130px; /* Customize width */
-    height: 40px; /* Customize height */
-    background-color: transparent; /* No background color */
-    border: solid 1.5px black;
-    border-radius: 20px;
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    font-size: inherit; /* Inherit font size */
-    color: inherit; /* Inherit text color */
-    cursor: pointer; /* Custom cursor on hover */
-    outline: none; /* Remove outline on focus */
-    display: flex; /* Allow flexbox layout */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    text-align: center; /* Center text */
-  }
-  
-  .Specificbutton:hover {
-    /* You can add hover effects here if needed */
-    background-color: rgba(0, 0, 0, 0.1); /* Example hover background */
-  }
 
   .testimony {
     background-color: #dce3f1;
