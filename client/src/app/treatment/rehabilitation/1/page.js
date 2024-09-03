@@ -13,7 +13,8 @@ export default function Rehabilitation1() {
                 <div>
                     <h4>개인치료.</h4>
                     <h2>상담</h2>
-                    <p>개인의 문제를 명확히 이해할 수 있도록 상담합니다.</p>
+                    <p>개인이 가진 문제를 훈련된 상담사와의 면담을 통해 해결합니다.
+                    </p>
                 </div>
             ),
             backgroundImage: "/individual1.png", // Background image URL for slide 1
@@ -23,7 +24,8 @@ export default function Rehabilitation1() {
                 <div>
                     <h4>개인치료.</h4>
                     <h2>교육</h2>
-                    <p>중독을 유발시킨 부적응적/비관적 심리구조를 밝혀 적응/긍정으로 대치합니다.</p>
+                    <p>전문가의 교육을 통하여 개인이 가진 중독 문제를 해결합니다.
+                    </p>
                 </div>
             ),
             backgroundImage: "/individual2.png", // Background image URL for slide 1
@@ -33,7 +35,8 @@ export default function Rehabilitation1() {
                 <div>
                     <h4>집단치료.</h4>
                     <h2>상담</h2>
-                    <p>전문적으로 훈련된 상담자의 지도와 동료들과의 교류를 통해 집단 내 자신을 성숙한 사람으로 향상시킵니다.</p>
+                    <p>훈련된 상담사의 지도와 동료 간 집단상담을 통해 개인을 성장시킵니다.
+                    </p>
                 </div>
             ),
             backgroundImage: "/group1.png", // Background image URL for slide 1
@@ -43,7 +46,8 @@ export default function Rehabilitation1() {
                 <div>
                     <h4>집단치료.</h4>
                     <h2>교육</h2>
-                    <p>약물 인식 교육 및 전염병 교육을 실시해 약물이 타인에게 미치는 문제를 교육합니다.</p>
+                    <p>중독 집단교육을 통해 개인과 사회의 문제를 해결/적응할 수 있도록 돕습니다.
+                    </p>
                 </div>
             ),
             backgroundImage: "/group2.png", // Background image URL for slide 2
@@ -53,7 +57,8 @@ export default function Rehabilitation1() {
                 <div>
                     <h4>가족치료.</h4>
                     <h2>상담</h2>
-                    <p>자신이 가족에게 미친 영향을 제대로 알 수 있도록 상담합니다.</p>
+                    <p>가족이 건강한 생활을 하도록 전문적인상담을 제공합니다.
+                    </p>
                 </div>
             ),
             backgroundImage: "/family1.png", // Background image URL for slide 3
@@ -63,7 +68,8 @@ export default function Rehabilitation1() {
                 <div>
                     <h4>가족치료.</h4>
                     <h2>교육</h2>
-                    <p>가족 구성원 전체가 하나로 융합될 수 있도록 돕습니다.</p>
+                    <p>가족이 기능적인 생활을 하도록 다양한 분야 전문가의 교육을 제공합니다.
+                    </p>
                 </div>
             ),
             backgroundImage: "/family2.png", // Background image URL for slide 4

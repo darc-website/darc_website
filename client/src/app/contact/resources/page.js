@@ -49,13 +49,6 @@ export default function Mission() {
                             className={styles.leftLink}
                             onClick={() => window.open("https://instagram.com/mass9bro/", "_blank")}
                         >
-                            <h1><FaTwitter /></h1>
-                            <h3>Twitter</h3>
-                        </div>
-                        <div
-                            className={styles.leftLink}
-                            onClick={() => window.open("https://instagram.com/mass9bro/", "_blank")}
-                        >
                             <h1><FaTelegramPlane /></h1>
                             <h3>Telegram</h3>
                         </div>

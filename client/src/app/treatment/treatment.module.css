@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+.main {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.content {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 80%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    height: 100%;
+    width: 50%; /* Ensure it takes up half of the header */
+    color: #19428b;
+}
+
+.link {
+    height: 100%;
+    width: 50%; /* Ensure it takes up half of the header */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    font-size: 18px; /* Adjust the font size as needed */
+    text-align: right;
+}
+
+.link p {
+    margin: 0 10px; /* Add some space around the ">" symbol */
+}
+
+.link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link a:hover {
+    color: #4e73ac; /* Change to desired hover color */
+}
+
+.link h4 {
+    margin: 0;
+    transition: color 0.3s; /* Add transition for smooth color change */
+}
+
+.link h4:hover {
+    color: #4e73ac; /* Change to desired hover color */
+}
+
+.divbox {
+    margin-top: 80px;
+    width: 1200px;
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+.leftLink1,
+.leftLink2,
+.leftLink3 {
+    width: 370px;
+    height: 450px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    color: rgb(39, 39, 39);
+    background-color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 20px 20px 20px;
+    text-align: left;
+    position: relative; /* Added for positioning the button */
+}
+
+.leftLink1 h3,
+.leftLink2 h3,
+.leftLink3 h3 {
+    margin: 0;
+    font-weight: 200;
+    font-size: 26px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.cardButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #19428b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cardButton:hover {
+    background-color: #4e73ac;
+    transform: scale(1.1);
+}
+
+.cardButton:active {
+    transform: scale(0.9);
+}
+
+.leftLink1 {
+    background-image: url(/addiction4.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.leftLink2 {
+    background-image: url(/addiction5.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.leftLink3 {
+    background-image: url(/addiction6.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

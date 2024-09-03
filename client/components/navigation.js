@@ -111,7 +111,7 @@ export default function Navigation({ activeIndex }) {
                         <div className={styles.dropdown} ref={el => dropdownRefs.current.treatment = el}>
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
-                                    <Link href="/treatment/rehabilitation/1"><h4>중독 재활</h4></Link>
+                                    <Link href="/treatment"><h4>중독 재활</h4></Link>
                                     <Link href="/treatment/rehabilitation/1">치료</Link>
                                     <Link href="/treatment/program/1">프로그램</Link>
                                     <Link href="/treatment/law">사법지원</Link>

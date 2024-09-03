@@ -13,7 +13,7 @@ export default function Addicitons() {
                     </div>
                 </div>
                 <div className={styles.chart}>
-                    <img src="/chart.svg" alt="" />
+                    <img src="/chartNew.svg" alt="" />
                 </div>
                 <div className={styles.text}>
                     <p>
@@ -21,9 +21,7 @@ export default function Addicitons() {
                         *기타 약물은 임상실험 및 연구결과의 부재로인해 다양한 부작용이 생길 수 있음 <br />
                     </p>
                 </div>
-                <div className={styles.margin}>
 
-                </div>
 
             </div>
         </main>

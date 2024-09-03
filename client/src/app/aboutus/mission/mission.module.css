@@ -73,64 +73,11 @@
     justify-content: center;
 }
 
-.circle {
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+
+.chart {
+    margin-top: 60px;
 }
 
-.circle h3 {
-    font-size: 22px;
-    margin-top: 50px;
-    font-weight: 600;
-    color: rgb(48, 48, 48);
-}
-
-.circle1 {
-    width: 560px;
-    height: 560px;
-    background-color: #e0ebf5;
-    z-index: 1; /* Ensure it stays behind the other circles */
-}
-
-.circle2 {
-    width: 430px;
-    height: 430px;
-    margin-top: 120px;
-    background-color: #c2d6ec;
-    z-index: 2; /* Middle circle */
-}
-
-.circle3 {
-    width: 300px;
-    height: 300px;
-    margin-top: 240px;
-    background-color: #4c6db6;
-    z-index: 3; /* Innermost circle */
-}
-
-.circle3 h3 {
-    color: white;
-    margin-top: 70px;
-}
-
-.right {
-    width: 40%;
-    margin-left: 30px;
-}
-
-.box h2 {
-    color: #19428b;
-    font-size: 34px;
-}
-
-.box h3 {
-    font-size: 24px;
-    color: rgb(65, 65, 65);
-}
-
-.box p {
-    color: rgb(65, 65, 65);
+.chart > img {
+    width: 900px;
 }

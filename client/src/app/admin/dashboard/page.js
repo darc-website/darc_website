@@ -188,7 +188,8 @@ export default function Dashboard() {
         }
     };
 
-    const handleDeleteReview = async (id) => {
+    const handleDeleteReview = async (id, event) => {
+        event.stopPropagation();  // Stop event propagation
         try {
             const response = await fetch(`/api/reviews/${id}`, {
                 method: 'DELETE',
@@ -203,7 +204,8 @@ export default function Dashboard() {
         }
     };
 
-    const handleDeleteVideo = async (id) => {
+    const handleDeleteVideo = async (id, event) => {
+        event.stopPropagation();  // Stop event propagation
         try {
             const response = await fetch(`/api/youtube-videos/${id}`, {
                 method: 'DELETE',
@@ -224,7 +226,8 @@ export default function Dashboard() {
     };
 
     // Function to handle edit for videos
-    const handleEditVideo = (id, currentName) => {
+    const handleEditVideo = (id, currentName, event) => {
+        event.stopPropagation();  // Stop event propagation
         setEditingId(id);
         setNewName(currentName);
         setNewText(''); // Clear review-related fields
@@ -232,7 +235,8 @@ export default function Dashboard() {
     };
 
     // Function to handle edit for reviews
-    const handleEditReview = (id, currentName, currentText, currentJob) => {
+    const handleEditReview = (id, currentName, currentText, currentJob, event) => {
+        event.stopPropagation();  // Stop event propagation
         setEditingId(id);
         setNewName(currentName);
         setNewText(currentText);
@@ -599,44 +603,59 @@ export default function Dashboard() {
                                                         value={newName}
                                                         onChange={(e) => setNewName(e.target.value)}
                                                         placeholder="이름"
+                                                        onClick={(e) => e.stopPropagation()} // Prevent modal trigger
                                                     />
                                                     <input
                                                         type="text"
                                                         value={newJob}
                                                         onChange={(e) => setNewJob(e.target.value)}
                                                         placeholder="직업"
+                                                        onClick={(e) => e.stopPropagation()} // Prevent modal trigger
                                                     />
                                                     <textarea
                                                         value={newText}
                                                         onChange={(e) => setNewText(e.target.value)}
                                                         placeholder="리뷰"
+                                                        onClick={(e) => e.stopPropagation()} // Prevent modal trigger
                                                     />
                                                     <div className={styles.buttonRow}>
-                                                        <button onClick={() => handleSaveEditReview(review._id)} className={styles.saveEditButton}>저장</button>
-                                                        <button onClick={() => setEditingId(null)} className={styles.cancelEditButton}>취소</button>
+                                                        <button onClick={(e) => handleSaveEditReview(review._id)} className={styles.saveEditButton}>저장</button>
+                                                        <button onClick={(e) => setEditingId(null)} className={styles.cancelEditButton}>취소</button>
                                                     </div>
                                                 </div>
                                             ) : (
-                                                <>
-                                                    <div className={styles.reviewBox}>
-                                                        <div className={styles.reviewHeader}>
-                                                            <img src="/star.png" alt="Star Icon" className={styles.star} />
-                                                            <span className={styles.reviewDate}>{formattedDate}</span>
-                                                        </div>
-                                                        <div className={styles.userCard}>
-                                                            <img src="/userTest.png" alt="User" className={styles.user} />
-                                                            <div className={styles.name}>
-                                                                <p>{review.name}</p>
-                                                                <label>{review.job}</label>
-                                                            </div>
-                                                        </div>
-                                                        <p className={styles.reviewText}>{review.text}</p>
-                                                        <div className={styles.buttonRow}>
-                                                            <button onClick={() => handleEditReview(review._id, review.name, review.text, review.job)} className={styles.editButton}><FaEdit /> &nbsp; 수정</button>
-                                                            <button onClick={() => handleDeleteReview(review._id)} className={styles.deleteButton}><FaDeleteLeft /> &nbsp; 삭제</button>
+                                                <div
+                                                    className={styles.reviewBox}
+                                                    onClick={() => {
+                                                        if (editingId !== review._id) {
+                                                            openReviewModal(review);
+                                                        }
+                                                    }}
+                                                    style={{ cursor: editingId === review._id ? 'default' : 'pointer' }}
+                                                >
+                                                    <div className={styles.reviewHeader}>
+                                                        <img src="/star.png" alt="Star Icon" className={styles.star} />
+                                                        <span className={styles.reviewDate}>{formattedDate}</span>
+                                                    </div>
+                                                    <div className={styles.userCard}>
+                                                        <img src="/userTest.png" alt="User" className={styles.user} />
+                                                        <div className={styles.name}>
+                                                            <p>{review.name}</p>
+                                                            <label>{review.job}</label>
                                                         </div>
                                                     </div>
-                                                </>
+                                                    <p className={styles.reviewText}>{review.text}</p>
+                                                    <div className={styles.buttonRow}>
+                                                        <button onClick={(e) => {
+                                                            e.stopPropagation();  // Prevent modal trigger
+                                                            handleEditReview(review._id, review.name, review.text, review.job, e);
+                                                        }} className={styles.editButton}><FaEdit /> &nbsp; 수정</button>
+                                                        <button onClick={(e) => {
+                                                            e.stopPropagation();  // Prevent modal trigger
+                                                            handleDeleteReview(review._id, e);
+                                                        }} className={styles.deleteButton}><FaDeleteLeft /> &nbsp; 삭제</button>
+                                                    </div>
+                                                </div>
                                             )}
                                         </div>
                                     </div>
