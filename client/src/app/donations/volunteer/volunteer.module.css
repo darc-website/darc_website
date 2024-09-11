@@ -137,7 +137,7 @@
 
 .margin {
     width: 100%;
-    height: 500px;
+    height: 200px;
 }
 
 .application button {
@@ -524,4 +524,22 @@
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
     z-index: 1000;
+}
+
+.picBox,
+.picBox2 {
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+.picBox img {
+    width: 1000px;
+}
+
+
+
+.picBox2 img {
+    margin-top: 100px;
+    width: 1000px;
 }

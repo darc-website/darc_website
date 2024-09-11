@@ -2,6 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 .nav {
     overflow: hidden;
@@ -25,7 +32,7 @@
 }
 
 .nav.scrolled {
-    height: 55px; /* Only show the bottom part */
+    height: 55px; 
 }
 
 .top {
@@ -40,12 +47,13 @@
 }
 
 .nav.scrolled .top {
-    opacity: 0; /* Hide the top part */
-    height: 0; /* Collapse the height */
-    overflow: hidden; /* Ensure it doesn't take up space */
+    opacity: 0;
+    height: 0; 
+    overflow: hidden; 
 }
 
 .logo {
+    /* background-color: rebeccapurple; */
     top: -18px;
     width: 400px;
     height: 150px;
@@ -151,7 +159,7 @@
 }
 
 .nav.scrolled .bottom ul {
-    margin-bottom: 40px; /* Add margin-bottom when scrolled */
+    margin-bottom: 40px; 
 }
 
 .bottom li {
@@ -260,3 +268,221 @@
     background-color: #19428b; 
     color: #f3f3f5; /* Text color */
 }
+
+.special1 {
+    width: 70px;
+}
+
+.special2 {
+    width: 60px;
+}
+
+
+.hamburger {
+    display: none;
+}
+
+.fullscreenMenu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        width: 100%;
+        height: 100px;
+        font-family: 'Pretendard-Regular';
+    }
+
+    .link {
+        display: none;
+    }
+
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 40px;
+        cursor: pointer;
+        z-index: 998;
+    }
+
+    .bottom {
+        height: 0px;
+    }
+
+    .bottom ul {
+        display: none;
+    }
+
+    .nav.scrolled {
+        height: 100px; 
+    }
+    
+
+    .nav.scrolled .top {
+        opacity: 1; /* Ensure the top section stays visible */
+        height: 100px;
+    }
+
+    .nav.scrolled .dropdown {
+        top: 0px;
+    }
+
+    .fullscreenMenu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(240, 240, 240);
+        z-index: 999;
+        flex-direction: column;
+        justify-content: flex-start; /* Aligns the content to the top */
+        padding-top: 60px; /* Adds padding to ensure it's right below the hamburger */
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .fullscreenMenu.open {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .fullscreenMenu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        margin-left: 10%;
+        font-family: 'Pretendard-Regular';
+    }
+
+    .fullscreenMenu li {
+        margin: 20px 0px;
+    }
+
+    .fullscreenMenu a {
+        color: black;
+        font-size: 20px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+
+    .Firstbuttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Aligns buttons to the top */
+        width: 100%; /* Ensures the container takes the full width */
+        padding: 0; /* Removes any padding */
+        margin-top: 0px; /* Adjust the margin as needed to fine-tune positioning */
+        box-sizing: border-box; /* Ensures padding and borders are included in width */
+    }
+    
+    .menuButton {
+        background-color: inherit; /* Dark background */
+        color: black; /* White text */
+        border: none;
+        padding: 13px 10px;
+        font-size: 18px;
+        margin: 5px 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 90%; /* Ensures the button takes full width */
+        text-align: left;
+        box-sizing: border-box; /* Ensures padding and borders are included in width */
+        font-size: 22px;
+        margin-left: 5%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+    }
+    
+    .menuButton:hover {
+        background-color: #ececec; /* Lighter background on hover */
+    }
+
+
+    .nextSign {
+        position: absolute;
+        right: 20px;
+        color: #6b6b6b;
+        font-size: 18px;
+    }
+
+    .closeButton {
+        position: absolute;
+        top: 20px; /* 20px from the top */
+        right: 20px; /* 30px from the right */
+        color: #6b6b6b;
+        font-size: 30px; /* Adjust font size as needed */
+        cursor: pointer; /* Makes the close button clickable */
+        z-index: 1000; /* Ensures it stays above other content */
+    }
+    
+    .backButton {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        font-size: 20px;
+        color: #6b6b6b;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .subMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Full height for sub-menu */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .lineb {
+        color: #dbdbbe;
+    }
+    
+    .link {
+        height: 30px;
+        display: flex;
+        align-items: center; /* Center content vertically */
+        justify-content: space-between; /* Distribute space evenly */
+        padding: 0 20px; /* Add padding to the sides */
+        gap: 0px; /* Add some gap between elements */
+        position: absolute; /* Position the link container absolutely */
+        top: 10px; /* Adjust as needed */
+        right: 2%; /* Adjust as needed */
+        font-size: 14px;
+        color: #555555;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .link a, .link p {
+        margin: 0 5px; /* Add some space between the links */
+        line-height: 20px; /* Ensure vertical alignment */
+        text-decoration: none; /* Remove underline from links */
+        color: inherit; /* Inherit color from parent */
+    }
+
+    .linkbox {
+        margin-left: 25%;
+        width: 80%;
+        height: 220px;
+        gap: 96px;
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        left: 30%;
+        transform: translateX(-50%);
+    }
+
+}
+

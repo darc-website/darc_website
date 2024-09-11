@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 200px;
 }
 
 .header {
@@ -113,9 +114,9 @@
     display: flex;
     align-items: center;
     color: gray;
-    /* background-image: url(/Picture1.jpg); */
+    background-image: url(/medicine4.png);
     background-size: cover;
-    background-position: center;
+    background-position: center 30%;
     background-repeat: no-repeat;
 }
 

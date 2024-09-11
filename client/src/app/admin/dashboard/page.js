@@ -11,6 +11,7 @@ import { Password } from 'primereact/password';
 import { FloatLabel } from 'primereact/floatlabel';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import styles from './dashboard.module.css';
+import MemoEditor from '../../../../components/memo';
 
 export default function Dashboard() {
     const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -36,6 +37,8 @@ export default function Dashboard() {
     const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
     const [filterOption, setFilterOption] = useState('모두');
     const [filterOption2, setFilterOption2] = useState('모두');
+    const [checkedCount, setCheckedCount] = useState(0);
+
 
     const router = useRouter();
 
@@ -100,6 +103,7 @@ export default function Dashboard() {
     const handleLogout = () => {
         document.cookie = `authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
         router.push('/admin');
+        window.location.reload(); // 추가적으로 페이지 새로고침
     };
 
     const handleChangePassword = async (e) => {
@@ -205,7 +209,6 @@ export default function Dashboard() {
     };
 
     const handleDeleteVideo = async (id, event) => {
-        event.stopPropagation();  // Stop event propagation
         try {
             const response = await fetch(`/api/youtube-videos/${id}`, {
                 method: 'DELETE',
@@ -227,7 +230,6 @@ export default function Dashboard() {
 
     // Function to handle edit for videos
     const handleEditVideo = (id, currentName, event) => {
-        event.stopPropagation();  // Stop event propagation
         setEditingId(id);
         setNewName(currentName);
         setNewText(''); // Clear review-related fields
@@ -387,6 +389,39 @@ export default function Dashboard() {
         return filteredReviews;
     };
 
+    useEffect(() => {
+        setCheckedCount(reviews.filter(review => review.checked).length);
+    }, [reviews]);
+
+    const handleCheckboxChange = async (id, checked) => {
+        try {
+            // If the item is being unchecked or the number of currently checked items is less than 3, allow the change
+            if (checked || checkedCount < 3) {
+                const response = await fetch(`/api/reviews/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ checked: !checked }), // Toggle the checked state
+                });
+
+                if (response.ok) {
+                    // Update the reviews state and the checkedCount based on the user interaction
+                    setReviews(prevReviews => prevReviews.map(review =>
+                        review._id === id ? { ...review, checked: !checked } : review
+                    ));
+
+                    // Update the checkedCount based on whether the item was checked or unchecked
+                    setCheckedCount(prevCount => checked ? prevCount - 1 : prevCount + 1);
+                } else {
+                    console.error('Error updating checkbox state');
+                }
+            }
+        } catch (error) {
+            console.error('Error updating checkbox state:', error);
+        }
+    };
+
     return (
         <div className={styles.dashboard}>
             <aside className={styles.sidebar}>
@@ -409,7 +444,7 @@ export default function Dashboard() {
                     className={`${styles.sidebarLink} ${selectedSection === '시간표' ? styles.active : ''}`}
                     onClick={() => handleSectionSelect('시간표')}
                 >
-                    시간표
+                    관리자 메모
                 </button>
 
                 <Link href="/" className={styles.backLink}>
@@ -538,7 +573,10 @@ export default function Dashboard() {
                 {selectedSection === '회복수기' && (
                     <>
                         <div className={styles.reviewSectionHeader}>
-                            <button onClick={toggleReviewModal} className={styles.addButton}><AiOutlineFileAdd /> &nbsp; 추가</button>
+                            <div className={styles.leftAlignedControls}>
+                                <button onClick={toggleReviewModal} className={styles.addButton}><AiOutlineFileAdd /> &nbsp; 추가</button>
+                                <p>체크표시가 된 항목은 최신순부터 홈 화면에 표시되며 총 3개까지 표시가능</p>
+                            </div>
 
                             <div className={styles.rightAlignedControls}>
                                 <select
@@ -654,6 +692,13 @@ export default function Dashboard() {
                                                             e.stopPropagation();  // Prevent modal trigger
                                                             handleDeleteReview(review._id, e);
                                                         }} className={styles.deleteButton}><FaDeleteLeft /> &nbsp; 삭제</button>
+                                                        <input
+                                                            className={styles.click}
+                                                            type="checkbox"
+                                                            checked={review.checked || false}
+                                                            onChange={() => handleCheckboxChange(review._id, review.checked)}
+                                                            disabled={!review.checked && checkedCount >= 3}
+                                                        />
                                                     </div>
                                                 </div>
                                             )}
@@ -662,6 +707,12 @@ export default function Dashboard() {
                                 );
                             })}
                         </div>
+                    </>
+                )}
+
+                {selectedSection === '시간표' && (
+                    <>
+                        <MemoEditor />
                     </>
                 )}
             </main>

@@ -1,10 +1,13 @@
 import Navigation from "../../../components/navigation";
 import styles from "./addictions.module.css"
 import Link from "next/link";
+import Footer from "../../../components/footer";
+import ScrollToTop from "../../../components/ScrollToTop";
 
 export default function Addicitons() {
     return (
         <main className={styles.main}>
+            <ScrollToTop />
             <Navigation />
             <div className={styles.content}>
                 <div className={styles.header}>
@@ -24,6 +27,7 @@ export default function Addicitons() {
 
 
             </div>
+            <Footer />
         </main>
     );
 }

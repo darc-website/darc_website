@@ -1,11 +1,14 @@
 import Navigation from "../../../../components/navigation";
 import styles from "./schedule.module.css"
 import Link from "next/link";
+import Footer from "../../../../components/footer";
+import ScrollToTop from "../../../../components/ScrollToTop";
 
 export default function Schedule() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -21,7 +24,8 @@ export default function Schedule() {
                         </div>
                     </div>
                     <div className={styles.scheduler}>
-                        <div className={styles.row}>
+                        <img src="/schedule.png" alt="" />
+                        {/* <div className={styles.row}>
                             <div className={styles.blankBlock}>
                             </div>
                             <div className={styles.dayBlock}>
@@ -50,7 +54,7 @@ export default function Schedule() {
                             </div>
                             <div className={styles.scheduleBlock}>
                                 <div className={styles.textBlockR1}>
-                                    <p>저녁식사</p>
+                                    <p>기상 & 아침식사</p>
                                 </div>
                             </div>
                             <div className={styles.scheduleBlock}>
@@ -330,7 +334,7 @@ export default function Schedule() {
                                     <p>저녁식사</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className={styles.bottom}>
                             <p>*노란색 표시 된 프로그램은 외부 전문가 초청을 통해 진행하는 프로그램으로 상황에 따라 변경가능성 있음 <br />
                                 *초록색 표시 된 모임은 항상 같은 시간에 있는 자조모임 <br />
@@ -339,6 +343,7 @@ export default function Schedule() {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </main>
         </div>
     );

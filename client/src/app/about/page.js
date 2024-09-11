@@ -1,11 +1,48 @@
+'use client'
+import { useEffect } from "react";
 import Navigation from "../../../components/navigation";
 import styles from "./about.module.css"
+import Footer from "../../../components/footer";
 import Link from "next/link";
+import ScrollToTop from "../../../components/ScrollToTop";
 
 export default function About() {
+    const adjustTextboxHeight = () => {
+        const textbox = document.querySelector(`.${styles.textbox}`);
+        const textboxin = document.querySelector(`.${styles.textboxin}`);
+        const content = document.querySelector(`.${styles.content}`);
+
+        if (textbox && textboxin && content) {
+            const textboxHeight = textbox.offsetHeight;
+            textboxin.style.height = `${textboxHeight}px`;
+
+            // Adjust the top property dynamically
+            const topOffset = 15 - textboxHeight;  // Example of subtracting the height from 15px
+            textboxin.style.top = `${topOffset}px`;
+
+            const marginBottom = 200 - textboxHeight;
+            textboxin.style.marginBottom = `${marginBottom}px`;
+        }
+    };
+
+    useEffect(() => {
+        // Adjust height and position on initial load
+        adjustTextboxHeight();
+
+        // Adjust height and position on window resize
+        window.addEventListener('resize', adjustTextboxHeight);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', adjustTextboxHeight);
+        };
+    }, []);
+
+
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -33,6 +70,7 @@ export default function About() {
                     </div>
                     <div className={styles.textboxin}></div>
                 </div>
+                <Footer />
             </main>
         </div>
     );

@@ -79,16 +79,16 @@
 }
 
 .firstScreen {
+  margin-top: 130px;
   display: flex;
   justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
   width: 100%;
-  height: 100vh; /* Full height of the viewport */
+  height: calc(100vh - 130px); /* Full height of the viewport */
   position: relative;
 }
 
 .pictureBox {
-  margin-top: 140px;
+  margin-top: 40px;
   background-image: url("/picture3.jpg");
   background-position: center bottom 30%; /* Position the background image to show the bottom */
   background-size: cover; /* Ensure the background image covers the whole container */
@@ -98,10 +98,11 @@
   justify-content: center;
   text-align: center;
   width: 95%;
-  height: 77%; /* Adjust the height based on your design */
+  height: 90%; /* Adjust the height based on your design */
   object-fit: cover; /* Ensure the image covers the container without distortion */
   position: absolute;
   font-family: 'Pretendard-Regular';
+  overflow: hidden;
 }
 
 .pictureBox .firstText {
@@ -112,16 +113,16 @@
   align-items: center;
 }
 
-.pictureBox h1 {
-  font-size: 20px;
-  margin-top: 95px;
-  font-weight: 500;
-}
+  .pictureBox h1 {
+    font-size: 20px;
+    margin-top: 95px;
+    font-weight: 500;
+  }
 
-.pictureBox p {
-  margin-top: 10px;
-  font-size: 15px;
-}
+  .pictureBox p {
+    margin-top: 10px;
+    font-size: 15px;
+  }
 
 .cardSlot {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -130,13 +131,14 @@
   background-color: white;
   border-radius: 20px;
   opacity: 80%;
-  margin-top: 20px; /* Add space between the <p> and the cardSlot */
+  margin-top: 60px; /* Add space between the <p> and the cardSlot */
   width: 140px;
   height: 85px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative; /* Make it relative to position the button inside */
+  cursor: pointer;
 }
 
 .cardSlot:hover {
@@ -144,17 +146,16 @@
   transform: scale(1.01);
 }
 
-.cardSlot button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+.arrowSym {
+  font-size: 15px;
+  color: black;
   font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute; /* Position it inside the cardSlot */
-  right: 10px; /* 10px from the right */
-  bottom: 10px; /* 10px from the bottom */
+  right: 13px; /* 10px from the right */
+  bottom: 12px; /* 10px from the bottom */
 }
 
 .cardSlot h3 {
@@ -166,22 +167,24 @@
   display: flex;
   justify-content: center; /* Align horizontally */
   align-items: center; /* Align vertically */
-  height: 100vh; /* Full height of the viewport */
+  height: auto; /* Full height of the viewport */
   position: relative;
 }
 
   
   /* Second section styles */
   .second {
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-image: url(/watermark.svg);
     background-position: center center; /* Position the background image to show the bottom */
     background-size: cover;
     width: 90%;
     height: 85%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     gap: 20px;
   }
 
@@ -211,13 +214,15 @@
     box-sizing: border-box; /* Include padding and border in width and height */
   }
   .Firstblocks {
-    padding: 40px 30px;
-    width: 31%;
-    height: 100%;
-    border-radius: 10px;
+    width: 31%; /* Your block width */
+    height: 284px;
+
+    border-radius: 20px;
+    padding: 30px 30px;
     display: flex;
-    position: relative; /* Set relative position to allow absolute positioning inside */
-    box-sizing: border-box; /* Ensure padding/border are part of the block size */
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative; /* Ensure the circle is positioned inside */
   }
 
   .Firstblocks h1 {
@@ -229,7 +234,7 @@
   
   .blocks {
     width: 31%; /* Your block width */
-    height: 100%; /* Your block height */
+    height: 284px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -237,7 +242,7 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    position: relative; /* Ensure the circle is positioned inside */
+    position: relative; 
   }
 
   .blocks h2 {
@@ -295,10 +300,19 @@
     margin-right: 10px;
   }
 
+  .linetext {
+    color: #8e1f1f;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
   .textinCard {
-    margin-top: -20px;
     display: flex;
     flex-direction: column;
+  }
+
+  .textinCard h2 {
+    margin-top: 10px;
   }
 
   .textinCard p {
@@ -311,59 +325,95 @@
     margin-bottom: 20px;
   }
 
-
-
-  .videoSlot {
-    background-color: gray;
-    background-position: center bottom 30%; /* Position the background image to show the bottom */
-    background-size: cover;
-    margin-top: 30px;
-    width: 100%;
-    min-height: 400px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-    padding: 0 10%; /* Add padding to control the left and right spaces */
-  }
-  
-  .video {
-    width: 1000px; /* Set video to take up 30% of the width */
-    height: 300px;
-    background-color: #4b6ebd;
+  .wholeWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+  }
+
+  .videoSlot {
+    background-image: url(/videoBackground2.png);
+    background-position: center bottom 30%;
+    margin-bottom: 30px;
+    width: 95%;
+    border-radius: 20px;
+    background-size: cover;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Space between video and text */
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   
-.videoTextBox {
-  color: white;
-    margin-left: 100px;
-    width: 40%; /* Set videoTextBox to take up 40% of the width */
-    padding-left: 20px; /* Add some padding between the video and the text */
+  .videoWrapper {
+    position: relative;
+    width: 600px;
+    height: 337.5px;
+    overflow: hidden;
+    border-radius: 20px; /* Apply border-radius */
+    margin-left: 5%;
+  }
+  
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
-.Specificbutton {
+  .videoTextBox {
+    /* font-family: 'Pretendard-Regular'; */
+    color: black;
+    width: 35%; /* Set videoTextBox to take up 40% of the width */
+    display: flex;
+    flex-direction: column;
+    text-align: right; /* Align the text to the right */
+    margin-right: 15%;
+  }
+
+  .videoTextBox h2 {
+    margin-bottom: 0px;
+    /* font-weight: 800; */
+  }
+
+  .buttonWraper2 {
+    display: flex;
+    justify-content: right;
+  }
+
+  .noLinkStyle {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherit the color of the parent element */
+  }
+  
+  .Specificbutton {
     width: 130px; /* Customize width */
     height: 40px; /* Customize height */
-    background-color: transparent; /* No background color */
-    border: solid 1.5px black;
+    background-color: rgb(30, 30, 30);
+    border: none;
+    color: white;
     border-radius: 20px;
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    font-size: inherit; /* Inherit font size */
-    color: inherit; /* Inherit text color */
-    cursor: pointer; /* Custom cursor on hover */
-    outline: none; /* Remove outline on focus */
-    display: flex; /* Allow flexbox layout */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    text-align: center; /* Center text */
-}
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-self: flex-end; /* Align the button to the right */
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+  }
 
-.Specificbutton:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Example hover background */
-}
+
+  
+  .Specificbutton:hover {
+    background-color: rgb(49, 49, 49); /* Example hover background */
+  }
+
 
   .housing {
     position: relative; /* Ensure the child elements are positioned relative to this container */
@@ -391,13 +441,15 @@
 
 
   .testimony {
-    background-color: #dce3f1;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1) 30%, transparent 60%), 
+              linear-gradient(135deg, #e3e3df 0%, #a8a8a7 100%);
     position: relative; /* Ensure the child elements are positioned relative to this container */
     width: 100%;
-    min-height: 400px;
+    min-height: 440px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
   }
 
   .testimonyText {
@@ -428,12 +480,15 @@
   }
 
   .cardWrapper {
-    width: 90%;
+    width: auto;
+    max-width: 90%;
   }
 
   .testcardWrapper {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
   }
 
@@ -446,6 +501,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    padding-bottom: 10px;
   }
 
   .userCard {
@@ -454,8 +510,8 @@
   }
 
   .user {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 
   .userCard {
@@ -472,16 +528,31 @@
   .name p {
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 15px;
   }
 
   .name label {
     color: gray;
     font-style: italic;
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  .testText {
+    margin-top: -5px;
+    color: #393939;
+    line-height: 1.45; 
+    text-align: left;
+    max-height: 140px; /* Adjust max-height to fit the desired number of lines */
+    overflow: hidden; /* Hide any text that overflows */
+    text-overflow: ellipsis; /* Show ellipsis when text overflows */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Show up to 14 lines of text */
+    -webkit-box-orient: vertical;
+    line-clamp: 4;
   }
 
   .hospital {
-    background-color: #e0ebf6;
+    background-color: #fafafa;
     position: relative; /* Ensure the child elements are positioned relative to this container */
     width: 100%;
     min-height: 170px;
@@ -491,267 +562,288 @@
     justify-content: center;
   }
 
-
-
-
-
-
-
-
-/* from here nothing */
-
-  .cards {
-    margin-top: 30px;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  }
-  
-  .card {
-  width: 230px;
-  height: 220px;
-  z-index: 2;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  }
-  
-  .card h4 {
-  margin-top: 20px;
-  margin-bottom: 0;
-  }
-  
-  .icon {
-  width: 55px;
-  height: 55px;
-  margin-top: 20px;
-  filter: brightness(60%);
-  }
-  
-  .cardHead {
-  color: #26405f;
-  font-weight: 700;
-  margin-top: 20px;
-  font-size: 17px;
-  }
-  
-  .cardtext2 {
-  color: #26405f;
-  margin: 0;
-  margin-top: -15px;
-  font-size: 12px;
-  text-align: center;
-  }
-  
-  .cardtext3 {
-  font-size: 11.4px;
-  text-align: center;
-  color: rgb(31, 31, 31);
-  }
-  
-  .textbox {
-  margin-top: 200px;
-  text-align: center;
-  }
-  
-  .font1 {
-  font-size: 17px;
-  margin-top: 100px;
-  font-weight: 300;
-  }
-  
-  .specialText {
-font-family: 'SF_HambakSnow';
-  color: #4b6ebd;
-  font-size: 25px;
-  }
-  
-  .font2 {
-    font-family: "Tinos", serif;
-    color: #2d4275;
-    font-weight: 600;
-    margin-left: 610px;
-    font-weight: 100;
-  }
-  
-
-  .content2 {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  }
-  
-  .real {
-    margin-top: 60px;
-  width: 1330px;
-  display: flex;
-  flex-direction: row;
-  }
-
-  .carousel {
+  .buttonWraper {
     margin-top: 20px;
-    width: 35%;
-    margin-left: 190px;
+    display: flex;
+    justify-content: right;
   }
 
-  .texts {
-    margin-left: 100px;
-    text-align: right;
-    display: flex; /* Set the container as a flexbox */
-    flex-direction: column;
-    align-items: flex-end; /* Align items to the right */
-}
-  
-.divider1 {
-  height: calc(50% + 20px);
-  width: 100%;
-  background-position: center -20px; /* Example positioning */
-  background-size: cover;
-  position: relative; /* Positioning context for .design */
-}
-  
-  .texts h3 {
-  font-size: 35px;
-  font-family: 'SF_HambakSnow';
-    color: #c5996e;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-  }
-
-  .texts p {
-    margin-top: -30px;
-    color: gray;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-  }
-  
-  .texts a {
-    text-decoration: none;
-    color: #333;
-  }
-
-  .texts button {
-    width: 120px;
-    height: 45px;
-    border: 1px solid black;
-    background-color: transparent;
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    box-sizing: border-box; /* Include padding and border in width and height */
+  .buttonWraper button {
+    font-size: 15px;
+    cursor: pointer;
+    height: 40px;
+    width: 150px;
+    background-color: white;
+    border: none;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card-style shadow */
-  }
-
-  .texts button:hover {
-    background-color: rgb(237, 237, 237);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
   
-  .texts h4 {
-    margin: 0; /* Remove margin from h4 */
-    padding: 0; /* Remove padding from h4 */
-    text-align: center; /* Ensure text is centered within h4 */
+  .buttonWraper button:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
   }
 
-  .design {
-    position: absolute; /* Position relative to .devider1 */
-    bottom: -5px; /* 10px from the bottom of .devider1 */
-    right: 10px; /* 10px from the right of .devider1 */
+  .noDecoration {
+    text-decoration: none; /* Removes any link underline */
+    color: inherit; /* Ensures that link inherits the color of the surrounding text */
+}
 
+@media (max-width: 450px) {
+  .firstScreen {
+    margin-top: 100px;
   }
 
-  .design p {
-    font-size: 11px;
-    color: white; 
+  .pictureBox {
+    margin-top: 20px;
+    height: 90%;
   }
-
-  .texts2 a {
-    text-decoration: none;
-    color: #333;
+  .pictureBox h1 {
+    font-size: 16px;
+    margin-top: 35%;
+    font-weight: 500;
   }
-
-  .texts2 button {
-    width: 120px;
-    height: 45px;
-    border: 1px solid black;
-    background-color: transparent;
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    box-sizing: border-box; /* Include padding and border in width and height */
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card-style shadow */
-  }
-
-  .texts2 h3 {
-    font-size: 35px;
-    font-family: 'SF_HambakSnow';
-      color: #c5996e;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-    }
   
-    .texts2 p {
-      margin-top: -30px;
-      color: gray;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-    }
+  .pictureBox p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
 
-    .texts2 button:hover {
-      background-color: rgb(237, 237, 237);
-    }
+  
+  .topBlocks,
+  .bottomBlocks {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    justify-content: center; /* Center items in the container */
+    gap: 15px;
+    height: auto;
+  }
+
+  .topBlocks {
+    margin-bottom: 0;
+  }
+ 
+  .second {
+    width: 95%;
+    background-size: cover; 
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .Firstblocks {
+    width: 90%; /* Each block takes up almost the full width */
+    height: auto;
+  }
+
+  .Firstblocks h1 {
+    font-weight: 600;
+    border-bottom: 0;
+    margin-bottom: 0px;
     
-    .texts2 h4 {
-      margin: 0; /* Remove margin from h4 */
-      padding: 0; /* Remove padding from h4 */
-      text-align: center; /* Ensure text is centered within h4 */
-    }
+  }
+
+  .Firstblocks p {
+    font-size: 15px;
+  }
+
+  .blocks {
+    width: 90%; /* Each block takes up almost the full width */
+    margin-bottom: 20px; /* Add space between rows */
+    height: 300px;
+  }
+
+  .secPage {
+    height: auto;
+    align-items: top; /* Align vertically */
+  }
+
+  .videoSlot {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .videoWrapper {
+    position: relative;
+    width: 90%;
+    margin-left: 10%;
+    height: calc(90vw / 16 * 8.55);
+    overflow: hidden;
+    border-radius: 20px; /* Apply border-radius */
+    margin-left: 0;
+  }
   
-  .content3 {
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    padding-top: 50px;
+  }
+
+  .videoTextBox {
+    margin-right: 0;
+    width: 90%;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .testcardWrapper {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  
+  .testCard {
+    width: 99%;
+  }
+
+  .testimonyText2 {
+    margin-top: -10px;
   }
 
 
-  .marquee {
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
+  .buttonWraper {
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+
+}
+
+
+@media (min-width: 450px) and (max-width: 768px) {
+
+  .firstScreen {
+    margin-top: 100px;
+    height: calc(100vh - 190px); /* Full height of the viewport */
+  }
+
+  .pictureBox {
+    margin-top: 30px;
+    height: 93%;
+  }
+
+  .pictureBox h1 {
+    margin-top: 45%;
+    font-weight: 500;
+  }
+
+  .topBlocks,
+  .bottomBlocks {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    justify-content: center; /* Center items in the container */
+    gap: 15px;
+    height: auto;
+  }
+
+  .topBlocks {
+    margin-bottom: 0;
+  }
+ 
+  .second {
+    width: 95%;
+    background-size: cover; 
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .Firstblocks {
+    width: 60%; /* Each block takes up almost the full width */
+    height: auto;
+  }
+
+  .Firstblocks h1 {
+    font-weight: 600;
+    border-bottom: 0;
+    margin-bottom: 0px;
+    
+  }
+
+  .Firstblocks p {
+    font-size: 15px;
+  }
+
+  .blocks {
+    width: 60%; /* Each block takes up almost the full width */
+    margin-bottom: 20px; /* Add space between rows */
+    height: 300px;
+  }
+
+  .secPage {
+    height: auto;
+    align-items: top; /* Align vertically */
+  }
+
+  .videoSlot {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .videoWrapper {
     position: relative;
+    width: 90%;
+    margin-left: 10%;
+    height: calc(90vw / 16 * 8.55);
+    overflow: hidden;
+    border-radius: 20px; /* Apply border-radius */
+    margin-left: 0;
+  }
+  
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .videoTextBox {
+    margin-right: 0;
+    width: 90%;
+    align-items: center;
+    margin-top: 20px;
+  }
+
 }
 
-.marqueeContent {
-    display: inline-block;
-    animation: marquee 50s linear infinite;
-    white-space: nowrap;
-}
 
-.marqueeLogo {
-    display: inline-block;
-    margin-right: 200px;
-    padding: 0 20px;
-    font-size: 24px; /* Adjust the size as needed */
-    text-align: center;
-}
+@media (min-width: 768px) and (max-width: 1194px) {
 
-/* Animation */
-@keyframes marquee {
-    from {
-        transform: translateX(0); /* Start from the left edge */
-    }
-    to {
-        transform: translateX(-50%); /* Move halfway to allow seamless loop */
-    }
+
+  .pictureBox {
+    height: 91%;
+  }
+
+  .pictureBox h1 {
+    margin-top: 30%;
+    font-weight: 500;
+  }
+
+  .Firstblocks {
+    height: 330px;
+  }
+
+  .blocks {
+    height: 330px;
+  }
+
+  .videoWrapper {
+    width: 65%;
+    height: calc(65vw / 16 * 7.61);
+  }
+
+  .videoTextBox {
+    margin-right: 6%;
+  }
+
+
+
+
 }

@@ -106,3 +106,20 @@
     color: red;
     font-size: 14px;
 }
+
+.forgotPasswordLink {
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;   
+    color: black;
+}
+
+.forgotPasswordLink:hover {
+    color: gray;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+}

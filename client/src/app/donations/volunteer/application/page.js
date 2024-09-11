@@ -2,6 +2,7 @@
 import Navigation from "../../../../../components/navigation";
 import styles from "./application.module.css"
 import Link from "next/link";
+import ScrollToTop from "../../../../../components/ScrollToTop";
 
 
 export default function Program1() {
@@ -31,6 +32,7 @@ export default function Program1() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>

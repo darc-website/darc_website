@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
-
 .main {
-    overflow: hidden;
     height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
 }
@@ -15,7 +11,7 @@
 }
 
 .header {
-    width: 1200px;
+    width: 1200px; /* Ensure the header takes up the full width */
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -33,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Align items to the right */
-    font-size: 18px; /* Adjust the font size as needed */
+    font-size: 18px;
     text-align: right;
 }
 
@@ -47,15 +43,292 @@
 }
 
 .link a:hover {
-    color: #4e73ac; /* Change to desired hover color */
+    color: #4e73ac;
 }
 
 .link h4 {
     margin: 0;
-    transition: color 0.3s; /* Add transition for smooth color change */
+    transition: color 0.3s;
 }
 
 .link h4:hover {
-    color: #4e73ac; /* Change to desired hover color */
+    color: #4e73ac;
 }
 
+.reviewSection {
+    width: 100%;
+    max-width: 1200px; /* Limit the maximum width to align with the header */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.reviewList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    justify-content: center; /* Center the review boxes */
+}
+
+@media (min-width: 768px) {
+    .reviewList {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+        justify-content: center; /* Center the boxes if fewer than 2 are shown */
+    }
+}
+
+@media (min-width: 1200px) {
+    .reviewList {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        justify-content: center; /* Center the boxes when fewer than 3 are shown */
+    }
+}
+
+.reviewBox {
+    width: 380px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviewBox:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reviewDate {
+    font-size: 14px;
+    color: #777;
+}
+
+.userCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviewBox .name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.reviewBox .name p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.reviewBox .name label {
+    color: gray;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.reviewText {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    text-align: left;
+    max-height: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 15;
+    -webkit-box-orient: vertical;
+    margin-bottom: 60px;
+    line-clamp: 15;
+}
+
+.buttonRow {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.editButton,
+.deleteButton {
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+    background-color: #ec971f;
+}
+
+.star {
+    width: 100px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fullReviewText {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.45;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+.modal .closeButton {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.modal .closeButton:hover {
+    background-color: #999;
+}
+
+.modalContent .name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.modalContent .name p {
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.modalContent .name label {
+    color: gray;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.closeButton2 {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.closeButton2:hover {
+    background-color: #999;
+}
+
+.filterDropdown {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.controlsContainer {
+    display: flex;
+    justify-content: space-between; /* Space between the left and right controls */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Left-aligned controls */
+.leftAlignedControls {
+    text-align: left;
+    color: rgb(61, 61, 61);
+    font-size: 16px;
+}
+
+/* Right-aligned controls */
+.rightAlignedControls {
+    text-align: right;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+.pageButton {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pageButton:hover {
+    background-color: #ddd;
+}
+
+.activePage {
+    background-color: #5187c2; /* Set the active page background */
+    color: #fff; /* Make text white for better contrast */
+    border-color: #5187c2; /* Match border color to background */
+}

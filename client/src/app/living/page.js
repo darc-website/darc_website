@@ -6,6 +6,8 @@ import Link from "next/link";
 import ComponentA from "../../../components/componentA";
 import ComponentB from "../../../components/componentB";
 import ComponentC from "../../../components/componentC";
+import Footer from "../../../components/footer";
+import ScrollToTop from "../../../components/ScrollToTop";
 
 export default function Review() {
     const [activeComponent, setActiveComponent] = useState('A');
@@ -17,6 +19,7 @@ export default function Review() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -61,6 +64,7 @@ export default function Review() {
 
 
                 </div>
+                <Footer />
             </main>
         </div>
     );

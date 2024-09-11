@@ -7,12 +7,15 @@ import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
+import Footer from '../../../../components/footer';
+import ScrollToTop from '../../../../components/ScrollToTop';
 
 
 export default function Mission() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -31,13 +34,7 @@ export default function Mission() {
                     </div>
 
                     <div className={styles.divbox}>
-                        <div
-                            className={styles.leftLink}
-                            onClick={() => window.open("https://instagram.com/mass9bro/", "_blank")}
-                        >
-                            <h1><FaInstagram /></h1>
-                            <h3>Instagram</h3>
-                        </div>
+
                         <div
                             className={styles.leftLink}
                             onClick={() => window.open("https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw", "_blank")}
@@ -49,11 +46,19 @@ export default function Mission() {
                             className={styles.leftLink}
                             onClick={() => window.open("https://instagram.com/mass9bro/", "_blank")}
                         >
+                            <h1><FaInstagram /></h1>
+                            <h3>Instagram</h3>
+                        </div>
+                        <div
+                            className={styles.leftLink}
+                            onClick={() => window.open("https://t.me/+821084801445", "_blank")}
+                        >
                             <h1><FaTelegramPlane /></h1>
                             <h3>Telegram</h3>
                         </div>
                     </div>
                 </div>
+                <Footer />
             </main>
         </div>
     );

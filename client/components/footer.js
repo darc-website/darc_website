@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { FaYoutube, FaInstagram } from 'react-icons/fa'; // Importing only YouTube and Instagram icons
+import { FaYoutube, FaInstagram, FaTelegramPlane } from 'react-icons/fa'; // Importing YouTube, Instagram, and Telegram icons
 import styles from './footer.module.css'; // Assuming you will have a corresponding CSS file
 
 const Footer = () => {
@@ -10,26 +10,32 @@ const Footer = () => {
             <div className={styles.footerContainer}>
                 <div className={styles.footerLinks}>
                     <Link href="/about">About Us</Link>
-                    <Link href="/services">Services</Link>
-                    <Link href="/contact">Contact Us</Link>
+                    <Link href="/contact/contactus">Contact Us</Link>
                 </div>
 
                 <div className={styles.footerSocials}>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.youtube.com/channel/UCgBJ6HVUV81VvwsWh4kVhSw" target="_blank" rel="noopener noreferrer">
                         <FaYoutube className={styles.icon} />
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/mass9bro/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className={styles.icon} />
+                    </a>
+                    <a href="https://t.me/+821084801445" target="_blank" rel="noopener noreferrer">
+                        <FaTelegramPlane className={styles.icon} />
                     </a>
                 </div>
 
-                <button className={styles.homeButton}>Home</button>
+                <Link href="/">
+                    <button className={styles.homeButton}>Home</button>
+                </Link>
 
                 <div className={styles.footerInfo2}>
                     <p>등록 번호: 216-82-69731</p>
                     <p>다르크 협회 이사장: 최진묵</p>
                     <p>TEL: +82 70-4046-1445</p>
                 </div>
+
+
 
                 <div className={styles.footerInfo}>
                     <p>© 2024 Korea DARC Association. All rights reserved.</p>

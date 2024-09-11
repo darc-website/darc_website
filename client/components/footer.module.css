@@ -52,7 +52,12 @@
     width: 24px; /* Icon size */
     height: 24px;
     filter: brightness(0) invert(1); /* Make icons white */
-  }
+    transition: filter 0.3s ease; /* Smooth transition for color change */
+}
+
+.footerSocials a:hover .icon {
+    filter: brightness(0) invert(0.8); /* Change icon to gray when hovered */
+}
 
   .footerInfo2 {
     display: flex; /* Flexbox layout to align items in a row */
@@ -79,3 +84,9 @@
     color: white;
     border-radius: 20px;
   }
+
+  .homeButton:hover {
+    background-color: white;
+    color: #244186;
+}
+

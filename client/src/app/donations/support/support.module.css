@@ -3,7 +3,6 @@
 
 
 .main {
-    overflow: hidden;
     height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
 }
@@ -196,4 +195,25 @@
     border-radius: 10px; /* Add border radius */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
     z-index: 0;
+}
+
+.application button {
+    text-decoration: none;
+    color: white;
+    background-color: #3b608c;
+    height: 50px;
+    width: 130px;
+    font-size: 20px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    border-radius: 20px;
+    font-weight: 400;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 1000;
+}
+
+.application  button:hover {
+    background-color: #436ea2;
 }

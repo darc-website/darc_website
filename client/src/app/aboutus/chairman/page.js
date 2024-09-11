@@ -3,6 +3,8 @@ import { Signika } from "next/font/google";
 import Navigation from "../../../../components/navigation";
 import styles from "./chairman.module.css"
 import Link from "next/link";
+import Footer from "../../../../components/footer";
+import ScrollToTop from "../../../../components/ScrollToTop";
 
 
 export default function Chairman() {
@@ -10,6 +12,7 @@ export default function Chairman() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -52,6 +55,7 @@ export default function Chairman() {
 
                     </div>
                 </div>
+                <Footer />
             </main>
         </div>
     );

@@ -10,6 +10,8 @@ import { Checkbox } from "primereact/checkbox";
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import { RadioButton } from "primereact/radiobutton";
+import Footer from '../../../../components/footer';
+import ScrollToTop from '../../../../components/ScrollToTop';
 
 
 export default function Program1() {
@@ -184,6 +186,7 @@ export default function Program1() {
 
     return (
         <div>
+            <ScrollToTop />
             <Navigation />
 
             <main className={`${styles.main} ${showPopup ? styles.blurred : ''}`}>
@@ -204,43 +207,24 @@ export default function Program1() {
                             마약으로 고통받고 있는 <br />
                             중독자들에게 큰 힘이 되어주세요.
                         </h3>
-                        <div className={styles.picture1}>
-                            <img src="/picture.png" alt="" />
+                        <div className={styles.picBox}>
+                            <img src="/donation.png" alt="" />
+
                         </div>
-                        <div className={styles.reviews}>
-                            <div className={styles.oneCard}>
-                                <div className={styles.theme}>
-                                    <img src="/theme.png" alt="" />
-                                </div>
-                                <div className={styles.ppl}>
-                                    <img src="/ppl1.png" alt="" />
-                                </div>
-                                <div className={styles.review}>
-                                    <h3>자원봉사자 명(소속)</h3>
-                                    <p>봉사 후기: 너무 좋았고 다르크 사람들이 진심으로 회복하기를 기원합니다...</p>
-                                </div>
-                            </div>
+                        <div className={styles.picBox2}>
+                            <img src="/donation2.png" alt="" />
                         </div>
-                        <div className={styles.reviews}>
-                            <div className={styles.oneCard}>
-                                <div className={styles.theme}>
-                                    <img src="/theme.png" alt="" />
-                                </div>
-                                <div className={styles.ppl}>
-                                    <img src="/ppl2.png" alt="" />
-                                </div>
-                                <div className={styles.review}>
-                                    <h3>자원봉사자 명</h3>
-                                    <p>봉사 후기: 너무 좋았고 다르크 사람들이 진심으로 회복하기를 기원합니다. 앞으로도 다들 건강하세요...</p>
-                                </div>
-                            </div>
-                        </div>
+
+
+
+
                         <div className={styles.margin}></div>
                         <div className={styles.application}>
                             <button onClick={handlePopup}>Application Form</button>
                         </div>
                     </div>
                 </div>
+                <Footer />
             </main>
 
             {/* The popup overlay and popup content */}

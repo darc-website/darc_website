@@ -4,6 +4,8 @@ import Navigation from "../../../../components/navigation";
 import styles from "./chart.module.css";
 import Link from "next/link";
 import { GoX } from "react-icons/go";
+import Footer from '../../../../components/footer';
+import ScrollToTop from '../../../../components/ScrollToTop';
 
 export default function Mission() {
 
@@ -11,6 +13,7 @@ export default function Mission() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -30,14 +33,15 @@ export default function Mission() {
                     <div className={styles.contentBox}>
                         <div className={styles.photobox}>
                             <img src="/pplchart.png" alt="Organization Chart" />
+                            <div className={styles.logo}>
+                            </div>
                         </div>
-                        <div className={styles.watermark}>
-                            <img src="/watermark.svg" alt="" />
-                        </div>
+
                     </div>
 
 
                 </div>
+                <Footer />
             </main>
         </div>
     );

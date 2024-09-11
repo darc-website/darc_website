@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     position: relative; /* Allows the popup to be positioned relative to the content */
+    margin-bottom: 50px;
 }
 
 .header {

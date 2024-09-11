@@ -1,14 +1,31 @@
-'use client'
+'use client';
+import { useState } from 'react';
 import Navigation from "../../../../components/navigation";
-import styles from "./support.module.css"
+import styles from "./support.module.css";
 import Link from "next/link";
-
+import Footer from "../../../../components/footer";
+import ScrollToTop from "../../../../components/ScrollToTop";
 
 export default function Program1() {
+    // Function to open the external link in a popup window
+    const handleOpenPopup = () => {
+        const popupWidth = 600; // Specify your desired width
+        const popupHeight = 800; // Specify your desired height
+        const left = (window.innerWidth - popupWidth) / 2; // Center horizontally
+        const top = (window.innerHeight - popupHeight) / 2; // Center vertically
+
+        window.open(
+            'https://www.ihappynanum.com/Nanum/B/O5HB28LU47',
+            'popup',
+            `width=${popupWidth},height=${popupHeight},top=${top},left=${left},scrollbars=yes,resizable=yes`
+        );
+    };
+
 
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -33,41 +50,28 @@ export default function Program1() {
                         <div className={styles.out}>
                             <div className={styles.just}>
                                 <p className={styles.text}>기업</p>
-                                <div className={styles.picture1}>
-
-                                </div>
-                                <div className={styles.picturein}>
-
-                                </div>
+                                <div className={styles.picture1}></div>
+                                <div className={styles.picturein}></div>
                             </div>
                             <div className={styles.just}>
                                 <p className={styles.text}>개인</p>
-                                <div className={styles.picture2}>
-
-                                </div>
-                                <div className={styles.picturein}>
-
-                                </div>
+                                <div className={styles.picture2}></div>
+                                <div className={styles.picturein}></div>
                             </div>
                             <div className={styles.just}>
                                 <p className={styles.text}>기관/단체</p>
-                                <div className={styles.picture3}>
-
-                                </div>
-                                <div className={styles.picturein}>
-
-                                </div>
+                                <div className={styles.picture3}></div>
+                                <div className={styles.picturein}></div>
                             </div>
                         </div>
 
-
                         <div className={styles.application}>
-                            <Link href="/donations/support/application"><button>Continue</button></Link>
+                            <button onClick={handleOpenPopup}>후원하기</button> {/* Open popup on click */}
                         </div>
                     </div>
                 </div>
+                <Footer />
             </main>
         </div>
     );
 }
-

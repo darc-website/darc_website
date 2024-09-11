@@ -1,74 +1,41 @@
 .slider {
-    height: 60px;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide any overflow */
+}
+
+.Marquee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+      transform: translateX(0); /* Start at 0 */
   }
-  
-  .slider::before,
-  .slider::after {
-    position: absolute;
-    background-image: linear-gradient(to right, #e2ebf5 0%, rgba(255, 255, 255, 0) 100%);
-    content: '';
-    height: 100%;
-    width: 25%;
-    z-index: 2;
-    pointer-events: none;
+  100% {
+      transform: translateX(-50%); /* End at -50% to smoothly loop across both logo sets */
   }
-  
-  .slider::before {
-    left: 0;
-    top: 0;
-  }
-  
-  .slider::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-  }
-  
-  .slide-track {
-    width: calc(150px * 20); /* Adjust based on the number of logos */
-    display: flex;
-    animation: scroll 20s linear infinite;
-  }
-  
-  .slide {
-    width: 150px; /* Adjust according to your logo size */
-    height: 60px;
-    display: grid;
-    place-items: center;
-    transition: 0.5s;
-    cursor: pointer;
-    color: black; /* Text color */
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0px);
-    }
-    100% {
-      transform: translateX(calc(-150px * 10)); /* Adjust based on the number of original slides */
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .slide-track {
-      width: calc(80px * 20);
-    }
-  
-    .slide {
-      width: 80px;
-    }
-  
-    @keyframes scroll {
-      0% {
-        transform: translateX(0px);
-      }
-      100% {
-        transform: translateX(calc(-80px * 10));
-      }
-    }
-  }
+}
+
+.imageGroup {
+  display: grid;
+  place-items: center;
+  width: clamp(9rem, 1rem + 35vmin, 30rem);
+  padding: calc(clamp(10rem, 1rem + 40vmin, 30rem) / 10);
+}
+
+.imageGroup img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  aspect-ratio: 16/9;
+  padding: 5px 20px;
+
+}

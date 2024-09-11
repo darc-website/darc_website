@@ -111,42 +111,43 @@
     color: #19428b; /* Keep the same color on hover */
 }
 
-.contentBox {
-    width: 1200px;
-    height: 1300px;
-    border-radius: 20px;
-    margin-top: 20px;
 
-    margin-bottom: 20px;
-    display: flex; /* Enable Flexbox */
-    align-items: top; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    position: relative;
+.contentBox {
+    margin-top: 80px;
+    width: 100%; 
+    height: auto; /* Adjust height automatically based on content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    margin-bottom: 200px; /* Space between contentBox and footer */
 }
 
 .photobox {
-    display: flex; /* Enable Flexbox */
-    align-items: top; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    width: 70%; /* Make sure it takes up the full width of the parent */
-    height: 90%;
-    margin-top: -100px;
+    position: relative;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    align-items: center;
+
 }
 
 .photobox img {
-    max-width: 95%;  /* Ensure the image scales to fit within the box */
-    max-height: 100%; /* Ensure the image scales to fit within the box */
-    object-fit: contain; /* Ensure the image maintains aspect ratio */
-    margin-left: 20px;
+    width: 900px;
+    z-index: 100;
 }
 
-.watermark {
+
+
+.logo {
     position: absolute;
-    bottom: -100px;
-    right: -40px;
-    
-}
-
-.watermark img {
-    transform: rotate(-20deg); 
+    bottom: 10px;
+    right: 10px;
+    width: 500px;
+    height: 400px;
+    background-image: url(/watermark.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
 }

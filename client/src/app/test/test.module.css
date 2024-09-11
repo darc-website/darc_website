@@ -1,109 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
-
-
-.main {
-    font-family: "Noto Sans KR", sans-serif;
-}
-
-.content {
-    margin-top: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.header {
-    width: 80%;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-}
-
-.title {
-    font-family: 'Times New Roman', Times, serif;
-    height: 100%;
-    width: 50%; /* Ensure it takes up half of the header */
-    color: #19428b;
-}
-
-.link {
-    height: 100%;
-    width: 50%; /* Ensure it takes up half of the header */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Align items to the right */
-    font-size: 18px; /* Adjust the font size as needed */
-    text-align: right;
-}
-
-.link p {
-    margin: 0 10px; /* Add some space around the ">" symbol */
-}
-
-.link a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.link a:hover {
-    color: #4e73ac; /* Change to desired hover color */
-}
-
-.link h4 {
-    margin: 0;
-    transition: color 0.3s; /* Add transition for smooth color change */
-}
-
-.link h4:hover {
-    color: #4e73ac; /* Change to desired hover color */
-}
-
-.carousel {
-    width: 80%;
-}
-
-.itemContainer {
-    position: relative;
-    width: 100%;
-    overflow: visible;
-}
-
-.slider {
-    display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    width: 100%;
-}
-
-.leftBtn, .rightBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.leftBtn {
-    left: 10px;
-}
-
-.rightBtn {
-    right: 10px;
-}
-
-.item {
-    width: calc(100% / 4); /* Adjust width dynamically based on slidesVisible */
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-    margin-right: 10px;
-}
-
-.slide {
-    width: 80%;
-}
+.md-calendar-booking .mbsc-calendar-text {
+    text-align: center;
+  }
+  
+  .md-calendar-booking .booking-datetime .mbsc-datepicker-tab-calendar {
+    flex: 1 1 0;
+    min-width: 300px;
+  }
+  
+  .md-calendar-booking .mbsc-timegrid-item {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  
+  .md-calendar-booking .mbsc-timegrid-container {
+    top: 30px;
+  }

@@ -86,7 +86,7 @@
     background-color: #fafafa;
     font-size: 24px;
     color: #666;
-    text-align: center;
+    /* text-align: center; */
     overflow-y: auto;
     height: calc(100vh - 60px); /* Full height minus navbar */
 }
@@ -253,8 +253,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 20px;
-    position: sticky; /* Make the header sticky */
+    margin-bottom: 10px;
     top: 0px; /* Position it below the navbar */
     background-color: #fafafa;
     opacity: 95%;
@@ -344,6 +343,11 @@
     left: 8px; 
 }
 
+.click {
+    margin-left: 15px;
+    margin-top: 8px;
+}
+
 .videoDate {
     font-size: 14px;
     color: #777;
@@ -419,7 +423,15 @@
     background-color: #4cae4c;
 }
 
+.leftAlignedControls {
+    display: flex;
+    align-items: baseline;
+}
 
+.leftAlignedControls p {
+    font-size: 14px;
+    margin-left: 30px;
+}
 
 .rightAlignedControls {
     display: flex;

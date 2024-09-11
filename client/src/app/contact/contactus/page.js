@@ -1,23 +1,38 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import Navigation from "../../../../components/navigation";
 import styles from "./contactus.module.css";
 import Link from "next/link";
 import { GoX } from "react-icons/go";
 import { SlArrowUp } from "react-icons/sl";
 import { SlArrowDown } from "react-icons/sl";
+import Footer from '../../../../components/footer';
+import ScrollToTop from '../../../../components/ScrollToTop';
 
 export default function Mission() {
     const [showEffects, setShowEffects] = useState(false);
 
     const toggleEffects = () => {
-        console.log("Toggling effects", !showEffects);
         setShowEffects(!showEffects);
-    }
+    };
+
+    useEffect(() => {
+        // Load the WhatTime widget script
+        const script = document.createElement('script');
+        script.src = "https://assets.whattime.co.kr/widget/widget.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            // Cleanup the script on component unmount
+            document.body.removeChild(script);
+        };
+    }, []);
 
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -32,7 +47,7 @@ export default function Mission() {
                     </div>
 
                     <div className={styles.textbox}>
-                        <h2>운영시간: 10:00 - 18:00</h2>
+                        <h2 className={styles.textBold}>운영시간: 10:00 - 18:00</h2>
                         <ul>
                             <li>전화 문의: 070-4046-1445</li>
                             <li>모든 상담 내용은 비밀 보장이 되며, 모든 문의 및 상담 내용은 원활한 문의 및 상담 내용 목적으로만 사용됩니다.</li>
@@ -40,8 +55,47 @@ export default function Mission() {
                         </ul>
                     </div>
 
+                    {/* <div style={{ marginTop: "40px" }}>
+                        <div
+                            className="whattime-inline-widget"
+                            data-url="https://whattime.co.kr/chanbinna/1h"
+                            data-text-color="#1a1a1a"
+                            data-button-color="#244186"
+                            data-background-color="#ffffff"
+                            style={{ minWidth: "1200px", height: "700px" }}
+                        ></div>
+                        <link href="https://assets.whattime.co.kr/widget/widget.css" rel="stylesheet" />
+                    </div> */}
+
+
+                    <div style={{ marginTop: "40px" }}>
+                        <div
+                            className="whattime-inline-widget"
+                            data-url="https://whattime.co.kr/koreadarc01/1h"
+                            data-text-color="#1a1a1a"
+                            data-button-color="#244186"
+                            data-background-color="#ffffff"
+                            style={{ minWidth: "1200px", height: "700px" }}
+                        ></div>
+                        <link href="https://assets.whattime.co.kr/widget/widget.css" rel="stylesheet" />
+                    </div>
+
+
+
+                    {/* <div className={styles.reservation}>
+                        <div className={styles.left}>
+
+                        </div>
+                        <div className={styles.middle}>
+
+                        </div>
+                        <div className={styles.right}>
+
+                        </div>
+                    </div> */}
+
                     <div className={styles.effect}>
-                        <hr class={styles.solid} />
+                        <hr className={styles.solid} />
                         <div className={styles.oneline}>
                             <div>
                                 <h2>개인정보 수집 및 이용에 대한 안내</h2>
@@ -49,7 +103,6 @@ export default function Mission() {
                             <button className={styles.toggleButton} onClick={toggleEffects}>
                                 {showEffects ? <SlArrowUp /> : <SlArrowDown />}
                             </button>
-
                         </div>
                         <div className={`${styles.effectsContent} ${showEffects ? styles.show : ''}`}>
                             <p>다르크협회 기업/단체 및 개인의 정보 수집 및 이용 등 처리에 있어 아래의 사항을 관계법령에 따라 고지하고 안내드립니다. <br />
@@ -63,9 +116,10 @@ export default function Mission() {
                         </div>
                     </div>
 
-
+                    {/* Embed the WhatTime widget here */}
 
                 </div>
+                <Footer />
             </main>
         </div>
     );

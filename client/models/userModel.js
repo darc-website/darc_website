@@ -2,6 +2,12 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true, // Ensure each email is unique
+        lowercase: true, // Normalize email to lowercase
+    },
     password: {
         type: String,
         required: true,

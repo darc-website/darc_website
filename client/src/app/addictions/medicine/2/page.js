@@ -6,6 +6,8 @@ import Link from "next/link";
 import { SlArrowUp } from "react-icons/sl";
 import { SlArrowDown } from "react-icons/sl";
 import { HiChevronDown } from "react-icons/hi2";
+import Footer from '../../../../../components/footer';
+import ScrollToTop from '../../../../../components/ScrollToTop';
 
 export default function Medicine1() {
     const [showEffects, setShowEffects] = useState(false);
@@ -18,6 +20,7 @@ export default function Medicine1() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -62,7 +65,6 @@ export default function Medicine1() {
                             </div>
                             <div className={styles.right}>
                                 <div className={styles.picture}>
-                                    <h1>진정, 마취제 <br />대표 사진</h1>
                                 </div>
                                 <div className={styles.picturein}>
 
@@ -92,6 +94,7 @@ export default function Medicine1() {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </main>
         </div>
     );

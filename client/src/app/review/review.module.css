@@ -1,9 +1,9 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
 
-
+/* General Page Layout */
 .main {
-    overflow: hidden;
     height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
 }
@@ -60,3 +60,240 @@
     color: #4e73ac; /* Change to desired hover color */
 }
 
+
+
+.videoList {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Initially one column */
+    margin-top: 0px;
+}
+
+@media (min-width: 768px) {
+    .videoList {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .videoList {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+    }
+}
+
+.thumbnail {
+    width: 101%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: -37px;
+}
+
+
+
+.videoContainer {
+    width: 390px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden; /* To ensure the rounded corners work on the video */
+    position: relative;
+    padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+    height: 0; /* Set height to 0 for the padding-bottom trick to work */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More intense initial shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.videoContainer:hover {
+    transform: scale(1.03); /* Slightly larger scaling for a stronger hover effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Deeper shadow on hover for more intensity */
+}
+
+
+.videoItem {
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 100%; /* Set max-width to allow larger size */
+    margin: 0 auto; /* Center the video item in the grid column */
+}
+
+.videoDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.videoNameRow {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0px; /* Space between the name and the buttons */
+}
+
+.videoName {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.videoDate {
+    font-size: 14px;
+    color: #777;
+}
+
+.videoSection {
+    width: 100%; /* Ensure it takes up the full width */
+    max-width: 1200px; /* Optional: Limit the maximum width */
+    margin: 0 auto; /* Center the content horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.controlsContainer {
+    display: flex;
+    justify-content: space-between; /* Space between the left and right controls */
+    width: 100%;
+}
+
+/* Left-aligned controls */
+.leftAlignedControls {
+    text-align: left;
+    color: rgb(61, 61, 61);
+    font-size: 16px;
+}
+
+/* Right-aligned controls */
+.rightAlignedControls {
+    text-align: right;
+}
+
+.filterDropdown {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+.pageButton {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pageButton:hover {
+    background-color: #ddd;
+}
+
+.activePage {
+    background-color: #5187c2; /* Set the active page background */
+    color: #fff; /* Make text white for better contrast */
+    border-color: #5187c2; /* Match border color to background */
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Overlay and Content */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+
+.modalContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%; /* Make the modal take full width */
+    max-width: 800px; /* Limit the max width of the modal */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.videoContainer2 {
+    position: relative;
+    width: 100%; /* Make the video container take full width */
+    padding-bottom: 56.25%; /* Maintain the 16:9 aspect ratio */
+    height: 0; /* Set height to 0 to enable aspect ratio trick */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+}
+
+.videoContainer2 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the iframe take full width */
+    height: 100%; /* Make the iframe take full height */
+}
+
+
+.modal .closeButton {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.modal .closeButton:hover {
+    background-color: #999;
+}
+
+.modalContent .name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.modalContent .name p {
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.modalContent .name label {
+    color: gray;
+    font-style: italic;
+    font-size: 14px;
+}

@@ -8,9 +8,15 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { FcMenu } from "react-icons/fc";
+import { GrNext } from "react-icons/gr";
+import { IoMdClose } from "react-icons/io";
+import { VscClose } from "react-icons/vsc";
 
 export default function Navigation({ activeIndex }) {
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Track menu state
+    const [menuPage, setMenuPage] = useState(1);
     const pathname = usePathname();
     const dropdownRefs = useRef({});
 
@@ -47,9 +53,26 @@ export default function Navigation({ activeIndex }) {
 
     const isScrolled = scrollPosition > 0 || activeIndex > 0;
 
+    const handleMenuToggle = () => {
+        setIsMenuOpen(!isMenuOpen);
+        setMenuPage(1); // Reset to the main menu when opening the menu
+    };
+
+
+    const closeMenu = () => {
+        setIsMenuOpen(false); // Close the menu
+        setMenuPage(1); // Reset to the main menu page
+    };
+
+
+
     return (
         <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""}`}>
             <div className={styles.top}>
+                <div className={styles.hamburger} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    <FcMenu size={30} /> {/* Hamburger icon */}
+                </div>
+
                 <Link href="/">
                     <div className={styles.logo}>
                         <img src="/logo2.png" alt="Logo" />
@@ -61,8 +84,114 @@ export default function Navigation({ activeIndex }) {
                     <span className={styles.lineb}><p> | </p></span>
 
                     <a href="https://www.instagram.com/mass9bro/">Instagram</a>
+
+                    <span className={styles.lineb}><p> | </p></span>
+
+                    <a href="https://t.me/+821084801445">Telegram</a>
                 </div>
             </div>
+
+
+            <div className={`${styles.fullscreenMenu} ${isMenuOpen ? styles.open : ""}`}>
+                <VscClose
+                    className={styles.closeButton}
+                    size={30}
+                    onClick={closeMenu}
+                />
+                {menuPage === 1 ? (
+                    <div className={styles.Firstbuttons}>
+                        {/* Buttons instead of list items */}
+                        <div>
+                            <button className={styles.menuButton} onClick={() => setMenuPage(7)}>Home
+                                <span className={styles.nextSign}><GrNext /></span>
+                            </button>
+                        </div>
+                        <div>
+                            <button className={styles.menuButton} onClick={() => setMenuPage(2)}>Addictions
+                                <span className={styles.nextSign}><GrNext /></span>
+                            </button>
+                        </div>
+                        <div>
+                            <button className={styles.menuButton} onClick={() => setMenuPage(3)}>Treatment
+                                <span className={styles.nextSign}><GrNext /></span>
+                            </button>
+                        </div>
+                        <div>
+                            <button className={styles.menuButton} onClick={() => setMenuPage(4)}>Donations
+                                <span className={styles.nextSign}><GrNext /></span>
+                            </button>
+                        </div>
+                        <div>
+                            <button className={styles.menuButton} onClick={() => setMenuPage(5)}>About Us
+                                <span className={styles.nextSign}><GrNext /></span>
+                            </button>
+                        </div>
+                        <div>
+                            <button className={styles.menuButton} onClick={() => setMenuPage(6)}>Contact
+                                <span className={styles.nextSign}><GrNext /></span>
+                            </button>
+                        </div>
+                    </div>
+                ) : (
+                    <div>
+                        <button onClick={() => setMenuPage(1)} className={styles.backButton}>Back</button>
+                        {menuPage === 7 && (
+                            <ul>
+                                <li><Link href="/about">다르크란?</Link></li>
+                                <li><Link href="/about/schedule">Schedule</Link></li>
+
+                                {/* Space between first and second section */}
+                                <li><Link href="/review">회복수기</Link></li>
+                                <li><Link href="/review/recommend">추천서</Link></li>
+
+                                {/* Another space between the second and third section */}
+                                <li><Link href="/living">Living</Link></li>
+                            </ul>
+                        )}
+                        {menuPage === 2 && (
+                            <ul>
+                                <li><Link href="/addictions">치료 약물</Link></li>
+                                <li><Link href="/addictions/medicine/1">각성제</Link></li>
+                                <li><Link href="/addictions/medicine/2">진정, 마취제</Link></li>
+                                <li><Link href="/addictions/medicine/3">환각제</Link></li>
+                                <li><Link href="/addictions/medicine/4">기타 약물</Link></li>
+                            </ul>
+                        )}
+                        {menuPage === 3 && (
+                            <ul>
+                                <li><Link href="/treatment">중독 재활</Link></li>
+                                <li><Link href="/treatment/rehabilitation/1">치료</Link></li>
+                                <li><Link href="/treatment/program/1">프로그램</Link></li>
+                                <li><Link href="/treatment/law">사법지원</Link></li>
+                            </ul>
+                        )}
+                        {menuPage === 4 && (
+                            <ul>
+                                <li><Link href="/donations/volunteer">자원봉사</Link></li>
+                                <li><Link href="/donations/support">기부</Link></li>
+                            </ul>
+                        )}
+                        {menuPage === 5 && (
+                            <ul>
+                                <li><Link href="/aboutus/chairman">이사장님 말씀</Link></li>
+                                <li><Link href="/aboutus/mission">미션</Link></li>
+                                <li><Link href="/aboutus/his/korea">역사</Link></li>
+                                <li><Link href="/aboutus/his/korea" >Korea</Link></li>
+                                <li><Link href="/aboutus/his/japan" >Japan</Link></li>
+                                <li><Link href="/aboutus/chart">조직도</Link></li>
+
+                            </ul>
+                        )}
+                        {menuPage === 6 && (
+                            <ul>
+                                <li><Link href="/contact/contactus">Contact us</Link></li>
+                                <li><Link href="/contact/resources">Resources</Link></li>
+                            </ul>
+                        )}
+                    </div>
+                )}
+            </div>
+
             <div className={styles.bottom}>
                 <ul>
                     <li
@@ -74,7 +203,7 @@ export default function Navigation({ activeIndex }) {
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
                                     <Link href="/about"><h4>다르크란?</h4></Link>
-                                    <Link href="/about/schedule">Schedule</Link>
+                                    <Link href="/about/schedule" className={styles.special1}>Schedule</Link>
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/review"><h4>회복수기</h4></Link>
@@ -151,8 +280,8 @@ export default function Navigation({ activeIndex }) {
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/aboutus/his/korea"><h4>역사</h4></Link>
-                                    <Link href="/aboutus/his/korea">Korea</Link>
-                                    <Link href="/aboutus/his/japan">Japan</Link>
+                                    <Link href="/aboutus/his/korea" >Korea</Link>
+                                    <Link href="/aboutus/his/japan" className={styles.special2}>Japan</Link>
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/aboutus/chart"><h4>조직도</h4></Link>

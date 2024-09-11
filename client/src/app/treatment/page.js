@@ -5,6 +5,8 @@ import Link from "next/link";
 import Slider from '../../../components/slider';
 import styles from "./treatment.module.css";
 import { FaArrowRight } from 'react-icons/fa';
+import Footer from '../../../components/footer';
+import ScrollToTop from '../../../components/ScrollToTop';
 
 export default function Rehabilitation1() {
     // Define the content and background image for each slide
@@ -13,6 +15,7 @@ export default function Rehabilitation1() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation1 />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -62,6 +65,7 @@ export default function Rehabilitation1() {
                     </div>
 
                 </div>
+                <Footer />
             </main>
         </div>
     );

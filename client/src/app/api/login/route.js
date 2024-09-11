@@ -20,7 +20,8 @@ export async function POST(req) {
         if (!user) {
             // No user exists, create one with a default password (plain, not hashed)
             user = new User({
-                password: 'defaultpassword', // Just set the plain password
+                email: 'chanbinna@gmail.com',
+                password: 'password', // Just set the plain password
             });
             await user.save(); // Pre-save hook will hash the password
             console.log('Default admin user created');

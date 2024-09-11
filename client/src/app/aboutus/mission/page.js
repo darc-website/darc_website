@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Navigation from "../../../../components/navigation";
 import styles from "./mission.module.css";
 import Link from "next/link";
+import Footer from '../../../../components/footer';
+import ScrollToTop from '../../../../components/ScrollToTop';
 
 export default function Mission() {
     const [hoveredCircle, setHoveredCircle] = useState(null);
@@ -18,6 +20,7 @@ export default function Mission() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -34,6 +37,7 @@ export default function Mission() {
                         <img src="/mission.svg" alt="" />
                     </div>
                 </div>
+                <Footer />
             </main>
         </div>
     );

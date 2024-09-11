@@ -15,7 +15,8 @@
 }
 
 .header {
-    width: 1200px;
+    width: 80%;
+    max-width: 1200px;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -86,6 +87,7 @@
 .blankBlock {
     width: 180px;
     height: 60px;
+
 }
 
 .dayBlock {
@@ -94,7 +96,7 @@
     border: 1px solid black; /* Add border width and color */
     border-radius: 5px; /* Optional: Add border-radius for rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a subtle effect */
-    background-color: #5c6f9f;
+    background-color: #526caa;
     padding-left: 18px;
     font-weight: 400;
     color: white;
@@ -232,4 +234,81 @@
     flex-direction: row;
     color: #808080;
     margin-bottom: 70px;
+}
+
+
+@media (max-width: 450px) {
+    .content {
+        margin-top: 120px;
+        height: auto;
+        overflow: hidden; /* Prevent horizontal scrolling for content */
+        width: 100vw;
+    }
+
+    .header {
+        flex-direction: column; /* Stack the link and title vertically */
+        align-items: flex-start; /* Align both link and title to the left */
+        width: 80%;
+        max-width: 1200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .link {
+        order: -1; /* Move the link above the title */
+        width: 100%; /* Make the link take full width */
+        justify-content: flex-start; /* Align the link to the left */
+        margin-bottom: 0px; /* Add some space between link and title */
+    }
+
+    .title {
+        width: 100%; /* Make the title take full width */
+        text-align: left; /* Align the title text to the left */
+        margin-top: -10px;
+        height: 70px;
+    }
+
+    /* same for this for all  */
+
+    .scheduler {
+        width: 100%;
+    }
+
+
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+    .content {
+        margin-top: 110px;
+    }
+    .header {
+        width: 85%;
+    }
+
+    .scheduler {
+        width: 85%;
+    }
+
+    .bottom {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .header {
+        width: 85%;
+    }
+
+    .scheduler {
+        width: 85%;
+    }
+
+    .bottom {
+        width: 100%;
+    }
+
+    
+
+
 }

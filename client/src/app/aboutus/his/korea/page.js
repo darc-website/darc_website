@@ -4,6 +4,8 @@ import Navigation from "../../../../../components/navigation";
 import styles from "./history.module.css";
 import Link from "next/link";
 import { GoX } from "react-icons/go";
+import Footer from '../../../../../components/footer';
+import ScrollToTop from '../../../../../components/ScrollToTop';
 
 export default function Mission() {
     const [selectedCity, setSelectedCity] = useState('Incheon');
@@ -24,6 +26,7 @@ export default function Mission() {
     return (
         <div className={styles['main-container']}>
             <main className={styles.main}>
+                <ScrollToTop />
                 <Navigation />
                 <div className={styles.content}>
                     <div className={styles.header}>
@@ -135,7 +138,9 @@ export default function Mission() {
                         </div>
                     )}
                 </div>
+                <Footer />
             </main>
+
         </div>
     );
 }
