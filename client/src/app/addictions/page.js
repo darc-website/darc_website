@@ -17,6 +17,7 @@ export default function Addicitons() {
                 </div>
                 <div className={styles.chart}>
                     <img src="/chartNew.svg" alt="" />
+
                 </div>
                 <div className={styles.text}>
                     <p>

@@ -28,8 +28,27 @@ const Slider = ({ slides }) => {
 
             <Swiper
                 ref={swiperRef}
-                modules={[Pagination, Mousewheel, Navigation, Scrollbar]}
                 slidesPerView={3}
+                modules={[Pagination, Mousewheel, Navigation, Scrollbar]}
+                breakpoints={{
+                    // When window width is <= 450px
+                    382.5: {
+                        slidesPerView: 1,
+                    },
+                    // When window width is between 450px and 768px
+                    650: {
+                        slidesPerView: 2,
+                    },
+                    // When window width is between 768px and 1194px
+                    1150: {
+                        slidesPerView: 3,
+                    },
+                    1500: {
+                        slidesPerView: 3,
+                    }
+
+
+                }}
                 spaceBetween={10}
                 navigation={{
                     nextEl: `.${styles.swiperButtonNext}`,

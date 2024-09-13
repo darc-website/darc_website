@@ -49,7 +49,7 @@ export default function Medicine1() {
                                 <h2>약물 설명</h2>
                                 <div className={styles.rows}>
                                     <h3 className={styles.highlight}>환각제 &nbsp;</h3>
-                                    <h3>(幻覺劑,  영어: Psychedelic drug, Hallucinogenic)
+                                    <h3 className={styles.nextff}>(幻覺劑,  영어: Psychedelic drug, Hallucinogenic)
 
                                     </h3>
                                 </div>

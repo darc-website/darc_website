@@ -49,7 +49,7 @@ export default function Medicine1() {
                                 <h2>약물 설명</h2>
                                 <div className={styles.rows}>
                                     <h3 className={styles.highlight}>진정, 마취제 &nbsp;</h3>
-                                    <h3>(영어: depressants, anesthetic)
+                                    <h3 className={styles.nextff}>(영어: depressants, anesthetic)
                                     </h3>
                                 </div>
                                 <div className={styles.textBox}>

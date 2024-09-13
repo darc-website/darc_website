@@ -71,11 +71,21 @@
 .scheduler {
     font-size: 16px;
     margin-top: 60px;
-    width: 1200px;
+    width: 100%; /* Ensure it takes full width of the parent */
+    max-width: 1200px; /* Set max-width to prevent it from growing too large */
     display: flex;
     flex-direction: column;
     gap: 3px;
     margin-bottom: 20px;
+    overflow: hidden; /* Prevent the image from overflowing outside the container */ 
+    position: relative; /* Necessary to control the positioning of children */
+}
+
+.scheduler img {
+    width: 100%; /* Make the image responsive and fit within the container */
+    max-width: 100%; /* Ensure the image doesn’t grow beyond the container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    object-fit: contain; /* Ensure the image stays contained within the .scheduler */
 }
 
 .row {
@@ -227,8 +237,23 @@
     color: #1f1f1f;
 }
 
+.controls {
+    gap: 20px;
+}
+
+.controls button {
+    background-color: #e9e9ea;
+    color: #387cf6;
+    border: none;
+    width: auto;
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 4px 12px;
+}
+
 .bottom {
-    width: 1200px;
+    max-width: 1200px;
+    width: 80%;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -241,14 +266,12 @@
     .content {
         margin-top: 120px;
         height: auto;
-        overflow: hidden; /* Prevent horizontal scrolling for content */
-        width: 100vw;
     }
 
     .header {
         flex-direction: column; /* Stack the link and title vertically */
         align-items: flex-start; /* Align both link and title to the left */
-        width: 80%;
+        width: 85%;
         max-width: 1200px;
         height: auto;
         margin-bottom: 10px;
@@ -271,7 +294,15 @@
     /* same for this for all  */
 
     .scheduler {
-        width: 100%;
+        margin-top: 50px;
+        width: 90%;
+    }
+
+
+    .bottom {
+        width: 90%;
+        margin-bottom: 170px;
+        font-size: 12px;
     }
 
 
@@ -281,22 +312,25 @@
     .content {
         margin-top: 110px;
     }
-    .header {
+    .header,
+    .bottom {
         width: 85%;
     }
 
     .scheduler {
         width: 85%;
     }
-
+    
     .bottom {
-        width: 100%;
+        font-size: 14px;
     }
+  
 }
 
 
 @media (min-width: 768px) and (max-width: 1194px) {
-    .header {
+    .header,
+    .bottom {
         width: 85%;
     }
 
@@ -304,9 +338,7 @@
         width: 85%;
     }
 
-    .bottom {
-        width: 100%;
-    }
+
 
     
 

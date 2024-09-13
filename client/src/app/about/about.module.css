@@ -121,7 +121,7 @@
     .header {
         flex-direction: column; /* Stack the link and title vertically */
         align-items: flex-start; /* Align both link and title to the left */
-        width: 80%;
+        width: 85%;
         max-width: 1200px;
         height: auto;
         margin-bottom: 10px;
@@ -150,6 +150,11 @@
         width: 300px;
         height: 300px;
         
+    }
+
+    .textbox,
+    .textboxin {
+        width: 85%;
     }
 
 }

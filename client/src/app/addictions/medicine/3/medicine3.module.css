@@ -3,7 +3,6 @@
 
 
 .main {
-    height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -16,7 +15,8 @@
 }
 
 .header {
-    width: 1200px;
+    width: 80%;
+    max-width: 1200px;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -61,7 +61,8 @@
 }
 
 .anotherLink {
-    width: 1200px;
+    width: 80%;
+    max-width: 1200px;
     height: 50px;
     display: flex;
     flex-direction: row;
@@ -87,13 +88,19 @@
 
 .contentBox {
     margin-top: 20px;
-    width: 1200px;
-    height: 500px;
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
 }
 
 .left {
     width: 50%;
     padding-right: 20px;
+    height: auto;
+}
+
+.left h2 {
+    margin-top: 0px;
 }
 
 .right {
@@ -142,6 +149,7 @@
 .medicine {
     display: flex;
     flex-direction: row;
+    height: auto;
 }
 
 .highlight {
@@ -154,7 +162,7 @@
 
 .caption {
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: -8px;
     color: #545454;
 }
 
@@ -213,3 +221,158 @@
     margin-bottom: 8px;
 }
 
+
+@media (max-width: 450px) {
+    .content {
+        margin-top: 120px;
+    }
+
+    .header {
+        flex-direction: column; /* Stack the link and title vertically */
+        align-items: flex-start; /* Align both link and title to the left */
+        width: 85%;
+        max-width: 1200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .link {
+        order: -1; /* Move the link above the title */
+        width: 100%; /* Make the link take full width */
+        justify-content: flex-start; /* Align the link to the left */
+        margin-bottom: 0px; /* Add some space between link and title */
+    }
+
+    .title {
+        width: 100%; /* Make the title take full width */
+        text-align: left; /* Align the title text to the left */
+        margin-top: -10px;
+        height: 70px;
+    }
+
+    .anotherLink {
+        font-size: 14px;
+        gap: 14px;
+        width: 85%;
+    }
+
+  
+    .contentBox {
+        width: 85%;
+    }
+
+    .medicine {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .right {
+        order: -1;
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .picture {
+        height: 230px;
+    }
+
+    .picturein {
+        height: 230px;
+        top: -220px;
+    }
+
+    .left {
+        width: 100%;
+        margin-top: -170px;
+    }
+
+    .rows {
+        flex-direction: column;
+        margin-top: -20px;
+    }
+
+    .nextff {
+        margin-top: -10px;
+    }
+
+    .solid {
+        margin-top: 20px;
+    }
+
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+    .content {
+        margin-top: 110px;
+    }
+    .header {
+        width: 85%;
+    }
+
+  
+    .anotherLink,
+    .contentBox {
+        width: 85%;
+    }
+
+    .medicine {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .right {
+        order: -1;
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .left {
+        width: 100%;
+        margin-top: -250px;
+    }
+
+    .rows {
+        flex-direction: column;
+        margin-top: -20px;
+    }
+
+    .nextff {
+        margin-top: -10px;
+    }
+
+    .solid {
+        margin-top: 20px;
+    }
+
+   
+}
+
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .header,
+    .bottom {
+        width: 85%;
+    }
+
+
+    .anotherLink,
+    .contentBox {
+        width: 85%;
+    }
+
+    .rows {
+        flex-direction: column;
+        margin-top: -20px;
+    }
+
+    .nextff {
+        margin-top: -10px;
+    }
+
+    .solid {
+        margin-top: -240px;
+    }
+}

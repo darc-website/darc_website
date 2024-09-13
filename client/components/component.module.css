@@ -1,6 +1,8 @@
 .whole {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .closed {
@@ -24,6 +26,99 @@
 
 .card h1 {
     color: gray;
+}
+
+.cardB1 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    background-image: url(/office1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cardB2 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    background-image: url(/office2.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cardB3 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    background-image: url(/office3.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cardB4 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    /* background-image: url(/livingHome2.jpeg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cardB5 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    /* background-image: url(/livingHome1.jpeg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cardB6 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    /* background-image: url(/livingHome2.jpeg); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .cardC1 {
@@ -56,18 +151,79 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-
-
-.down {
+.cardC3 {
+    width: 500px;
+    height: 270px; 
     display: flex;
-    flex-direction: row;
-    gap: 40px;
+    align-items: center;
     justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    background-image: url(/livingHome3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cardC4 {
+    width: 500px;
+    height: 270px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Ensure it appears on top of the cards container */
+    background-color: white;
+    border-radius: 30px; /* Add border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
+    background-image: url(/livingHome4.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.hiddenCard {
-    width: 500px;
-    height: 60px; 
+
+.cardWrapper {
     text-align: left;
-    padding-left: 20px;
+}
+
+@media (max-width: 450px) {
+    .card,
+    .cardC1,
+    .cardC2,
+    .cardC3,
+    .cardC4,
+    .cardB1,
+    .cardB2 {
+        width: 300px;
+        height: 225px;
+    }
+
+    .closed {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+    .closed {
+        flex-direction: column;
+        gap: 20px;
+    }
+   
+}
+
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .card,
+    .cardC1,
+    .cardC2,
+    .cardC3,
+    .cardC4,
+    .cardB1,
+    .cardB2 {
+        width: 340px;
+    }
+  
 }

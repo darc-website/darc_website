@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap');
 
 .main {
-    height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -11,11 +10,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 200px;
+    margin-bottom: 180px;
 }
 
 .header {
-    width: 1200px;
+    width: 80%;
+    max-width: 1200px;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -61,9 +61,11 @@
 
 
 .pics {
-    width: 1200px;
-    height: 500px;
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
     text-align: center;
+    
 }
 
 .pics h1 {
@@ -105,4 +107,64 @@
 
 .changed {
     margin-top: 30px;
+    
+}
+
+@media (max-width: 450px) {
+    .content {
+        margin-top: 120px;
+    }
+
+    .header {
+        flex-direction: column; /* Stack the link and title vertically */
+        align-items: flex-start; /* Align both link and title to the left */
+        width: 85%;
+        max-width: 1200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .link {
+        order: -1; /* Move the link above the title */
+        width: 100%; /* Make the link take full width */
+        justify-content: flex-start; /* Align the link to the left */
+        margin-bottom: 0px; /* Add some space between link and title */
+    }
+
+    .title {
+        width: 100%; /* Make the title take full width */
+        text-align: left; /* Align the title text to the left */
+        margin-top: -10px;
+        height: 70px;
+    }
+
+    .pics h1 {
+        font-size: 25px;
+    }
+
+    .button {
+        gap: 50px;
+    }
+
+
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+    .content {
+        margin-top: 110px;
+    }
+    .header {
+        width: 85%;
+    }
+   
+}
+
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .header {
+        width: 85%;
+    }
+
+    
+  
 }

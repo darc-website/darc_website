@@ -11,7 +11,8 @@
 }
 
 .header {
-    width: 1200px; /* Ensure the header takes up the full width */
+    width: 80%;
+    max-width: 1200px;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -56,8 +57,8 @@
 }
 
 .reviewSection {
-    width: 100%;
-    max-width: 1200px; /* Limit the maximum width to align with the header */
+    width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -76,7 +77,7 @@
 @media (min-width: 768px) {
     .reviewList {
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 30px;
+        grid-gap: 20px;
         justify-content: center; /* Center the boxes if fewer than 2 are shown */
     }
 }
@@ -84,13 +85,13 @@
 @media (min-width: 1200px) {
     .reviewList {
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 30px;
+        grid-gap: 20px;
         justify-content: center; /* Center the boxes when fewer than 3 are shown */
     }
 }
 
 .reviewBox {
-    width: 380px;
+    width: 367px;
     height: 500px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -217,7 +218,7 @@
     background-color: white;
     padding: 30px;
     border-radius: 10px;
-    width: 400px;
+    width: 450px;
     max-width: 90%;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -292,6 +293,7 @@
     justify-content: space-between; /* Space between the left and right controls */
     width: 100%;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 /* Left-aligned controls */
@@ -331,4 +333,83 @@
     background-color: #5187c2; /* Set the active page background */
     color: #fff; /* Make text white for better contrast */
     border-color: #5187c2; /* Match border color to background */
+}
+
+@media (max-width: 450px) {
+    .content {
+        margin-top: 120px;
+    }
+
+    .header {
+        flex-direction: column; /* Stack the link and title vertically */
+        align-items: flex-start; /* Align both link and title to the left */
+        width: 85%;
+        max-width: 1200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .link {
+        order: -1; /* Move the link above the title */
+        width: 100%; /* Make the link take full width */
+        justify-content: flex-start; /* Align the link to the left */
+        margin-bottom: 0px; /* Add some space between link and title */
+    }
+
+    .title {
+        width: 100%; /* Make the title take full width */
+        text-align: left; /* Align the title text to the left */
+        margin-top: -10px;
+        height: 70px;
+    }
+
+    .reviewSection {
+        width: 85%;
+        margin-top: 10px;
+    }
+
+    .reviewBox {
+        width: 335px;
+    }
+
+    .reviewBox:hover {
+        box-shadow: none; /* Remove the box-shadow */
+        transform: none; /* Remove the scale effect */
+    }
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+    .content {
+        margin-top: 110px;
+    }
+    .header,
+    .reviewSection {
+        width: 85%;
+    }
+    
+    .reviewBox {
+        width: 380px;
+    }
+
+    .reviewBox:hover {
+        box-shadow: none; /* Remove the box-shadow */
+        transform: none; /* Remove the scale effect */
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .header,
+    .reviewSection {
+        width: 85%;
+    }
+
+    .reviewBox {
+        width: 345px;
+    }
+
+    .reviewBox:hover {
+        box-shadow: none; /* Remove the box-shadow */
+        transform: none; /* Remove the scale effect */
+    }
 }

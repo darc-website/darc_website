@@ -81,3 +81,47 @@
 .swiper-scrollbar {
     display: none;
 }
+
+
+@media (max-width: 450px) {
+    .swiperButtonPrev, .swiperButtonNext {
+        visibility: visible;
+        opacity: 0.7; /* Make buttons visible */
+    }
+
+    .slide {
+        width: 97%;
+        margin-left: 1.5%;
+    }
+
+
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+    .swiperButtonPrev, .swiperButtonNext {
+        visibility: visible;
+        opacity: 0.7; /* Make buttons visible */
+    }
+
+    .slide {
+        width: 97%;
+        height: 480px;
+        margin: 1.5%;
+    }
+   
+}
+
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .swiperButtonPrev, .swiperButtonNext {
+        visibility: visible;
+        opacity: 0.7; /* Make buttons visible */
+    }
+  
+    .slide {
+        width: 97%;
+        max-width: 400px;
+        height: 500px;
+        margin: 1.5%;
+    }
+}

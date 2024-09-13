@@ -49,7 +49,7 @@ export default function Medicine1() {
                                 <h2>약물 설명</h2>
                                 <div className={styles.rows}>
                                     <h3 className={styles.highlight}>각성제 &nbsp;</h3>
-                                    <h3>(覺醒劑,  영어: Stimulant, Psychostimulant)</h3>
+                                    <h3 className={styles.nextff}>(覺醒劑,  영어: Stimulant, Psychostimulant)</h3>
                                 </div>
                                 <div className={styles.textBox}>
                                     <p>중추신경계에 작용하여 교감신경계 활성화를 통해 일시적인 활동 증가 효과를 보이는 약품을 의미합니다. 정신, 육체적인 기능을 감소시키는 진정제와는 효과가 반대됩니다.
