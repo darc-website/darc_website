@@ -29,7 +29,8 @@
     "react-youtube": "^10.1.0",
     "react-zoom-pan-pinch": "^3.6.1",
     "resend": "^4.0.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
