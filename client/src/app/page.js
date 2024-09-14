@@ -5,12 +5,7 @@ import Navigation from "../../components/navigation";
 import Marquee from "../../components/marquee";
 import Footer from "../../components/footer";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import ReactCurvedText from 'react-curved-text';
-import EmblaCarousel from "../../components/EmblaCarousel";
-import { FullpageContainer, FullpageSection } from '@shinyongjun/react-fullpage';
 import '@shinyongjun/react-fullpage/css';
-import { Carousel } from "flowbite-react";
 import '../../components/embla.css'
 import { FaArrowRight } from "react-icons/fa6";
 import YouTube from 'react-youtube';
