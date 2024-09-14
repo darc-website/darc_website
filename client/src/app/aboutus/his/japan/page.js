@@ -60,14 +60,18 @@ export default function Mission() {
 
 
                     {showPopup && (
-                        <div className={styles.popupContent}>
-                            <h1>History of DARC Japan.</h1>
-                            <div className={styles.photo2}>
-                                <img src="/japan.png" alt="" />
+                        <>
+                            <div className={styles.popupOverlay} onClick={closePopup}></div>
+                            <div className={styles.popupContent}>
+                                <h1>History of DARC Japan.</h1>
+                                <div className={styles.photo2}>
+                                    <img src="/japan.png" alt="" />
 
+                                </div>
+                                <button onClick={closePopup}><GoX /></button>
                             </div>
-                            <button onClick={closePopup}><GoX /></button>
-                        </div>
+                        </>
+
                     )}
                 </div>
                 <Footer />

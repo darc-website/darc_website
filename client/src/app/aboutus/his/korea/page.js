@@ -128,14 +128,18 @@ export default function Mission() {
                     )}
 
                     {showPopup && (
-                        <div className={styles.popupContent}>
-                            <h1>연혁.</h1>
-                            <div className={styles.photoeee}>
-                                <img src="/incheon.svg" alt="" />
+                        <>
+                            <div className={styles.popupOverlay} onClick={closePopup}></div>
+                            <div className={styles.popupContent}>
+                                <h1>연혁.</h1>
+                                <div className={styles.photoeee}>
+                                    <img src="/incheon.svg" alt="" />
 
+                                </div>
+                                <button onClick={closePopup}><GoX /></button>
                             </div>
-                            <button onClick={closePopup}><GoX /></button>
-                        </div>
+                        </>
+
                     )}
                 </div>
                 <Footer />

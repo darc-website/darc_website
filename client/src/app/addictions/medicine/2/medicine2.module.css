@@ -121,7 +121,7 @@
     display: flex;
     align-items: center;
     color: gray;
-    /* background-image: url(/medicine2.jpeg); */
+    background-image: url(/medicine2.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -375,5 +375,9 @@
 
     .solid {
         margin-top: -240px;
+    }
+
+    .content {
+        margin-bottom: 250px;
     }
 }

@@ -68,31 +68,19 @@ export default function Mission() {
                     </div> */}
 
 
-                    <div style={{ marginTop: "40px" }}>
+                    <div className={styles.widgetwrapper}>
                         <div
                             className="whattime-inline-widget"
-                            data-url="https://whattime.co.kr/koreadarc01/1h"
+                            data-url="https://whattime.co.kr/chanbinna/1h"
                             data-text-color="#1a1a1a"
                             data-button-color="#244186"
                             data-background-color="#ffffff"
-                            style={{ minWidth: "1200px", height: "700px" }}
+                            style={{ width: "100%", height: "700px" }}
                         ></div>
                         <link href="https://assets.whattime.co.kr/widget/widget.css" rel="stylesheet" />
                     </div>
 
 
-
-                    {/* <div className={styles.reservation}>
-                        <div className={styles.left}>
-
-                        </div>
-                        <div className={styles.middle}>
-
-                        </div>
-                        <div className={styles.right}>
-
-                        </div>
-                    </div> */}
 
                     <div className={styles.effect}>
                         <hr className={styles.solid} />

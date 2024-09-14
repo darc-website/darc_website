@@ -1,6 +1,5 @@
 /* General Page Styles */
 .main {
-    height: 100vh;
     font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -14,7 +13,8 @@
 }
 
 .header {
-    width: 1200px;
+    width: 80%;
+    max-width: 1200px;
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -51,7 +51,8 @@
 }
 
 .anotherLink {
-    width: 1200px;
+    width: 80%;
+    max-width: 1200px;
     height: 50px;
     display: flex;
     flex-direction: row;
@@ -76,7 +77,8 @@
 
 .onemoreLink {
     margin-left: 10px;
-    width: 1200px;
+    width: 80%;
+    max-width: 1200px;
     height: 8px;
     display: flex;
     flex-direction: row;
@@ -113,8 +115,10 @@
 }
 
 .contentBox {
-    width: 1200px;
-    height: 500px;
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 500px;
     border: solid 1.5px #1a428b;
     border-radius: 20px;
     display: flex;
@@ -169,7 +173,8 @@
 /* Popup Styles */
 .popupContent {
     background-color: white;
-    width: 1200px;
+    width: 80%;
+    max-width: 1200px;
     height: 820px;
     border-radius: 20px;
     padding: 10px 30px;
@@ -183,9 +188,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 999;
 }   
 
 .popupContent h1 {
+    margin-top: 10px;
     margin-bottom: 28px;
     color: #19428b;
     align-self: flex-start; /* Align the h1 to the start (left) */
@@ -204,6 +211,17 @@
     width: 74%;
 }
 
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px); /* Apply blur effect */
+
+    z-index: 998; /* Ensure it's below the popup but above the rest */
+}
+
 
 .popupContent button {
     position: absolute;
@@ -211,17 +229,220 @@
     right: 15px;
     width: 40px;
     height: 40px;
-    background-color: #404040;
-    color: white;
+    color: black;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 25px;
+    text-align: center;
+    line-height: 40px; /* Align the "X" vertically */
+    background-color: transparent; /* Ensure no background color issue */
 }
 
-.popupContent button:hover {
-    background-color: #525252;
+
+
+
+@media (max-width: 666px) {
+    .content {
+        margin-top: 120px;
+    }
+
+    .header {
+        flex-direction: column; /* Stack the link and title vertically */
+        align-items: flex-start; /* Align both link and title to the left */
+        width: 85%;
+        max-width: 1200px;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .link {
+        order: -1; /* Move the link above the title */
+        width: 100%; /* Make the link take full width */
+        justify-content: flex-start; /* Align the link to the left */
+        margin-bottom: 0px; /* Add some space between link and title */
+        margin-top: -30px;
+    }
+
+    .title {
+        width: 100%; /* Make the title take full width */
+        text-align: left; /* Align the title text to the left */
+        margin-top: -35px;
+        height: 70px;
+    }
+
+    .contentBox {
+        width: 85%;
+
+    }
+
+    .anotherLink {
+        margin-top: -10px;
+    }
+
+    .onemoreLink {
+        margin-left: 0px;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .anotherLink p {
+        font-size: 16px;
+    }
+
+    .onemoreLink button {
+        font-size: 16px;
+    }
+
+    .contentBox {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .left img {
+        width: 100%;
+        height: 50%;
+    }
+
+    .right {
+        margin-top: -20px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 70px;
+    }
+
+    .closebutton {
+        width: 35px; /* Adjust button size for mobile */
+        height: 35px;
+        font-size: 18px; /* Adjust font size for smaller screens */
+        line-height: 35px; /* Keep the "X" vertically centered */
+        top: 10px;
+    }
+
+    .popupContent {
+        width: 90%;
+        height: auto;
+    }
+
+    .popupContent img {
+        width: 110%;
+        margin-left: -10px;
+    }
+
+    .right img {
+        width: 140%;
+    }
+
+    .popupContent {
+        top: 570px;
+    }
+
+}
+
+@media (min-width: 666px) and (max-width: 768px) {
+    .content {
+        margin-top: 110px;
+    }
+    .header {
+        width: 85%;
+    }
+
+    .contentBox {
+        width: 85%;
+        height: auto;
+    }
+
+
+    .anotherLink {
+        margin-top: -20px;
+    }
+
+    .onemoreLink {
+        margin-left: -6px;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .closebutton {
+        top: 13px;
+    }
+
+    .popupContent {
+        width: 90%;
+        height: auto;
+    }
+   
+    .popupContent img {
+        width: 100%;
+    }
+
+    .left {
+        width: 50%;
+    }
+
+    .left img {
+        width: 100%;
+        height: auto;
+    }
+
+    .right {
+        width: 50%;
+        padding-left: 0px;
+        padding-bottom: 80px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .header {
+        width: 85%;
+    }
+
+
+    .contentBox {
+        width: 85%;
+        height: auto;
+    }
+
+    .popupContent img {
+        width: 100%;
+    }
+    
+    .closebutton {
+        top: 13px;
+    }
+    
+    .popupContent {
+        width: 85%;
+    }
+  
+    .anotherLink {
+        margin-top: -20px;
+    }
+
+    .onemoreLink {
+        margin-left: -6px;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .left img {
+        width: 360px;
+        height: auto;
+    }
+
+    .right img {
+        width: 120%;
+    }
+
+    .right {
+        padding-right: 10px;
+        padding-left: 70px;
+    }
+
 }

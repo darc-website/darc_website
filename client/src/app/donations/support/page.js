@@ -53,12 +53,12 @@ export default function Program1() {
                                 <div className={styles.picture1}></div>
                                 <div className={styles.picturein}></div>
                             </div>
-                            <div className={styles.just}>
+                            <div className={styles.just2}>
                                 <p className={styles.text}>개인</p>
                                 <div className={styles.picture2}></div>
                                 <div className={styles.picturein}></div>
                             </div>
-                            <div className={styles.just}>
+                            <div className={styles.just3}>
                                 <p className={styles.text}>기관/단체</p>
                                 <div className={styles.picture3}></div>
                                 <div className={styles.picturein}></div>
