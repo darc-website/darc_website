@@ -30,6 +30,17 @@
   font-style: normal;
 }
 
+@keyframes goUp {
+  0% {
+    transform: translateY(50px); /* Start 100px below the current position */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1; /* End fully visible */
+  }
+}
+
 /* Main styles */
 .main {
   display: flex;
@@ -103,6 +114,7 @@
   position: absolute;
   font-family: 'Pretendard-Regular';
   overflow: hidden;
+  animation: goUp 1s ease-out; 
 }
 
 .pictureBox .firstText {
