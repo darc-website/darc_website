@@ -84,7 +84,7 @@
     background-color: white;
     border-radius: 30px; /* Add border radius */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
-    /* background-image: url(/livingHome2.jpeg); */
+    background-image: url(/office4.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,7 +100,7 @@
     background-color: white;
     border-radius: 30px; /* Add border radius */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
-    /* background-image: url(/livingHome1.jpeg); */
+    background-image: url(/office5.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -115,7 +115,7 @@
     background-color: white;
     border-radius: 30px; /* Add border radius */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.30);
-    /* background-image: url(/livingHome2.jpeg); */
+    background-image: url(/office6.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -194,7 +194,11 @@
     .cardC3,
     .cardC4,
     .cardB1,
-    .cardB2 {
+    .cardB2,
+    .cardB3,
+    .cardB4,
+    .cardB5,
+    .cardB6 {
         width: 300px;
         height: 225px;
     }
@@ -222,7 +226,11 @@
     .cardC3,
     .cardC4,
     .cardB1,
-    .cardB2 {
+    .cardB2,
+    .cardB3,
+    .cardB4,
+    .cardB5,
+    .cardB6 {
         width: 340px;
     }
   

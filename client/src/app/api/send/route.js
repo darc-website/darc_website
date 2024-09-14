@@ -40,7 +40,7 @@ export async function POST(request) {
 
         const { data, error } = await resend.emails.send({
             from: 'Acme <onboarding@resend.dev>',
-            to: ['chanbinna@gmail.com'], // Replace with your target email
+            to: ['koreadarc01@gmail.com'], // Replace with your target email
             subject: subject, // Use the dynamically generated subject
             react: emailContent,
         });

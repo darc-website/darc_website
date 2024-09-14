@@ -50,14 +50,14 @@ export default function Mission() {
                         <h2 className={styles.textBold}>운영시간: 10:00 - 18:00</h2>
                         <ul>
                             <li>전화 문의: 070-4046-1445</li>
-                            <li>모든 상담 내용은 비밀 보장이 되며, 모든 문의 및 상담 내용은 원활한 문의 및 상담 내용 목적으로만 사용됩니다.</li>
+                            <li>기록해주신 문의와 상담내용은 원활한 상담을 위한 목적으로만 사용되며, 모든 내용은 비밀이 보장됩니다.</li>
                             <li>공휴일은 휴무입니다.</li>
                         </ul>
                     </div>
 
                     {/* <div style={{ marginTop: "40px" }}>
                         <div
-                            className="whattime-inline-widget"
+                        className="whattime-inline-widget"
                             data-url="https://whattime.co.kr/chanbinna/1h"
                             data-text-color="#1a1a1a"
                             data-button-color="#244186"
@@ -71,7 +71,7 @@ export default function Mission() {
                     <div className={styles.widgetwrapper}>
                         <div
                             className="whattime-inline-widget"
-                            data-url="https://whattime.co.kr/chanbinna/1h"
+                            data-url="https://whattime.co.kr/koreadarc01/1h2"
                             data-text-color="#1a1a1a"
                             data-button-color="#244186"
                             data-background-color="#ffffff"

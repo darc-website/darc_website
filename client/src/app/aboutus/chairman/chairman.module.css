@@ -117,7 +117,7 @@
 }
 
 .letter {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .letter p {
@@ -133,7 +133,7 @@
 
 .sign img {
     position: absolute; /* Added to enable positioning */
-    bottom: -25px; /* Position 20px from the bottom */
+    bottom: -70px; /* Position 20px from the bottom */
     right: -90px; /* Position 20px from the right */
     width: 200px;
 }

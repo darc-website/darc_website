@@ -51,7 +51,7 @@ export default function Mission() {
                             <p>
                                 1985년, 도쿄, 니포리에 최초로 Group Home이 설립되었습니다. 설립 이후 Daycare Center, APARI (Asia Pacific Addiction Research Institution) 등 다양한 부속기관들을 기반으로 마약중독자들의 재활에 기여하고 있습니다. <br /><br />
 
-                                23년 6월 기준, 현재 95개 넘는 공동가정생활시설 및 Daycare-센터가 운영중이며, 1,500명 이상의 중독자들이 단약 및 건강한 사회구성원으로의 복귀를 위해 입소해 있습니다.
+                                23년 6월 기준, 현재 95개 넘는 공동 가정 생활시설 및 Daycare-센터가 운영 중이며, 1,500명 이상의 중독자들이 단약 및 건강한 사회 구성원으로의 복귀를 위해 입소해 있습니다.
                             </p>
                             <button onClick={handlePopup}>자세히 보기</button>
                         </div>

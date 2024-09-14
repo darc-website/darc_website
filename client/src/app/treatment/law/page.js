@@ -28,7 +28,7 @@ export default function Program1() {
                             <h1>사법지원.</h1>
                         </div>
                         <div className={styles.link}>
-                            <Link href="/treatment/rehabilitation/1">Treatment</Link>
+                            <Link href="/treatment">Treatment</Link>
                             <p>&gt;</p>
                             <Link href="/treatment/law"><h4>사법지원</h4></Link>
                         </div>
@@ -37,7 +37,7 @@ export default function Program1() {
                     <div className={styles.contentBox}>
                         <div className={styles.box}>
                             <h2>프로그램.</h2>
-                            <p>인천 다르크는 마약류 중독자가 조금이라도 빠른 치료를 받을 수 있도록 최선을 다하겠습니다.</p>
+                            <p>인천 다르크는 마약류 중독자가 조금이라도 빠른 치료를 받을 수 있도록 최선을 다 하겠습니다.</p>
                             <div className={styles.buttonContainer}>
                                 <button onClick={openModal}>자세히 보기</button>
                             </div>

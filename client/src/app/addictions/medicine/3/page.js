@@ -87,7 +87,7 @@ export default function Medicine1() {
                             </div>
                             <div className={`${styles.effectsContent} ${showEffects ? styles.show : ''}`}>
                                 <ul>
-                                    <li>극심한 공포, 편집증 등의 정신적 부작용과 혈압, 호흡수 또는 체온 증가, 동공 확대, 오한, 땀 흘림, 손떨림, 어지러움 식욕부진 등의 신체적인 부작용이 나타날 수 있습니다.
+                                    <li>극심한 공포, 편집증 등의 정신적 부작용과 혈압, 호흡수 또는 체온 증가, 동공 확대, 오한, 땀 흘림, 손 떨림, 어지러움 식욕부진 등의 신체적인 부작용이 나타날 수 있습니다.
                                     </li>
 
 
