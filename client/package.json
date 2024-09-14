@@ -11,6 +11,7 @@
   "dependencies": {
     "@mobiscroll/react": "npm:@mobiscroll/react-next-trial@^5.31.2",
     "@shinyongjun/react-fullpage": "^1.10.0",
+    "@vercel/speed-insights": "^1.0.12",
     "bcryptjs": "^2.4.3",
     "embla-carousel-react": "^8.1.7",
     "flowbite-react": "^0.10.1",

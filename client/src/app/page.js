@@ -5,11 +5,11 @@ import Navigation from "../../components/navigation";
 import Marquee from "../../components/marquee";
 import Footer from "../../components/footer";
 import Link from "next/link";
-import '@shinyongjun/react-fullpage/css';
 import '../../components/embla.css'
 import { FaArrowRight } from "react-icons/fa6";
 import YouTube from 'react-youtube';
 import ScrollToTop from "../../components/ScrollToTop";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 export default function Home() {
@@ -39,6 +39,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <ScrollToTop />
+      <SpeedInsights />
       <Navigation activeIndex={activeIndex} />
       <div className={styles.container}>
         <div className={styles.firstScreen}>
