@@ -17,7 +17,7 @@ export default function Chairman() {
                 <div className={styles.content}>
                     <div className={styles.header}>
                         <div className={styles.title}>
-                            <h1>Director's Remarks.</h1>
+                            <h1>Director&#39;s Remarks.</h1>
                         </div>
                         <div className={styles.link}>
                             <Link href="/aboutus/chairman">About us</Link>

@@ -47,7 +47,7 @@ export default function Home() {
           <div className={styles.pictureBox}>
             <div className={styles.firstText}>
               <h1>
-                “다르크에서는 아무리 지독한 약물 중독자일지라도 <br /> 회복할 수 있다라는 희망의 메세지를 받게됩니다.”
+                &quot;다르크에서는 아무리 지독한 약물 중독자일지라도 <br /> 회복할 수 있다라는 희망의 메세지를 받게됩니다.&quot;
               </h1>
               <p>From Reading Guide</p>
               <Link href="/contact/contactus" passHref className={styles.noDecoration}>
@@ -71,7 +71,7 @@ export default function Home() {
                 <div className={styles.textinCard}>
                   <span className={styles.linetext}>Our Services</span>
                   <h2>Addiciton Rehabilitation</h2>
-                  <p>"중독으로 인해 잘못된 성격, 가치관, 신념등의 문제를 확인하고 검토, 수정, 해결해 나아감으로써 단순히 약물을 끊는 것이 아닌 온전한 회복에 이를 수 있게 됩니다."</p>
+                  <p>&quot;중독으로 인해 잘못된 성격, 가치관, 신념등의 문제를 확인하고 검토, 수정, 해결해 나아감으로써 단순히 약물을 끊는 것이 아닌 온전한 회복에 이를 수 있게 됩니다.&quot;</p>
                 </div>
 
 
@@ -83,7 +83,7 @@ export default function Home() {
 
                 </div>
                 <h2>약물 치료</h2>
-                <p>"마약 중독 전문 병원과 연계를 통해 전문적인 치료를 진행합니다"</p>
+                <p>&quot;마약 중독 전문 병원과 연계를 통해 전문적인 치료를 진행합니다&quot;</p>
               </div>
 
               <div className={styles.blocks}>
@@ -91,7 +91,7 @@ export default function Home() {
                   <img src="/icon2.svg" alt="" />
                 </div>
                 <h2>약물 인식 교육</h2>
-                <p>"마약류 중독 전문가들이 당사자와 가족들에게 마약류 중독에 대한 체계적인 교육을 실시합니다."
+                <p>&quot;마약류 중독 전문가들이 당사자와 가족들에게 마약류 중독에 대한 체계적인 교육을 실시합니다.&quot;
                 </p>
               </div>
             </div>
@@ -101,21 +101,21 @@ export default function Home() {
                   <img src="/icon3.svg" alt="" />
                 </div>
                 <h2>직업 재활</h2>
-                <p>"재활을 통해 건강한 사회 구성원이 될 수 있도록 돕습니다."</p>
+                <p>&quot;재활을 통해 건강한 사회 구성원이 될 수 있도록 돕습니다.&quot;</p>
               </div>
               <div className={styles.blocks}>
                 <div className={styles.iconCircle} style={{ backgroundColor: "#574200" }}>
                   <img src="/icon4.svg" alt="" />
                 </div>
                 <h2>자기 검토/자아 성찰</h2>
-                <p>"12단계 프로그램 실천으로 삶에 대한 태도 변화와 가치관을 변화시킵니다."</p>
+                <p>&quot;12단계 프로그램 실천으로 삶에 대한 태도 변화와 가치관을 변화시킵니다.&quot;</p>
               </div>
               <div className={styles.blocks}>
                 <div className={styles.iconCircle} style={{ backgroundColor: "#8d7125" }}>
                   <img src="/icon5.svg" alt="" />
                 </div>
                 <h2>미래 비전 제시</h2>
-                <p>"미래에 대한 고민을 함께합니다."
+                <p>&quot;미래에 대한 고민을 함께합니다.&quot;
                 </p>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function Home() {
           <div className={styles.testimony}>
             <div className={styles.testimonyText}>
               <h3>Real Stories of Recovery</h3>
-              <p>Reviews From Around The World <br /> "You can be the next one.”</p>
+              <p>Reviews From Around The World <br /> &quot;You can be the next one.&quot;</p>
             </div>
             <div className={styles.cardWrapper}>
               <div className={styles.testimonyText2}>
