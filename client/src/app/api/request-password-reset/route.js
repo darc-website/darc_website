@@ -29,7 +29,7 @@ export async function POST() {
         const expirationTime = new Date(Date.now() + 15 * 60000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
         // Create the reset URL
-        const resetUrl = `${process.env.BASE_URL}/password-reset/${resetToken}`;
+        const resetUrl = `https://www.darc-incheon.com/password-reset/${resetToken}`;
 
         // Send the reset URL via Resend
         const { data, error } = await resend.emails.send({
