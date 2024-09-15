@@ -206,7 +206,7 @@ export default function Navigation({ activeIndex }) {
                                     <Link href="/about/schedule" className={styles.special1}>Schedule</Link>
                                 </div>
                                 <div className={styles.column}>
-                                    <Link href="/review"><h4>회복수기</h4></Link>
+                                    <Link href="/review"><h4>Our Story</h4></Link>
                                     <Link href="/review/recommend">추천서</Link>
                                 </div>
                                 <div className={styles.column}>

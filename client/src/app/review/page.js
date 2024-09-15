@@ -132,7 +132,7 @@ export default function Review() {
                         <div className={styles.link}>
                             <Link href="/">Home</Link>
                             <p>&gt;</p>
-                            <Link href="/review"><h4>회복 수기</h4></Link>
+                            <Link href="/review"><h4>Our Story</h4></Link>
                         </div>
                     </div>
                     <div className={styles.videoSection}>

@@ -34,7 +34,7 @@ export default function Mission() {
                         </div>
                     </div>
                     <div className={styles.chart}>
-                        <img src="/mission.svg" alt="" />
+                        <img src="/mission.png" alt="" />
                     </div>
                 </div>
                 <Footer />

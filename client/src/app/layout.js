@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>{children}</body>
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"></meta>
+      <meta name="naver-site-verification" content="0fa832e430a4813bbb6a5ea447baacd5a39d561b" />
     </html>
   );
 }
