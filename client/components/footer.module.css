@@ -90,3 +90,17 @@
     color: #244186;
 }
 
+
+@media (max-width: 450px) {
+  .footerInfo2 p {
+    font-size: 15px;
+    margin-bottom: -5px;
+  }
+
+  .footerInfo2 {
+    flex-direction: column;
+    gap: 0px;
+    margin-bottom: 20px;
+
+  }
+}

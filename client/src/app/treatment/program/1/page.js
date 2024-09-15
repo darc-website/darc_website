@@ -15,7 +15,7 @@ export default function Rehabilitation1() {
                 <div>
                     <h4>프로그램.</h4>
                     <h2>연극</h2>
-                    <p>연극속의 역할에 몰입해 타인의 심리, 행동 이해 능력 향상 시킬 수 있습니다.</p>
+                    <p>연극 속의 역할에 몰입해 타인의 심리, 행동 등을 이해하는 능력을 향상 시킬 수 있습니다.</p>
                 </div>
             ),
             backgroundImage: "/act.png", // Background image URL for slide 1
@@ -35,7 +35,7 @@ export default function Rehabilitation1() {
                 <div>
                     <h4>프로그램.</h4>
                     <h2>미술</h2>
-                    <p>심리 상태를 다양한 형태로 표현하며 올바른 가치관을 형성 시킵니다.</p>
+                    <p>심리 상태를 다양한 형태로 표현하며 올바른 가치관을 형성시킵니다.</p>
                 </div>
             ),
             backgroundImage: "/art.png", // Background image URL for slide 1
