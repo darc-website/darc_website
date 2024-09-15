@@ -97,7 +97,7 @@ export default function Mission() {
                             </p>
                             <ol>
                                 <li>정보수집의 이용 목적: 온라인 문의/신청</li>
-                                <li>수집/이용 항목: 성함, 성별, 연락처, 이메일</li>
+                                <li>수집/이용 항목: 성함, 연락처, 이메일</li>
                                 <li>보유 및 이용기간: 프로그램 종료 후 6개월, 정보제공자의 삭제 요청시 즉시</li>
                                 <li>개인정보처리담당: 전화: / 이메일: koreadarc01@gmail.com</li>
                             </ol>
