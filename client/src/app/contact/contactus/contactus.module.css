@@ -110,7 +110,7 @@
 }
 
 .effectsContent.show {
-    max-height: 400px; /* Adjust as needed */
+    max-height: 700px; /* Adjust as needed */
     padding: 4px 0; /* Adjust as needed */
 }
 
@@ -167,6 +167,17 @@
 
     .button {
         gap: 50px;
+    }
+
+    .effect {
+        height: auto;
+    }
+
+    .effectsContent.show {
+
+        max-height: 1000px; /* Increase to fit the content */
+        padding: 4px 0;
+        transition: max-height 0.5s ease, padding 0.3s ease;
     }
 
 

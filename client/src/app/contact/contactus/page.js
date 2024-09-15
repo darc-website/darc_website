@@ -93,7 +93,7 @@ export default function Mission() {
                             </button>
                         </div>
                         <div className={`${styles.effectsContent} ${showEffects ? styles.show : ''}`}>
-                            <p>다르크협회 기업/단체 및 개인의 정보 수집 및 이용 등 처리에 있어 아래의 사항을 관계법령에 따라 고지하고 안내드립니다. <br />
+                            <p>다르크협회 기업/단체 및 개인의 정보 수집 및 이용 등 처리에 있어 아래의 사항을 관계 법령에 따라 안내 드립니다. <br />
                             </p>
                             <ol>
                                 <li>정보수집의 이용 목적: 온라인 문의/신청</li>

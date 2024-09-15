@@ -141,7 +141,7 @@ export default function Navigation({ activeIndex }) {
                                 <li><Link href="/about/schedule">Schedule</Link></li>
 
                                 {/* Space between first and second section */}
-                                <li><Link href="/review">회복수기</Link></li>
+                                <li><Link href="/review">Our Story</Link></li>
                                 <li><Link href="/review/recommend">추천서</Link></li>
 
                                 {/* Another space between the second and third section */}
