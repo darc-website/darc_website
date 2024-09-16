@@ -65,13 +65,6 @@ export default function Mission() {
                         >
                             경기도
                         </button>
-                        <p>|</p>
-                        <button
-                            onClick={() => handleCityClick('Gimhae')}
-                            className={`${styles.cityButton} ${selectedCity === 'Gimhae' ? styles.selectedCity : ''}`}
-                        >
-                            김해
-                        </button>
                     </div>
 
                     {selectedCity === 'Incheon' && (
