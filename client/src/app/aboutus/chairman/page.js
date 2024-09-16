@@ -47,7 +47,7 @@ export default function Chairman() {
                             <div className={styles.sign}>
                                 <p>
                                     감사합니다. <br />
-                                    센터장 최진묵 올림
+                                    이사장 최진묵 올림
                                 </p>
                                 <img src="/sign.png" alt="sign" />
                             </div>
