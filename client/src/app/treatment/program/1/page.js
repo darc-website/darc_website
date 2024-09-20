@@ -41,6 +41,19 @@ export default function Rehabilitation1() {
             backgroundImage: "/art.png", // Background image URL for slide 1
         },
 
+        {
+            content: (
+                <div>
+                    <h4>프로그램.</h4>
+                    <h2>자원봉사
+                    </h2>
+                    <p>사회적 연대감 및 공동체 의식을 강화시켜 건강한 가치관을 형성시킵니다.
+                    </p>
+                </div>
+            ),
+            backgroundImage: "/programLast.png", // Background image URL for slide 1
+        },
+
     ];
 
     return (

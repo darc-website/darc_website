@@ -22,7 +22,7 @@ const keywordsArray = [
 const keywordsString = keywordsArray.join(", ");
 
 export const metadata = {
-  title: "다르크 협회",
+  title: "인천 다르크",
   description: "다르크에서는 아무리 지독한 약물 중독자일지라도 회복할 수 있다라는 희망의 메세지를 받게됩니다.",
   keywords: keywordsString,
   viewport: "width=device-width, initial-scale=1, user-scalable=yes",
