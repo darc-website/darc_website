@@ -23,7 +23,7 @@ const keywordsString = keywordsArray.join(", ");
 
 export const metadata = {
   title: "인천 다르크",
-  description: "다르크에서는 아무리 지독한 약물 중독자일지라도 회복할 수 있다라는 희망의 메세지를 받게됩니다.",
+  description: "인천 다르크에서는 아무리 지독한 약물 중독자일지라도 회복할 수 있다라는 희망의 메세지를 받게됩니다. #다르크 #인천다르크 #다르크 협회",
   keywords: keywordsString,
   viewport: "width=device-width, initial-scale=1, user-scalable=yes",
   naverSiteVerification: "0fa832e430a4813bbb6a5ea447baacd5a39d561b",
