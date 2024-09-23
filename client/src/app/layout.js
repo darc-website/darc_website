@@ -27,6 +27,22 @@ export const metadata = {
   keywords: keywordsString,
   viewport: "width=device-width, initial-scale=1, user-scalable=yes",
   naverSiteVerification: "0fa832e430a4813bbb6a5ea447baacd5a39d561b",
+  openGraph: {
+    title: "인천 다르크",
+    type: "website",
+    url: "https://www.darc-incheon.com/",  // Replace with your actual URL
+    siteName: "인천 다르크",
+    description: "인천 다르크에서는 아무리 지독한 약물 중독자일지라도 회복할 수 있다라는 희망의 메세지를 받게됩니다.",
+    images: [
+      {
+        url: "https://i.imgur.com/7gFZudZ.png",  // Replace with the URL of your Open Graph image
+        width: 800,
+        height: 600,
+        alt: "인천 다르크 로고",
+      }
+    ],
+    locale: "ko_KR",
+  }
 };
 
 export default function RootLayout({ children }) {
