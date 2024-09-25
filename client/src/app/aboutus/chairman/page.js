@@ -30,7 +30,7 @@ export default function Chairman() {
                             <div className={styles.letter}>
                                 <p>
                                     안녕하세요, <br />
-                                    다르크 협회 이사장 최진묵입니다. <br />
+                                    인천 다르크 이사장 최진묵입니다. <br />
                                     <br />
                                     23년 마약 중독에서 벗어나 상담사가 된 저는 마약중독을 극복한 경험으로 현재 현장에서 마약중독자들의 치료와 재활을 직접 도우며 힘쓰고 있습니다. <br />
                                     <br />

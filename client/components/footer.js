@@ -31,7 +31,7 @@ const Footer = () => {
 
                 <div className={styles.footerInfo2}>
                     <p>등록 번호: 216-82-69731</p>
-                    <p>다르크 협회 이사장: 최진묵</p>
+                    <p>인천 다르크 이사장: 최진묵</p>
                     <p>TEL: +82 70-4046-1445</p>
                 </div>
 

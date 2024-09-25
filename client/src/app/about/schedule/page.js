@@ -16,7 +16,7 @@ export default function Schedule() {
                     <div className={styles.header}>
                         <div className={styles.title}>
                             <h1>Schedule.</h1>
-                            <h3>다르크에서의 생활</h3>
+                            <h3>인천 다르크에서의 생활</h3>
                         </div>
 
                         <div className={styles.link}>
