@@ -15,7 +15,8 @@ const keywordsArray = [
   "마약중독 치료",
   "약물중독 치료",
   "약물중독 치료자",
-  "마약중독 치료자"
+  "마약중독 치료자",
+  "마약"
 ];
 
 // Convert the array into a comma-separated string
