@@ -33,7 +33,7 @@ export default function Review() {
                         </div>
                     </div>
                     <div className={styles.pics}>
-                        <h1>시설 사진 (준비중)</h1>
+                        <h1>시설 사진 <span style={{ color: "#e23122" }}>(준비중)</span></h1>
                         <div className={styles.button}>
                             <button
                                 className={`${styles.button} ${activeComponent === 'A' ? styles.active : ''}`}

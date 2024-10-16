@@ -18,7 +18,7 @@ export default function Mission() {
                 <div className={styles.content}>
                     <div className={styles.header}>
                         <div className={styles.title}>
-                            <h1>조직도.</h1>
+                            <h1>조직도. <span style={{ color: "#e23122" }}>(준비중)</span></h1>
                         </div>
                         <div className={styles.link}>
                             <Link href="/aboutus/chart">About us</Link>
