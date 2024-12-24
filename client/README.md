@@ -1,6 +1,3 @@
-Here's the updated README with your information added:
-
----
 
 # Darc Incheon Website
 
