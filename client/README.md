@@ -1,69 +1,71 @@
-# Darc Incheon Website
-
-The **Darc Incheon Website** is a modern web application designed to serve as an online platform for showcasing community activities, programs, and organizational details. This document provides an overview of the project's architecture, technologies, and features.
+Here's the updated README with your information added:
 
 ---
 
-## **Features**
-- **Dynamic User Interface**: A responsive and user-friendly design optimized for all devices.
-- **Program & Event Management**: Displays information about ongoing and upcoming events or programs.
-- **Interactive Components**: Enables real-time interaction and navigation for users.
-- **User Authentication**: Secure login and role-based access for administrators and members.
+# Darc Incheon Website
+
+The **Darc Incheon Website** is the official online platform for the **Incheon Drug Addiction Rehabilitation Center (DARC)**. This website serves as a central hub for sharing resources, fostering community engagement, and promoting awareness about drug addiction recovery. It plays a vital role in supporting individuals recovering from drug addiction by providing information, tools, and a connection point for members of the community.
+
+---
+
+## **About the Darc Community**
+The **Darc Community** is a non-profit organization dedicated to supporting individuals recovering from drug addiction. Founded in 2022, **Incheon DARC** provides a safe and nurturing environment for individuals to rebuild their lives. By emphasizing collaboration, education, and structured rehabilitation programs, the organization helps its members regain control over their lives and reintegrate into society.
+
+### **Key Services**
+- **Rehabilitation Programs**: Group therapy and support sessions focused on recovery and personal growth.
+- **Medical Support**: Collaboration with specialized hospitals for professional medical treatment.
+- **Educational Workshops**: Programs for individuals and families to enhance understanding of addiction and recovery.
+- **Vocational Training**: Guidance and training for reintegration into the workforce.
+- **Self-Reflection Programs**: Implementation of 12-step programs to encourage personal development.
+- **Future Planning**: Support for individuals to envision and prepare for a healthy, sustainable future.
+
+---
+
+## **Website Features**
+
+### **Core Functionalities**
+- **Resource Sharing**: Comprehensive information on recovery programs, workshops, and events.
+- **Community Engagement**: A platform for members to connect, share experiences, and support one another.
+- **Awareness Promotion**: Educational content aimed at reducing stigma and spreading awareness about addiction recovery.
+
+### **Interactive Features**
+- **Dynamic User Interface**: A responsive design that works seamlessly across all devices.
+- **Event Listings**: Displaying upcoming workshops, support groups, and community events.
+- **User Authentication**: Secure login system with role-based access for members and administrators.
 
 ---
 
 ## **Technologies**
 
 ### **Frontend**
-- **Framework**: 
-  - Built with **Next.js**, leveraging server-side rendering (SSR) and static site generation (SSG) for fast performance and SEO optimization.
-- **Styling**: 
-  - Designed using **TailwindCSS** for rapid UI development and consistent styling.
-- **Interactivity**:
-  - Utilizes **React hooks** and libraries like **Framer Motion** for smooth animations and dynamic content updates.
+- **Framework**: Built using **Next.js** with server-side rendering (SSR) and static site generation (SSG).
+- **Styling**: Designed with **traditional CSS** for consistent and responsive user interfaces.
+- **Animations**: Implements **CSS animations and transitions** for smooth effects and interactive elements.
 
 ### **Backend**
-- **Framework**:
-  - Powered by **Node.js** and **Express.js** for robust server-side logic and API management.
-- **Database**:
-  - **MongoDB** for a NoSQL database or **MySQL/PostgreSQL** for relational data storage.
-  - Database interactions managed using **Mongoose** or **Prisma** ORM.
-- **APIs**:
-  - RESTful or **GraphQL APIs** to bridge frontend and backend, ensuring efficient data communication.
-
-### **Authentication & Authorization**
-- **User Authentication**:
-  - Implements **OAuth** or **JWT-based authentication** for secure user sessions.
-- **Authorization**:
-  - Ensures role-based access control to sensitive or administrative functionalities.
+- **Framework**: Utilizes **Next.js** for server-side logic and API routes, seamlessly integrating backend functionality with the frontend.
+- **Database**: 
+  - Uses **MongoDB** as the primary database for storing and managing application data.
+- **APIs**: Implements RESTful APIs using **Next.js API routes** to facilitate efficient communication between the frontend and the database.
 
 ### **Hosting & Deployment**
-- **Platform**:
-  - Deployed on **Vercel**, taking advantage of its seamless integration with Next.js for hosting and scaling.
-- **CI/CD**:
-  - Automated testing and deployment pipelines set up using **GitHub Actions** or **GitLab CI**.
+- **Platform**: Deployed on **Vercel**, leveraging seamless integration with Next.js.
+- **CI/CD Pipelines**: Automated testing and deployment using **GitHub Actions**.
 
-### **Performance Optimization**
-- **Caching**:
-  - Incorporates caching mechanisms such as **Redis** for fast data retrieval and improved user experience.
-- **Code Splitting**:
-  - Implements lazy loading and code splitting for optimized resource usage and faster load times.
-- **Image Optimization**:
-  - Uses **Next.js image optimization** or services like **Cloudinary** for handling media assets.
+---
 
-### **Monitoring & Analytics**
-- **Error Tracking**:
-  - Monitored via **Sentry** for proactive debugging and issue resolution.
-- **User Analytics**:
-  - Tracks user engagement using **Google Analytics** or similar tools.
+## **Non-Contribution Policy**
+This project is not open for external contributions. The Darc Incheon Website is managed and maintained by the Darc Incheon team to ensure security, consistency, and alignment with the organization’s mission.
+
+If you have inquiries, suggestions, or feedback about the website, please contact us through the official communication channels provided on the website.
 
 ---
 
 ## **Setup & Installation**
 
 ### **Prerequisites**
-- **Node.js**: Ensure you have the latest version installed.
-- **Package Manager**: Use **npm** or **pnpm** for dependency management.
+- **Node.js**: Ensure the latest version is installed.
+- **Package Manager**: Use **npm** or **pnpm**.
 
 ### **Installation Steps**
 1. Clone the repository:
@@ -79,9 +81,9 @@ The **Darc Incheon Website** is a modern web application designed to serve as an
 
 3. Configure environment variables:
    - Create a `.env` file in the root directory.
-   - Add required configurations (e.g., database URL, API keys).
+   - Add required configurations such as database URLs and API keys.
 
-4. Run the development server:
+4. Start the development server:
    ```bash
    npm run dev
    ```
@@ -91,3 +93,13 @@ The **Darc Incheon Website** is a modern web application designed to serve as an
    npm run build
    npm start
    ```
+
+---
+
+## **Main Contributor**
+- **Chanbin Na**  
+  **Email**: [chna@ucsd.edu](mailto:chna@ucsd.edu)
+
+---
+
+The Darc Incheon Website empowers the organization’s mission of supporting individuals in their recovery journey and fostering a compassionate community. It provides vital resources and engagement opportunities while maintaining a secure and controlled development environment.
