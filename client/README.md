@@ -91,17 +91,3 @@ The **Darc Incheon Website** is a modern web application designed to serve as an
    npm run build
    npm start
    ```
-
----
-
-## **Contributing**
-We welcome contributions to improve the platform. Please follow these steps to contribute:
-1. Fork the repository and create a feature branch.
-2. Submit a pull request with detailed information about your changes.
-
----
-
-## **License**
-This project is licensed under the [MIT License](LICENSE).
-
-For questions or support, please contact us at **[info@darc-incheon.com](mailto:info@darc-incheon.com)**.
