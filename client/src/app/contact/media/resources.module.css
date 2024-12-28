@@ -1,0 +1,229 @@
+/* General Page Styles */
+.main {
+    height: 100vh;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.content {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Allows the popup to be positioned relative to the content */
+    margin-bottom: 50px;
+}
+
+.header {
+    max-width: 1200px;
+    width: 80%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    height: 100%;
+    width: 50%;
+    color: #19428b;
+}
+
+.link {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 18px;
+    text-align: right;
+}
+
+.link p {
+    margin: 0 10px;
+}
+
+.link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link a:hover {
+    color: #4e73ac;
+}
+
+
+.textbox {
+    max-width: 1200px;
+    width: 80%;
+    height: 80px;
+    margin-top: -10px;
+    color: rgb(65, 65, 65);
+}
+
+.divbox {
+    margin-top: 20px;
+    max-width: 1200px;
+    width: 80%;
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.leftLink h1 {
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.leftLink h3 {
+    margin-top: 0px;
+    font-weight: 400;
+}
+
+.leftLink,
+.rightLink {
+    width: 250px;
+    height: 250px;
+    /* border: solid 2px #19428b; */
+    border-radius: 20px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    color: rgb(39, 39, 39);
+    background-color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack h1 and h3 vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    cursor: pointer;
+}
+
+.leftLink:hover,
+.rightLink:hover {
+    background-color: #e9e8e8; /* Change text color to white on hover */
+    transform: translateY(-3px); /* Slightly lift the div on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+
+
+
+@media (max-width: 450px) {
+    .content {
+        margin-top: 100px;
+        overflow: hidden;
+    }
+
+    .header {
+        flex-direction: column; /* Stack the link and title vertically */
+        align-items: flex-start; /* Align both link and title to the left */
+        width: 85%;
+        max-width: 1200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .link {
+        order: -1; /* Move the link above the title */
+        width: 100%; /* Make the link take full width */
+        justify-content: flex-start; /* Align the link to the left */
+        margin-bottom: 0px; /* Add some space between link and title */
+    }
+
+    .title {
+        width: 100%; /* Make the title take full width */
+        text-align: left; /* Align the title text to the left */
+        margin-top: -30px;
+        height: 70px;
+    }
+
+    .pics h1 {
+        font-size: 25px;
+    }
+
+    .button {
+        gap: 50px;
+    }
+
+    .textbox {width: 85%;}
+
+    .divbox {
+        width: 85%;
+        margin-top: 50px;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding-bottom: 20px;
+        flex-wrap: wrap; /* Allow the items to wrap if necessary */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    }
+
+
+    .leftLink:hover,
+.rightLink:hover {
+    background-color: white; /* Keep the original background color */
+    transform: none; /* Disable the lift effect */
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+    .content {
+        margin-top: 110px;
+    }
+    .header {
+        width: 85%;
+    }
+
+    .leftLink {
+        width: 180px;
+        height: 180px;
+    }
+
+    .textbox {width: 85%;}
+
+    .divbox {
+        width: 85%;
+        
+    }
+
+    .leftLink:hover,
+    .rightLink:hover {
+        background-color: white; /* Keep the original background color */
+        transform: none; /* Disable the lift effect */
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+    }
+    
+   
+}
+
+
+@media (min-width: 768px) and (max-width: 1194px) {
+    .header {
+        width: 85%;
+    }
+
+
+    .leftLink {
+        width: 200px;
+        height: 200px;
+    }
+    
+  
+    .textbox {width: 85%;}
+
+    .divbox {
+        width: 85%;
+        
+    }
+
+    .leftLink:hover,
+    .rightLink:hover {
+        background-color: white; /* Keep the original background color */
+        transform: none; /* Disable the lift effect */
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+    }
+}

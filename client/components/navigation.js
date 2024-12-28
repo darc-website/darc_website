@@ -185,6 +185,8 @@ export default function Navigation({ activeIndex }) {
                         {menuPage === 6 && (
                             <ul>
                                 <li><Link href="/contact/contactus">Contact us</Link></li>
+                                <li><Link href="/contact/announcement">공지사항</Link></li>
+                                <li><Link href="/contact/media">자료실</Link></li>
                                 <li><Link href="/contact/resources">Resources</Link></li>
                             </ul>
                         )}
@@ -298,6 +300,10 @@ export default function Navigation({ activeIndex }) {
                             <div className={styles.linkbox}>
                                 <div className={styles.column}>
                                     <Link href="/contact/contactus"><h4>Contact us</h4></Link>
+                                </div>
+                                <div className={styles.column}>
+                                    <Link href="/contact/announcement"><h4>공지사항</h4></Link>
+                                    <Link href="/contact/media"><h4>자료실</h4></Link>
                                 </div>
                                 <div className={styles.column}>
                                     <Link href="/contact/resources"><h4>Resources</h4></Link>
