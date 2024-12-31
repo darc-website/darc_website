@@ -62,6 +62,7 @@ const NoticeAdmin = () => {
   const [currTab, setCurrTab] = useState("전체");
   const [currentPage, setCurrentPage] = useState(1);
   const [showDetail, setShowDetail] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const noticesPerPage = 5;
 
@@ -81,6 +82,10 @@ const NoticeAdmin = () => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
     }
+  };
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
   };
 
   return (
@@ -142,6 +147,8 @@ const NoticeAdmin = () => {
             className={styles.searchInput}
             type="text"
             placeholder="검색어를 입력하세요."
+            value={searchTerm}
+            onChange={handleSearch}
           />
           <button className={styles.searchButton}>
             <i className="pi pi-search" style={{ color: "black" }} />
