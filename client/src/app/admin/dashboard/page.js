@@ -14,6 +14,7 @@ import "primereact/resources/themes/lara-light-cyan/theme.css";
 import styles from "./dashboard.module.css";
 import MemoEditor from "../../../../components/memo";
 import NoticeAdmin from "../../../../components/NoticeAdmin";
+import ArchiveAdmin from "../../../../components/ArchiveAdmin";
 
 export default function Dashboard() {
   const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -845,6 +846,11 @@ export default function Dashboard() {
         {selectedSection === "공지사항" && (
           <>
             <NoticeAdmin />
+          </>
+        )}
+        {selectedSection === "자료실" && (
+          <>
+            <ArchiveAdmin />
           </>
         )}
       </main>

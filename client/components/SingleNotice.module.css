@@ -12,6 +12,7 @@
     color: #333;
     margin-bottom: 0.5rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .singleCategory {

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./NoticeAdmin.module.css";
+import styles from "./ArchiveAdmin.module.css";
 import "primeicons/primeicons.css";
 import SingleNotice from "./SingleNotice";
 
@@ -10,14 +10,14 @@ const data = [
   {
     id: 1,
     title: "공지사항 1",
-    category: "이벤트",
+    category: "언론보도",
     date: new Date("2021-09-01"),
     content: "이벤트 내용 1",
   },
   {
     id: 2,
     title: "공지사항 2",
-    category: "업데이트",
+    category: "출판물",
     date: new Date("2021-09-12"),
     content: "업데티트 내용 1",
   },
@@ -29,36 +29,15 @@ const data = [
     content: "기타 내용 1",
   },
   {
-    id: 4,
-    title: "공지사항 4",
-    category: "공고",
-    date: new Date("2021-10-01"),
-    content: "공고 내용 1",
-  },
-  {
     id: 5,
-    title: "공지사항 5",
-    category: "서비스",
-    date: new Date("2021-10-01"),
-    content: "서비스 내용 1",
-  },
-  {
-    id: 6,
-    title: "공지사항 5",
-    category: "서비스",
-    date: new Date("2021-10-01"),
-    content: "서비스 내용 1",
-  },
-  {
-    id: 7,
-    title: "공지사항 5",
-    category: "서비스",
+    title: "공지사항 4",
+    category: "교육자료",
     date: new Date("2021-10-01"),
     content: "서비스 내용 1",
   },
 ];
 
-const NoticeAdmin = () => {
+const ArchiveAdmin = () => {
   const [currTab, setCurrTab] = useState("전체");
   const [currentPage, setCurrentPage] = useState(1);
   const [showDetail, setShowDetail] = useState(false);
@@ -85,7 +64,7 @@ const NoticeAdmin = () => {
 
   return (
     <div className={styles.noticeContainer}>
-      <h1 className={styles.heading}>공지사항</h1>
+      <h1 className={styles.heading}>자료실</h1>
       <div className={styles.topContainer}>
         <div className={styles.tabContainer}>
           <button
@@ -98,35 +77,27 @@ const NoticeAdmin = () => {
           </button>
           <button
             className={`${styles.tab} ${
-              currTab === "이벤트" ? styles.active : ""
+              currTab === "언론보도" ? styles.active : ""
             }`}
-            onClick={() => setCurrTab("이벤트")}
+            onClick={() => setCurrTab("언론보도")}
           >
-            이벤트
+            언론보도
           </button>
           <button
             className={`${styles.tab} ${
-              currTab === "업데이트" ? styles.active : ""
+              currTab === "출판물" ? styles.active : ""
             }`}
-            onClick={() => setCurrTab("업데이트")}
+            onClick={() => setCurrTab("출판물")}
           >
-            업데이트
+            출판물
           </button>
           <button
             className={`${styles.tab} ${
-              currTab === "서비스" ? styles.active : ""
+              currTab === "교육자료" ? styles.active : ""
             }`}
-            onClick={() => setCurrTab("서비스")}
+            onClick={() => setCurrTab("교육자료")}
           >
-            서비스
-          </button>
-          <button
-            className={`${styles.tab} ${
-              currTab === "공고" ? styles.active : ""
-            }`}
-            onClick={() => setCurrTab("공고")}
-          >
-            공고
+            교육자료
           </button>
           <button
             className={`${styles.tab} ${
@@ -187,4 +158,4 @@ const NoticeAdmin = () => {
   );
 };
 
-export default NoticeAdmin;
+export default ArchiveAdmin;
