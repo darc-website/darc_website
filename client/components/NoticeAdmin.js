@@ -144,7 +144,10 @@ const NoticeAdmin = () => {
         ))}
       </ul>
       <div className={styles.paginationContainer}>
-        <button className={styles.paginationButton}>
+        <button
+          className={styles.paginationButton}
+          onClick={() => handlePageChange(currentPage - 1)}
+        >
           <i className="pi pi-chevron-left" style={{ color: "black" }} />
         </button>
         {Array.from({ length: totalPages }, (_, i) => (
@@ -158,7 +161,10 @@ const NoticeAdmin = () => {
             {i + 1}
           </button>
         ))}
-        <button className={styles.paginationButton}>
+        <button
+          className={styles.paginationButton}
+          onClick={() => handlePageChange(currentPage + 1)}
+        >
           <i className="pi pi-chevron-right" style={{ color: "black" }} />
         </button>
       </div>
