@@ -2,9 +2,43 @@
 
 import React, { useState } from "react";
 import styles from "./NoticeAdmin.module.css";
+import "primeicons/primeicons.css";
+import SingleNotice from "./SingleNotice";
+
+const data = [
+  {
+    title: "공지사항 1",
+    category: "이벤트",
+    date: new Date("2021-09-01"),
+    content: "이벤트 내용 1",
+  },
+  {
+    title: "공지사항 2",
+    category: "업데이트",
+    date: new Date("2021-09-12"),
+    content: "업데티트 내용 1",
+  },
+  {
+    title: "공지사항 3",
+    category: "기타",
+    date: new Date("2021-09-30"),
+    content: "기타 내용 1",
+  },
+  {
+    title: "공지사항 4",
+    category: "공고",
+    date: new Date("2021-10-01"),
+    content: "공고 내용 1",
+  },
+];
 
 const NoticeAdmin = () => {
   const [currTab, setCurrTab] = useState("전체");
+
+  const filteredData =
+    currTab === "전체"
+      ? data
+      : data.filter((notice) => notice.category === currTab);
 
   return (
     <div className={styles.noticeContainer}>
@@ -66,9 +100,16 @@ const NoticeAdmin = () => {
             type="text"
             placeholder="검색어를 입력하세요."
           />
-          <button className={styles.searchButton}>🔍</button>
+          <button className={styles.searchButton}>
+            <i className="pi pi-search" style={{ color: "black" }} />
+          </button>
         </div>
       </div>
+      <ul className={styles.noticeList}>
+        {filteredData.map((notice, index) => (
+          <SingleNotice key={index} notice={notice} />
+        ))}
+      </ul>
     </div>
   );
 };
