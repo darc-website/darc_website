@@ -70,97 +70,101 @@ const ArchiveAdmin = () => {
   return (
     <div className={styles.noticeContainer}>
       <h1 className={styles.heading}>자료실</h1>
-      <div className={styles.topContainer}>
-        <div className={styles.tabContainer}>
-          <button
-            className={`${styles.tab} ${
-              currTab === "전체" ? styles.active : ""
-            }`}
-            onClick={() => setCurrTab("전체")}
-          >
-            전체
-          </button>
-          <button
-            className={`${styles.tab} ${
-              currTab === "언론보도" ? styles.active : ""
-            }`}
-            onClick={() => setCurrTab("언론보도")}
-          >
-            언론보도
-          </button>
-          <button
-            className={`${styles.tab} ${
-              currTab === "출판물" ? styles.active : ""
-            }`}
-            onClick={() => setCurrTab("출판물")}
-          >
-            출판물
-          </button>
-          <button
-            className={`${styles.tab} ${
-              currTab === "교육자료" ? styles.active : ""
-            }`}
-            onClick={() => setCurrTab("교육자료")}
-          >
-            교육자료
-          </button>
-          <button
-            className={`${styles.tab} ${
-              currTab === "기타" ? styles.active : ""
-            }`}
-            onClick={() => setCurrTab("기타")}
-          >
-            기타
-          </button>
-        </div>
-        <div className={styles.searchContainer}>
-          <input
-            className={styles.searchInput}
-            type="text"
-            placeholder="검색어를 입력하세요."
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-          <button className={styles.searchButton}>
-            <i className="pi pi-search" style={{ color: "black" }} />
-          </button>
-        </div>
-      </div>
-      <ul className={styles.noticeList}>
-        {paginatedNotices.map((notice, index) => (
-          <SingleNotice
-            key={index}
-            notice={notice}
-            showDetail={showDetail}
-            setShowDetail={setShowDetail}
-          />
-        ))}
-      </ul>
-      <div className={styles.paginationContainer}>
-        <button
-          className={styles.paginationButton}
-          onClick={() => handlePageChange(currentPage - 1)}
-        >
-          <i className="pi pi-chevron-left" style={{ color: "black" }} />
-        </button>
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button
-            key={i}
-            onClick={() => handlePageChange(i + 1)}
-            className={`${styles.paginationButton} ${
-              currentPage === i + 1 ? styles.active : ""
-            }`}
-          >
-            {i + 1}
-          </button>
-        ))}
-        <button
-          className={styles.paginationButton}
-          onClick={() => handlePageChange(currentPage + 1)}
-        >
-          <i className="pi pi-chevron-right" style={{ color: "black" }} />
-        </button>
-      </div>
+      {!showDetail && (
+        <>
+          <div className={styles.topContainer}>
+            <div className={styles.tabContainer}>
+              <button
+                className={`${styles.tab} ${
+                  currTab === "전체" ? styles.active : ""
+                }`}
+                onClick={() => setCurrTab("전체")}
+              >
+                전체
+              </button>
+              <button
+                className={`${styles.tab} ${
+                  currTab === "언론보도" ? styles.active : ""
+                }`}
+                onClick={() => setCurrTab("언론보도")}
+              >
+                언론보도
+              </button>
+              <button
+                className={`${styles.tab} ${
+                  currTab === "출판물" ? styles.active : ""
+                }`}
+                onClick={() => setCurrTab("출판물")}
+              >
+                출판물
+              </button>
+              <button
+                className={`${styles.tab} ${
+                  currTab === "교육자료" ? styles.active : ""
+                }`}
+                onClick={() => setCurrTab("교육자료")}
+              >
+                교육자료
+              </button>
+              <button
+                className={`${styles.tab} ${
+                  currTab === "기타" ? styles.active : ""
+                }`}
+                onClick={() => setCurrTab("기타")}
+              >
+                기타
+              </button>
+            </div>
+            <div className={styles.searchContainer}>
+              <input
+                className={styles.searchInput}
+                type="text"
+                placeholder="검색어를 입력하세요."
+                value={searchTerm}
+                onChange={handleSearch}
+              />
+              <button className={styles.searchButton}>
+                <i className="pi pi-search" style={{ color: "black" }} />
+              </button>
+            </div>
+          </div>
+          <ul className={styles.noticeList}>
+            {paginatedNotices.map((notice, index) => (
+              <SingleNotice
+                key={index}
+                notice={notice}
+                showDetail={showDetail}
+                setShowDetail={setShowDetail}
+              />
+            ))}
+          </ul>
+          <div className={styles.paginationContainer}>
+            <button
+              className={styles.paginationButton}
+              onClick={() => handlePageChange(currentPage - 1)}
+            >
+              <i className="pi pi-chevron-left" style={{ color: "black" }} />
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => handlePageChange(i + 1)}
+                className={`${styles.paginationButton} ${
+                  currentPage === i + 1 ? styles.active : ""
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button
+              className={styles.paginationButton}
+              onClick={() => handlePageChange(currentPage + 1)}
+            >
+              <i className="pi pi-chevron-right" style={{ color: "black" }} />
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
