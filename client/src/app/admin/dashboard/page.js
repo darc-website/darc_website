@@ -12,6 +12,7 @@ import { FloatLabel } from 'primereact/floatlabel';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import styles from './dashboard.module.css';
 import MemoEditor from '../../../../components/memo';
+import Announcements from '../../../../components/announcement';
 
 
 export default function Dashboard() {
@@ -442,6 +443,18 @@ export default function Dashboard() {
                     추천서
                 </button>
                 <button
+                    className={`${styles.sidebarLink} ${selectedSection === '공지사항' ? styles.active : ''}`}
+                    onClick={() => handleSectionSelect('공지사항')}
+                >
+                    공지사항
+                </button>
+                <button
+                    className={`${styles.sidebarLink} ${selectedSection === '자료실' ? styles.active : ''}`}
+                    onClick={() => handleSectionSelect('자료실')}
+                >
+                    자료실
+                </button>
+                <button
                     className={`${styles.sidebarLink} ${selectedSection === '시간표' ? styles.active : ''}`}
                     onClick={() => handleSectionSelect('시간표')}
                 >
@@ -714,6 +727,18 @@ export default function Dashboard() {
                 {selectedSection === '시간표' && (
                     <>
                         <MemoEditor />
+                    </>
+                )}
+
+                {selectedSection === '공지사항' && (
+                    <>
+                        <Announcements />
+                    </>
+                )}
+
+                {selectedSection === '자료실' && (
+                    <>
+
                     </>
                 )}
             </main>
