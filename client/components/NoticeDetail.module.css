@@ -1,0 +1,67 @@
+.detailTitle {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.detailCategory {
+    font-size: 16px;
+    color: #333;
+}
+
+.detailDate {
+    font-size: 14px;
+    color: #333;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.editingButton {
+    padding: 8px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.editingButton:hover {
+    background-color: #45a049;
+}
+
+.editingButtons {
+    display: flex;
+    gap: 5px;
+}
+
+.editingButtons {
+    white-space: pre-wrap;
+}
+
+.editorStyledContent {
+    font-size: 14px;
+    color: #333;
+    padding: 20px;
+    padding-top: 10px;
+    background-color: white;
+    min-height: 500px;
+    text-align: left;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    line-height: 0.45;
+}
+
+.detailHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}

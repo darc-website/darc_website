@@ -7,6 +7,8 @@ import { FaUndo } from "react-icons/fa";
 import { AiOutlineFileAdd } from "react-icons/ai";
 import Editor from './Editor';
 import Quill from 'quill';
+import "primeicons/primeicons.css";
+import NoticeAdmin from './NoticeAdmin';
 
 const Delta = Quill.import('delta');
 
@@ -149,6 +151,9 @@ export default function MemoEditor() {
                 <div>
                     <div className={styles.reviewSectionHeader}>
                         <div className={styles.leftAlignedControls}>
+                            <h3>공지사항</h3>
+                        </div>
+                        <div className={styles.rightAlignedControls}>
                             <button
                                 className={styles.addButton}
                                 onClick={() => setIsEditing(true)}
@@ -156,9 +161,8 @@ export default function MemoEditor() {
                                 <AiOutlineFileAdd /> &nbsp; 글쓰기
                             </button>
                         </div>
-                        <div className={styles.rightAlignedControls}></div>
                     </div>
-                    <div className={styles.memoContent}>
+                    {/* <div className={styles.memoContent}>
                         <h3>{title || '제목 없음'}</h3>
                         <p>{date || '날짜 없음'}</p>
                         <p>카테고리: {category}</p>
@@ -174,7 +178,8 @@ export default function MemoEditor() {
                         <div>
                             <strong>Current Range:</strong> {range ? JSON.stringify(range) : 'None'}
                         </div>
-                    </div>
+                    </div> */}
+                    <NoticeAdmin />
                 </div>
             )}
         </div>

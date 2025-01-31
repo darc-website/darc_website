@@ -11,7 +11,7 @@ export async function GET() {
         // 최신 순으로 정렬된 모든 공지사항 가져오기
         const announcements = await Announcement.find().sort({ createdAt: -1 });
 
-        return NextResponse.json({ announcements }, { status: 200 });
+        return NextResponse.json(announcements, { status: 200 });
     } catch (error) {
         console.error('공지사항 가져오기 에러:', error);
         return NextResponse.json({ error: '공지사항을 가져오는데 실패했습니다.' }, { status: 500 });

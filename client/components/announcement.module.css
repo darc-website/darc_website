@@ -1,5 +1,109 @@
-.memoContainer {
+/* =================== NoticeAdmin 관련 스타일 =================== */
+.noticeContainer {
   margin: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tabContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background-color: #f0f0f0;
+}
+
+.tab:active {
+  background-color: #e0e0e0;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.searchInput {
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.searchButton {
+  padding: 0.5rem 0.55rem;
+  font-size: 16px;
+  border: none;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.searchButton:hover {
+  background-color: #f0f0f0;
+}
+
+.searchButton:active {
+  background-color: #e0e0e0;
+}
+
+.noticeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.paginationButton {
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  border: none;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.paginationButton:hover {
+  background-color: #f0f0f0;
+}
+
+/* =================== MemoEditor(글쓰기 에디터) 관련 스타일 =================== */
+
+.memoContainer {
   height: 100%;
 }
 
@@ -170,4 +274,10 @@
   padding: 10px; /* Add padding for better visuals */
   font-size: 16px; /* Optional: Set font size */
   overflow-y: auto; /* Enable scrolling inside the editor */
+}
+
+.leftAlignedControls h3 {
+  color: black;
+  margin-top: 10px;
+  margin-bottom: -20px;
 }
