@@ -10,8 +10,9 @@
 }
 
 .detailDate {
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
+    margin-right: 10px;
 }
 
 .topBar {
@@ -65,3 +66,26 @@
     align-items: baseline;
     margin-bottom: 10px;
 }
+
+.listButton {
+    background-color: #5187c2; /* Blue color */
+    color: white;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+    display: block;
+    width: 150px;
+    text-align: center;
+  }
+  
+  .listButton:hover {
+    background-color: #0056b3; /* Darker blue */
+  }
+  
+  .listButton:active {
+    background-color: #004494;
+  }
+  
