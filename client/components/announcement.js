@@ -164,7 +164,7 @@ export default function MemoEditor() {
                         <p>{date || '날짜 없음'}</p>
                         <p>카테고리: {category}</p>
                         <p>
-                            {content && typeof content === 'object' ? JSON.stringify(content) : content || 'No memo available.'}
+                            {content && typeof content === 'ob ject' ? JSON.stringify(content) : content || 'No memo available.'}
                         </p>
                     </div>
                     <div className={styles.editorState}>

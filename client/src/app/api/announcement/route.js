@@ -131,7 +131,7 @@ export async function PUT(req) {
     await announcement.save();
 
     return NextResponse.json(
-      { message: "공지사항이 성공적으로 업데이트되었습니다." },
+      { message: "공지사항이 성공적으로 업데이트되었습니다.", announcement },
       { status: 200 }
     );
   } catch (error) {
