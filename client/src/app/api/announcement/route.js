@@ -8,8 +8,9 @@ export async function GET() {
     // 데이터베이스 연결
     await connectDB();
 
+    const announcements = await Announcement.find().sort({ date: -1 });
+
     // 최신 순으로 정렬된 모든 공지사항 가져오기
-    const announcements = await Announcement.find().sort({ createdAt: -1 });
 
     return NextResponse.json(announcements, { status: 200 });
   } catch (error) {
