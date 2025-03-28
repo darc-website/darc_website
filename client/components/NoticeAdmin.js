@@ -15,6 +15,7 @@ const NoticeAdmin = () => {
   const [notices, setNotices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [filteredNotices, setFilteredNotices] = useState([]);
 
   const noticesPerPage = 5;
 
@@ -52,12 +53,6 @@ const NoticeAdmin = () => {
   }, []);
 
   const filteredData = notices.filter((notice) => {
-    console.log(
-      "🚀 필터링 중 - category:",
-      notice.category,
-      "currTab:",
-      currTab
-    );
     return currTab === "전체" || notice.category.trim() === currTab.trim();
   });
 
@@ -76,10 +71,6 @@ const NoticeAdmin = () => {
   console.log("📌 notices:", notices);
   console.log("📌 filteredData:", filteredData);
   console.log("📌 paginatedNotices:", paginatedNotices);
-  console.log("📌 noticesPerPage:", noticesPerPage);
-  console.log("📌 currentPage:", currentPage);
-  console.log("📌 startIndex:", startIndex);
-  console.log("📌 totalPages:", totalPages);
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -89,6 +80,21 @@ const NoticeAdmin = () => {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
+    setError(null); // Reset error message on search input change
+    const searchTerm = e.target.value.toLowerCase();
+
+    const filteredNotices = notices.filter(
+      (notice) =>
+        notice.title.toLowerCase().includes(searchTerm) ||
+        notice.content.toLowerCase().includes(searchTerm)
+    );
+
+    console.log("🔍 검색어:", filteredNotices);
+    setFilteredNotices(filteredNotices);
+
+    if (filteredNotices.length === 0) {
+      setError("검색 결과가 없습니다.");
+    }
   };
 
   return (
@@ -131,6 +137,18 @@ const NoticeAdmin = () => {
             <p className={styles.errorMessage}>{error}</p>
           ) : paginatedNotices.length === 0 ? (
             <p>등록된 공지사항이 없습니다.</p>
+          ) : filteredNotices.length !== 0 ? (
+            <ul className={styles.noticeList}>
+              {filteredNotices.map((notice) => (
+                <SingleNotice
+                  key={notice.id}
+                  notice={notice}
+                  showDetail={showDetail}
+                  setShowDetail={setShowDetail}
+                  setSelectedNotice={setSelectedNotice}
+                />
+              ))}
+            </ul>
           ) : (
             <ul className={styles.noticeList}>
               {paginatedNotices.map((notice) => (
