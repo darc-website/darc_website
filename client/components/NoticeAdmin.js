@@ -15,7 +15,6 @@ const NoticeAdmin = () => {
   const [notices, setNotices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [filteredNotices, setFilteredNotices] = useState([]);
 
   const noticesPerPage = 5;
 
@@ -53,7 +52,12 @@ const NoticeAdmin = () => {
   }, []);
 
   const filteredData = notices.filter((notice) => {
-    return currTab === "전체" || notice.category.trim() === currTab.trim();
+    const tabMatch =
+      currTab === "전체" || notice.category.trim() === currTab.trim();
+    const searchMatch =
+      notice.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      notice.content.toLowerCase().includes(searchTerm.toLowerCase());
+    return tabMatch && searchMatch;
   });
 
   console.log("📌 필터링된 데이터:", filteredData);
@@ -81,20 +85,7 @@ const NoticeAdmin = () => {
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
     setError(null); // Reset error message on search input change
-    const searchTerm = e.target.value.toLowerCase();
-
-    const filteredNotices = notices.filter(
-      (notice) =>
-        notice.title.toLowerCase().includes(searchTerm) ||
-        notice.content.toLowerCase().includes(searchTerm)
-    );
-
-    console.log("🔍 검색어:", filteredNotices);
-    setFilteredNotices(filteredNotices);
-
-    if (filteredNotices.length === 0) {
-      setError("검색 결과가 없습니다.");
-    }
+    setCurrentPage(1); // Reset to first page on search
   };
 
   return (
@@ -137,9 +128,9 @@ const NoticeAdmin = () => {
             <p className={styles.errorMessage}>{error}</p>
           ) : paginatedNotices.length === 0 ? (
             <p>등록된 공지사항이 없습니다.</p>
-          ) : filteredNotices.length !== 0 ? (
+          ) : filteredData.length !== 0 ? (
             <ul className={styles.noticeList}>
-              {filteredNotices.map((notice) => (
+              {filteredData.map((notice) => (
                 <SingleNotice
                   key={notice.id}
                   notice={notice}
