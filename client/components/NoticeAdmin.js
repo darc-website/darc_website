@@ -123,11 +123,11 @@ const NoticeAdmin = () => {
           </div>
 
           {loading ? (
-            <p>공지사항을 불러오는 중...</p>
+            <p className={styles.loadingMessage}>공지사항을 불러오는 중...</p>
           ) : error ? (
             <p className={styles.errorMessage}>{error}</p>
           ) : paginatedNotices.length === 0 ? (
-            <p>등록된 공지사항이 없습니다.</p>
+            <p className={styles.emptyMessage}>등록된 공지사항이 없습니다.</p>
           ) : filteredData.length !== 0 ? (
             <ul className={styles.noticeList}>
               {filteredData.map((notice) => (

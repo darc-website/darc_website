@@ -96,8 +96,17 @@ const Editor = forwardRef(
             ref.current = quill;
 
             if (defaultValueRef.current) {
-                quill.setContents(defaultValueRef.current);
+                quill.clipboard.dangerouslyPasteHTML(defaultValueRef.current);
             }
+
+
+            // *** New code to apply custom font size and text color ***
+            const editorElem = editorContainer.querySelector('.ql-editor');
+            if (editorElem) {
+                editorElem.style.fontSize = '16px';   // Set your desired font size
+                editorElem.style.color = '#333333';    // Set your desired text color
+            }
+            // *******************************************************
 
             quill.on(Quill.events.TEXT_CHANGE, (...args) => {
                 onTextChangeRef.current?.(...args);

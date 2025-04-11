@@ -60,7 +60,11 @@ export default function MemoEditor() {
         const data = await response.json();
 
         if (response.ok) {
-          setMessage("공지사항이 성공적으로 저장되었습니다.");
+          setTitle("");
+          setDate("");
+          setCategory("이벤트"); // or set to empty string if you prefer
+          setContent(null);
+
           setIsEditing(false); // Exit editing mode
         } else {
           setError(data.error || "공지사항 저장에 실패했습니다.");
@@ -122,7 +126,7 @@ export default function MemoEditor() {
           <Editor
             ref={quillRef}
             readOnly={readOnly}
-            defaultValue={new Delta()}
+            defaultValue=" "
             className={styles.quillEditor}
             onTextChange={(delta) => setLastChange(delta)}
             onSelectionChange={(selection) => setRange(selection)}

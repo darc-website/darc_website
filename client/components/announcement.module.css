@@ -264,8 +264,8 @@
 
 /* Set fixed height for Quill's container and editor */
 .ql-container {
-  height: 400px; /* Set the height for the Quill container */
-  max-height: 400px; /* Prevent exceeding this height */
+  height: 350px; /* Set the height for the Quill container */
+  max-height: 350px; /* Prevent exceeding this height */
   overflow-y: auto; /* Enable scrolling for content */
 }
 
@@ -280,4 +280,16 @@
   color: black;
   margin-top: 10px;
   margin-bottom: -20px;
+}
+
+.successMessage {
+  color: green;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
 }
