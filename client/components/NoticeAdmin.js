@@ -52,13 +52,12 @@ const NoticeAdmin = () => {
   }, []);
 
   const filteredData = notices.filter((notice) => {
-    console.log(
-      "🚀 필터링 중 - category:",
-      notice.category,
-      "currTab:",
-      currTab
-    );
-    return currTab === "전체" || notice.category.trim() === currTab.trim();
+    const tabMatch =
+      currTab === "전체" || notice.category.trim() === currTab.trim();
+    const searchMatch =
+      notice.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      notice.content.toLowerCase().includes(searchTerm.toLowerCase());
+    return tabMatch && searchMatch;
   });
 
   console.log("📌 필터링된 데이터:", filteredData);
@@ -76,10 +75,6 @@ const NoticeAdmin = () => {
   console.log("📌 notices:", notices);
   console.log("📌 filteredData:", filteredData);
   console.log("📌 paginatedNotices:", paginatedNotices);
-  console.log("📌 noticesPerPage:", noticesPerPage);
-  console.log("📌 currentPage:", currentPage);
-  console.log("📌 startIndex:", startIndex);
-  console.log("📌 totalPages:", totalPages);
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -89,6 +84,8 @@ const NoticeAdmin = () => {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
+    setError(null); // Reset error message on search input change
+    setCurrentPage(1); // Reset to first page on search
   };
 
   return (
@@ -131,6 +128,18 @@ const NoticeAdmin = () => {
             <p className={styles.errorMessage}>{error}</p>
           ) : paginatedNotices.length === 0 ? (
             <p>등록된 공지사항이 없습니다.</p>
+          ) : filteredData.length !== 0 ? (
+            <ul className={styles.noticeList}>
+              {filteredData.map((notice) => (
+                <SingleNotice
+                  key={notice.id}
+                  notice={notice}
+                  showDetail={showDetail}
+                  setShowDetail={setShowDetail}
+                  setSelectedNotice={setSelectedNotice}
+                />
+              ))}
+            </ul>
           ) : (
             <ul className={styles.noticeList}>
               {paginatedNotices.map((notice) => (
