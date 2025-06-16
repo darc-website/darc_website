@@ -26,12 +26,10 @@ export default function NoticeDetailClient({ selectedNotice }) {
           <span className={styles.detailTitle}>{selectedNotice.title}</span>
           <div className={styles.topBar}>
             <span className={styles.detailDate}>{selectedNotice.date}</span>
-            <div className={styles.copyButtonWrapper}>
-              <button className={styles.copyButton} onClick={handleCopyLink}>
-                <FiCopy style={{ marginRight: "6px" }} />
-                링크 복사
-              </button>
-            </div>
+            <button className={styles.copyButton} onClick={handleCopyLink}>
+              <FiCopy style={{ marginRight: "6px" }} />
+              링크 복사
+            </button>
           </div>
         </div>
       </div>
