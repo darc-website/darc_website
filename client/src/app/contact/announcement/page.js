@@ -7,7 +7,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
-import NoticeAdmin from "../../../../components/NoticeAdmin";
+import NoticeClient from "../../../../components/NoticeClient";
 import Footer from "../../../../components/footer";
 import ScrollToTop from "../../../../components/ScrollToTop";
 import { FaL } from "react-icons/fa6";
@@ -32,7 +32,7 @@ export default function Announcement() {
             </div>
           </div>
           <div className={styles.noticeWrapper}>
-            <NoticeAdmin isAdmin={false} />
+            <NoticeClient isAdmin={false} />
           </div>
         </div>
         <Footer />

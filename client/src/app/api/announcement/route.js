@@ -1,5 +1,5 @@
 import Announcement from "../../../../models/announcementModel"; // 모델 경로
-import { connectDB } from "../../../../utils/connect"; // 연결 함수 경로
+import { connectDB } from "../../../../utils/connect";
 import { NextResponse } from "next/server";
 
 // GET 요청: 모든 공지사항 가져오기

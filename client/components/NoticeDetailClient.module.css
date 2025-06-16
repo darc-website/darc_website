@@ -1,0 +1,173 @@
+.detailContainer {
+    padding-left: 10px;
+}
+
+.detailTitle {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.detailCategory {
+    font-size: 16px;
+    color: #333;
+}
+
+.detailDate {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.copyButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.editingButton {
+    padding: 8px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.editingButton:hover {
+    background-color: #45a049;
+}
+
+.editingButtons {
+    display: flex;
+    gap: 5px;
+}
+
+.editingButtons {
+    white-space: pre-wrap;
+}
+
+.editorStyledContent {
+    font-size: 16px;
+    color: #333;
+    padding: 5px;
+    padding-top: 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.detailHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.listButton {
+    background-color: #5187c2; /* Blue color */
+    color: white;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: block;
+    width: 130px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .listButton:hover {
+    background-color: #0056b3; /* Darker blue */
+  }
+  
+  .listButton:active {
+    background-color: #004494;
+  }
+  
+
+  .detailFooter {
+    display: flex;
+  }
+
+  .quillEditor {
+    color: black;
+    height: 100px;
+  }
+
+
+  /* Editable Header Styles */
+.editableHeader {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style for dropdown (category) */
+  .editableHeader select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    background-color: #fafafa;
+  }
+  
+  /* Style for title input */
+  .editableHeader input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    background-color: #fafafa;
+    flex-grow: 1;
+  }
+  
+  /* Style for date input */
+  .editableHeader input[type="date"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    background-color: #fafafa;
+  }
+
+  .detailHeader {
+    gap: 5px;
+  }
+
+  .detailFooter {
+    margin-bottom: 30px;
+  }
+
+  .editorStyledContent img {
+    max-width: 100% !important;
+    height: auto;
+}
+
+.copyButton {
+  background-color: #f9f9f9;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: 500;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copyButton:hover {
+  background-color: #d2e3fc;
+}

@@ -1,0 +1,33 @@
+.singleNoticeContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    margin-left: -26px;
+}
+
+.singleNoticeContainer:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.singleTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.singleCategory {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.singleDate {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
