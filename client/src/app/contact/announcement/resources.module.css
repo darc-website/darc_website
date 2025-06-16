@@ -227,3 +227,11 @@
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
     }
 }
+
+.noticeWrapper {
+  width: 100%;
+  max-width: 1200px; /* or 1400px, depending on desired width */
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
