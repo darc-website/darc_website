@@ -1,18 +1,22 @@
-'use client';
+"use client";
 import React, { useState, useRef } from "react";
 import styles from "./NoticeDetail.module.css";
 import { FaEdit, FaUndo, FaSave, FaTrash } from "react-icons/fa"; // Import trash icon
 import Editor from "./Editor"; // your custom Quill wrapper
-import 'quill/dist/quill.snow.css';
+import "quill/dist/quill.snow.css";
 
 export default function NoticeDetail({
   selectedNotice,
   setShowDetail,
   setNotices,
+  isAdmin,
 }) {
   const [editing, setEditing] = useState(false);
-  const [selectedCurrentNotice, setSelectedCurrentNotice] = useState(selectedNotice);
+  const [selectedCurrentNotice, setSelectedCurrentNotice] =
+    useState(selectedNotice);
   const quillRef = useRef();
+
+  console.log("isAdmin:", isAdmin);
 
   const handleSave = async () => {
     try {
@@ -162,41 +166,39 @@ export default function NoticeDetail({
         >
           목록으로
         </button>
-        {editing ? (
-          <div className={styles.editingButtons}>
-            <button
-              className={styles.editingButton}
-              onClick={() => {
-                setEditing(false);
-                setSelectedCurrentNotice(selectedNotice); // reset on cancel
-              }}
-            >
-              <FaUndo />
-              &nbsp; 취소
-            </button>
-            <button className={styles.editingButton} onClick={handleSave}>
-              <FaSave />
-              &nbsp; 저장
-            </button>
-          </div>
-        ) : (
-          <div className={styles.editingButtons}>
-            <button
-              className={styles.editingButton}
-              onClick={() => setEditing(true)}
-            >
-              <FaEdit />
-              &nbsp; 편집
-            </button>
-            <button
-              className={styles.editingButton}
-              onClick={handleDelete}
-            >
-              <FaTrash />
-              &nbsp; 삭제
-            </button>
-          </div>
-        )}
+        {isAdmin && // Only show editing buttons if isAdmin is true
+          (editing ? (
+            <div className={styles.editingButtons}>
+              <button
+                className={styles.editingButton}
+                onClick={() => {
+                  setEditing(false);
+                  setSelectedCurrentNotice(selectedNotice); // reset on cancel
+                }}
+              >
+                <FaUndo />
+                &nbsp; 취소
+              </button>
+              <button className={styles.editingButton} onClick={handleSave}>
+                <FaSave />
+                &nbsp; 저장
+              </button>
+            </div>
+          ) : (
+            <div className={styles.editingButtons}>
+              <button
+                className={styles.editingButton}
+                onClick={() => setEditing(true)}
+              >
+                <FaEdit />
+                &nbsp; 편집
+              </button>
+              <button className={styles.editingButton} onClick={handleDelete}>
+                <FaTrash />
+                &nbsp; 삭제
+              </button>
+            </div>
+          ))}
       </div>
     </div>
   );

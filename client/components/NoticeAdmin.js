@@ -6,7 +6,7 @@ import "primeicons/primeicons.css";
 import SingleNotice from "./SingleNotice";
 import NoticeDetail from "./NoticeDetail";
 
-const NoticeAdmin = () => {
+const NoticeAdmin = ({ isAdmin }) => {
   const [currTab, setCurrTab] = useState("전체");
   const [currentPage, setCurrentPage] = useState(1);
   const [showDetail, setShowDetail] = useState(false);
@@ -188,6 +188,7 @@ const NoticeAdmin = () => {
           setShowDetail={setShowDetail}
           setSelectedNotice={setSelectedNotice}
           setNotices={setNotices}
+          isAdmin={isAdmin}
         />
       )}
     </div>

@@ -180,7 +180,7 @@ export default function MemoEditor() {
                             <strong>Current Range:</strong> {range ? JSON.stringify(range) : 'None'}
                         </div>
                     </div> */}
-          <NoticeAdmin />
+          <NoticeAdmin isAdmin={true} />
         </div>
       )}
     </div>

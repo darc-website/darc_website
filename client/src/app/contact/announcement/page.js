@@ -10,6 +10,7 @@ import { FaTelegramPlane } from "react-icons/fa";
 import NoticeAdmin from "../../../../components/NoticeAdmin";
 import Footer from "../../../../components/footer";
 import ScrollToTop from "../../../../components/ScrollToTop";
+import { FaL } from "react-icons/fa6";
 
 export default function Announcement() {
   return (
@@ -31,7 +32,7 @@ export default function Announcement() {
             </div>
           </div>
           <div className={styles.noticeWrapper}>
-            <NoticeAdmin />
+            <NoticeAdmin isAdmin={false} />
           </div>
         </div>
         <Footer />
