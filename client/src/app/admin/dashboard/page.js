@@ -13,7 +13,7 @@ import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import styles from './dashboard.module.css';
 import MemoEditor from '../../../../components/memo';
 import Announcements from '../../../../components/announcement';
-
+import Resource from '../../../../components/resource';
 
 export default function Dashboard() {
     const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -738,7 +738,7 @@ export default function Dashboard() {
 
                 {selectedSection === '자료실' && (
                     <>
-
+                        <Resource />
                     </>
                 )}
             </main>

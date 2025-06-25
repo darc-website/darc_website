@@ -7,3 +7,8 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   background-color: #fafafa;
 }
+
+.ql-editor img {
+  cursor: grab; /* 또는 grab, pointer 등 원하는 스타일로 */
+}
+

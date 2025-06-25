@@ -8,9 +8,9 @@ const SingleNotice = ({ notice, showDetail, setShowDetail, selectedNotice, setSe
     };
 
     return (
-        <li className={style.singleNoticeContainer}>
+        <li className={style.singleNoticeContainer} onClick={handleClick}>
             <span className={style.singleCategory}>{notice.category}</span>
-            <span className={style.singleTitle} onClick={handleClick}>
+            <span className={style.singleTitle}>
                 {notice.title}
             </span>
             <span className={style.singleDate}>

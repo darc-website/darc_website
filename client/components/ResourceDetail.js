@@ -4,73 +4,74 @@ import styles from "./NoticeDetail.module.css";
 import Editor from "./Editor";
 import { FaEdit, FaUndo, FaSave, FaTrash } from "react-icons/fa"; // Import trash icon
 
-export default function NoticeDetail({
-  selectedNotice,
+export default function ResourceDetail({
+  selectedResource,
   setShowDetail,
-  setNotices,
+  setResources,
   isAdmin,
 }) {
   const [editing, setEditing] = useState(false);
-  const [selectedCurrentNotice, setSelectedCurrentNotice] =
-    useState(selectedNotice);
+  const [selectedCurrentResource, setSelectedCurrentResource] =
+    useState(selectedResource || {});
   const quillRef = useRef();
 
   console.log("isAdmin:", isAdmin);
+  console.log("selectedResource:", selectedResource);
 
   const handleSave = async () => {
     try {
       const updatedContent =
-        quillRef.current?.root?.innerHTML || selectedCurrentNotice.content;
+        quillRef.current?.root?.innerHTML || selectedCurrentResource.content;
 
-      const response = await fetch("/api/announcement", {
+      const response = await fetch("/api/resources", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          id: selectedNotice._id,
-          title: selectedCurrentNotice.title,
-          date: selectedCurrentNotice.date,
-          category: selectedCurrentNotice.category,
+          id: selectedResource._id,
+          title: selectedCurrentResource.title,
+          date: selectedCurrentResource.date,
+          category: selectedCurrentResource.category,
           content: updatedContent,
           temp: false,
         }),
       });
 
       const data = await response.json();
-      const { announcement } = data;
+      const { resources } = data;
 
       if (response.ok) {
-        setSelectedCurrentNotice(announcement);
-        setNotices((prev) =>
-          prev.map((n) => (n._id === announcement._id ? announcement : n))
+        setSelectedCurrentResource(resources);
+        setResources((prev) =>
+          prev.map((n) => (n._id === resources._id ? resources : n))
         );
       } else {
-        console.error("Error saving notice:", data.error);
+        console.error("Error saving resources:", data.error);
       }
 
       setEditing(false);
     } catch (error) {
-      console.error("Error saving notice:", error);
+      console.error("Error saving resources:", error);
     }
   };
 
   const handleDelete = async () => {
     try {
-      const response = await fetch("/api/announcement", {
+      const response = await fetch("/api/resources", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          id: selectedNotice._id,
+          id: selectedResource._id,
         }),
       });
       const data = await response.json();
       if (response.ok) {
-        setNotices((prev) => prev.filter((n) => n._id !== selectedNotice._id));
+        setResources((prev) => prev.filter((n) => n._id !== selectedResource._id));
         setShowDetail(false);
       } else {
-        console.error("Error deleting notice:", data.error);
+        console.error("Error deleting resource:", data.error);
       }
     } catch (error) {
-      console.error("Error deleting notice:", error);
+      console.error("Error deleting resource:", error);
     }
   };
 
@@ -82,27 +83,26 @@ export default function NoticeDetail({
           <div className={styles.editableHeader}>
             {/* Editable category */}
             <select
-              value={selectedCurrentNotice.category}
+              value={selectedCurrentResource.category || "기타"}
               onChange={(e) =>
-                setSelectedCurrentNotice({
-                  ...selectedCurrentNotice,
+                setSelectedCurrentResource({
+                  ...selectedCurrentResource,
                   category: e.target.value,
                 })
               }
             >
-              <option value="이벤트">이벤트</option>
-              <option value="업데이트">업데이트</option>
-              <option value="서비스">서비스</option>
-              <option value="공고">공고</option>
+              <option value="언론보도">언론보도</option>
+              <option value="출판물">출판물</option>
+              <option value="교육자료">교육자료</option>
               <option value="기타">기타</option>
             </select>
             {/* Editable title */}
             <input
               type="text"
-              value={selectedCurrentNotice.title}
+              value={selectedCurrentResource.title || ""}
               onChange={(e) =>
-                setSelectedCurrentNotice({
-                  ...selectedCurrentNotice,
+                setSelectedCurrentResource({
+                  ...selectedCurrentResource,
                   title: e.target.value,
                 })
               }
@@ -111,10 +111,10 @@ export default function NoticeDetail({
             {/* Editable date */}
             <input
               type="date"
-              value={selectedCurrentNotice.date}
+              value={selectedCurrentResource.date || ""}
               onChange={(e) =>
-                setSelectedCurrentNotice({
-                  ...selectedCurrentNotice,
+                setSelectedCurrentResource({
+                  ...selectedCurrentResource,
                   date: e.target.value,
                 })
               }
@@ -123,14 +123,14 @@ export default function NoticeDetail({
         ) : (
           <div className={styles.detailHeader}>
             <span className={styles.detailCategory}>
-              {selectedCurrentNotice.category}
+              {selectedCurrentResource.category || "기타"}
             </span>
             <span className={styles.detailTitle}>
-              {selectedCurrentNotice.title}
+              {selectedCurrentResource.title || "제목 없음"}
             </span>
             <div className={styles.topBar}>
               <span className={styles.detailDate}>
-                {selectedCurrentNotice.date}
+                {selectedCurrentResource.date || "날짜 없음"}
               </span>
             </div>
           </div>
@@ -141,17 +141,17 @@ export default function NoticeDetail({
       {editing ? (
         // Editor for editing content
         <Editor
-          key={selectedCurrentNotice._id}
+          key={selectedCurrentResource._id}
           ref={quillRef}
           readOnly={false}
           height="400px"
           className={styles.quillEditor}
-          defaultValue={selectedCurrentNotice.content}
+          defaultValue={selectedCurrentResource.content || ""}
         />
       ) : (
         <div
           className={`${styles.noticeContent} ${styles.editorStyledContent} ql-editor`}
-          dangerouslySetInnerHTML={{ __html: selectedCurrentNotice.content }}
+          dangerouslySetInnerHTML={{ __html: selectedCurrentResource.content || "" }}
         />
       )}
 
@@ -172,7 +172,7 @@ export default function NoticeDetail({
                 className={styles.editingButton}
                 onClick={() => {
                   setEditing(false);
-                  setSelectedCurrentNotice(selectedNotice); // reset on cancel
+                  setSelectedCurrentResource(selectedResource || {}); // reset on cancel
                 }}
               >
                 <FaUndo />

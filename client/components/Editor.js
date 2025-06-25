@@ -2,6 +2,11 @@
 import React, { forwardRef, useEffect, useLayoutEffect, useRef } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css'; // For the Snow theme
+import ImageResize from 'quill-image-resize-module-react';
+
+if (typeof window !== 'undefined' && Quill && !Quill.imports['modules/imageResize']) {
+    Quill.register('modules/imageResize', ImageResize);
+}
 
 // Editor is an uncontrolled React component
 const Editor = forwardRef(
@@ -78,6 +83,9 @@ const Editor = forwardRef(
                             },
                         },
                     },
+                    imageResize: {
+                        modules: ['Resize', 'DisplaySize'],
+                    },
                 },
                 formats: [
                     'header', // Header levels
@@ -98,6 +106,8 @@ const Editor = forwardRef(
             if (defaultValueRef.current) {
                 quill.clipboard.dangerouslyPasteHTML(defaultValueRef.current);
             }
+
+
 
 
             // *** New code to apply custom font size and text color ***
