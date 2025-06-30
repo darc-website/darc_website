@@ -127,18 +127,18 @@ const ResourceAdmin = ({ isAdmin }) => {
                         <p className={styles.errorMessage}>{error}</p>
                     ) : paginatedNotices.length === 0 ? (
                         <p className={styles.emptyMessage}>등록된 자료가 없습니다.</p>
-                    ) : filteredData.length !== 0 ? (
-                        <ul className={styles.noticeList}>
-                            {filteredData.map((resource) => (
-                                <SingleResource
-                                    key={resource.id}
-                                    resource={resource}
-                                    showDetail={showDetail}
-                                    setShowDetail={setShowDetail}
-                                    setSelectedResource={setSelectedNotice}
-                                />
-                            ))}
-                        </ul>
+                        // ) : filteredData.length !== 0 ? (
+                        //     <ul className={styles.noticeList}>
+                        //         {filteredData.map((resource) => (
+                        //             <SingleResource
+                        //                 key={resource.id}
+                        //                 resource={resource}
+                        //                 showDetail={showDetail}
+                        //                 setShowDetail={setShowDetail}
+                        //                 setSelectedResource={setSelectedNotice}
+                        //             />
+                        //         ))}
+                        //     </ul>
                     ) : (
                         <ul className={styles.noticeList}>
                             {paginatedNotices.map((resource) => (

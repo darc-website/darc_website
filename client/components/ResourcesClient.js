@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./NoticeAdmin.module.css";
 import "primeicons/primeicons.css";
 import ResourceDetail from "./ResourceDetail";
-import SingleResourceClient from "./SingleResourceClient";
+import SingleResource from "./SingleResourceClient";
 
 const ResourcesClient = ({ isAdmin }) => {
     const [currTab, setCurrTab] = useState("전체");
@@ -127,14 +127,14 @@ const ResourcesClient = ({ isAdmin }) => {
                         <p className={styles.errorMessage}>{error}</p>
                     ) : paginatedResources.length === 0 ? (
                         <p className={styles.emptyMessage}>등록된 자료가 없습니다.</p>
-                    ) : filteredData.length !== 0 ? (
-                        <ul className={styles.noticeList}>
-                            {filteredData.map((resource) => (
-                                <SingleResourceClient
-                                    key={resource.id} notice={resource}
-                                />
-                            ))}
-                        </ul>
+                        // ) : filteredData.length !== 0 ? (
+                        //     <ul className={styles.noticeList}>
+                        //         {filteredData.map((resource) => (
+                        //             <SingleResourceClient
+                        //                 key={resource.id} notice={resource}
+                        //             />
+                        //         ))}
+                        //     </ul>
                     ) : (
                         <ul className={styles.noticeList}>
                             {paginatedResources.map((resource) => (

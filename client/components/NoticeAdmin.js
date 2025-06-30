@@ -98,9 +98,8 @@ const NoticeAdmin = ({ isAdmin }) => {
                 (tab) => (
                   <button
                     key={tab}
-                    className={`${styles.tab} ${
-                      currTab === tab ? styles.active : ""
-                    }`}
+                    className={`${styles.tab} ${currTab === tab ? styles.active : ""
+                      }`}
                     onClick={() => setCurrTab(tab)}
                   >
                     {tab}
@@ -128,18 +127,18 @@ const NoticeAdmin = ({ isAdmin }) => {
             <p className={styles.errorMessage}>{error}</p>
           ) : paginatedNotices.length === 0 ? (
             <p className={styles.emptyMessage}>등록된 공지사항이 없습니다.</p>
-          ) : filteredData.length !== 0 ? (
-            <ul className={styles.noticeList}>
-              {filteredData.map((notice) => (
-                <SingleNotice
-                  key={notice.id}
-                  notice={notice}
-                  showDetail={showDetail}
-                  setShowDetail={setShowDetail}
-                  setSelectedNotice={setSelectedNotice}
-                />
-              ))}
-            </ul>
+            // ) : filteredData.length !== 0 ? (
+            //   <ul className={styles.noticeList}>
+            //     {filteredData.map((notice) => (
+            //       <SingleNotice
+            //         key={notice.id}
+            //         notice={notice}
+            //         showDetail={showDetail}
+            //         setShowDetail={setShowDetail}
+            //         setSelectedNotice={setSelectedNotice}
+            //       />
+            //     ))}
+            //   </ul>
           ) : (
             <ul className={styles.noticeList}>
               {paginatedNotices.map((notice) => (
@@ -166,9 +165,8 @@ const NoticeAdmin = ({ isAdmin }) => {
               <button
                 key={i}
                 onClick={() => handlePageChange(i + 1)}
-                className={`${styles.paginationButton} ${
-                  currentPage === i + 1 ? styles.active : ""
-                }`}
+                className={`${styles.paginationButton} ${currentPage === i + 1 ? styles.active : ""
+                  }`}
               >
                 {i + 1}
               </button>
