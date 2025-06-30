@@ -135,7 +135,7 @@ const ResourceAdmin = ({ isAdmin }) => {
                                     resource={resource}
                                     showDetail={showDetail}
                                     setShowDetail={setShowDetail}
-                                    setSelectedNotice={setSelectedNotice}
+                                    setSelectedResource={setSelectedNotice}
                                 />
                             ))}
                         </ul>
@@ -147,7 +147,7 @@ const ResourceAdmin = ({ isAdmin }) => {
                                     resource={resource}
                                     showDetail={showDetail}
                                     setShowDetail={setShowDetail}
-                                    setSelectedNotice={setSelectedNotice}
+                                    setSelectedResource={setSelectedNotice}
                                 />
                             ))}
                         </ul>
@@ -182,9 +182,9 @@ const ResourceAdmin = ({ isAdmin }) => {
                 </>
             ) : (
                 <ResourceDetail
-                    selectedResources={selectedNotice}
+                    selectedResource={selectedNotice}
                     setShowDetail={setShowDetail}
-                    setSelectedResources={setSelectedNotice}
+                    setSelectedResource={setSelectedNotice}
                     setResources={setNotices}
                     isAdmin={isAdmin}
                 />
