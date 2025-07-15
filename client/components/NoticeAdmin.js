@@ -155,7 +155,7 @@ const NoticeAdmin = ({ isAdmin }) => {
           {searchTerm && (
             <div className={styles.searchResultInfo}>
               <span>
-                <strong>"{searchTerm}"</strong> 검색결과입니다.
+                <strong>&quot;{searchTerm}&quot;</strong> 검색결과입니다.
               </span>
               <button
                 className={styles.resetButton}
