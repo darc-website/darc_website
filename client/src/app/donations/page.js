@@ -1,3 +1,8 @@
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 import Navigation from "../../../components/navigation";
 import styles from "../page.module.css"
 

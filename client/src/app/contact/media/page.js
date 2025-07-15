@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react';
 import Navigation from "../../../../components/navigation";
 import styles from "./resources.module.css";
@@ -7,7 +8,12 @@ import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
-import ResourcesClient from "../../../../components/ResourcesClient";
+// import ResourcesClient from "../../../../components/ResourcesClient";
+import dynamic from "next/dynamic";
+
+const ResourcesClient = dynamic(() => import("../../../../components/ResourcesClient"), {
+    ssr: false,
+});
 import Footer from '../../../../components/footer';
 import ScrollToTop from '../../../../components/ScrollToTop';
 

@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
 import Link from 'next/link';
@@ -11,9 +12,11 @@ import { Password } from 'primereact/password';
 import { FloatLabel } from 'primereact/floatlabel';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import styles from './dashboard.module.css';
-import MemoEditor from '../../../../components/memo';
-import Announcements from '../../../../components/announcement';
-import Resource from '../../../../components/resource';
+import dynamic from 'next/dynamic';
+
+const MemoEditor = dynamic(() => import('../../../../components/memo'), { ssr: false });
+const Announcements = dynamic(() => import('../../../../components/announcement'), { ssr: false });
+const Resource = dynamic(() => import('../../../../components/resource'), { ssr: false });
 
 export default function Dashboard() {
     const [showPasswordModal, setShowPasswordModal] = useState(false);

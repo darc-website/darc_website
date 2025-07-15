@@ -1,4 +1,5 @@
 'use client'
+
 import { Signika } from "next/font/google";
 import Navigation from "../../../../components/navigation";
 import styles from "./chairman.module.css"

@@ -140,7 +140,7 @@ const ResourcesClient = ({ isAdmin }) => {
                                 onChange={(e) => setCurrTab(e.target.value)}
                                 className={styles.tabDropdown}
                             >
-                                {["전체", "이벤트", "업데이트", "서비스", "공고", "기타"].map((tab) => (
+                                {["전체", "언론보도", "출판물", "교육자료", "기타"].map((tab) => (
                                     <option key={tab} value={tab}>
                                         {tab}
                                     </option>

@@ -1,4 +1,5 @@
 'use client'
+
 import Navigation from "../../../../../components/navigation";
 import styles from "./application.module.css"
 import Link from "next/link";

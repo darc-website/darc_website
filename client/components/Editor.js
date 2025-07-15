@@ -75,12 +75,25 @@ const Editor = forwardRef(
                                 };
                             },
                             video: function () {
-                                const url = prompt('Enter video URL:');
+                                const url = prompt("YouTube 영상 링크를 입력하세요:");
                                 if (url) {
-                                    const range = quill.getSelection();
-                                    quill.insertEmbed(range.index, 'video', url);
+                                    const youtubeRegex =
+                                        /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w\-]+)/;
+                                    const match = url.match(youtubeRegex);
+                                    if (match && match[1]) {
+                                        const embedUrl = `https://www.youtube.com/embed/${match[1]}`;
+                                        const range = quill.getSelection(true);
+
+                                        // 원하는 width, height을 설정
+                                        const iframeHTML = `<iframe width="100%" height="360" src="${embedUrl}" frameborder="0" allowfullscreen></iframe>`;
+
+                                        quill.clipboard.dangerouslyPasteHTML(range.index, iframeHTML, Quill.sources.USER);
+                                        quill.setSelection(range.index + 1);
+                                    } else {
+                                        alert("유효한 YouTube 링크를 입력해주세요.");
+                                    }
                                 }
-                            },
+                            }
                         },
                     },
                     imageResize: {
@@ -102,6 +115,7 @@ const Editor = forwardRef(
             });
 
             ref.current = quill;
+
 
             if (defaultValueRef.current) {
                 quill.clipboard.dangerouslyPasteHTML(defaultValueRef.current);
