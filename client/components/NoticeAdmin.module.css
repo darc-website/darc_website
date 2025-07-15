@@ -1,0 +1,184 @@
+.noticeContainer {
+    margin: 10px;
+    margin-top: -20px;
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -20px;
+}
+
+.tabContainer {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: 0.5rem 0.6rem;
+    font-size: 16px;
+    border: none;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background-color: #f0f0f0;
+}
+
+.tab:active {
+    background-color: #e0e0e0;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.searchContainer {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+.searchInput {
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    border: none;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+.searchInput:focus {
+  outline: none;
+  border: none; 
+  /* border-radius: 8px; */
+}
+
+.searchButton {
+    padding: 0.5rem 0.55rem;
+    font-size: 16px;
+    border: none;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.searchButton:hover {
+    background-color: #f0f0f0;
+}
+
+.searchButton:active {
+    background-color: #e0e0e0;
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+}
+
+.paginationButton {
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    border: none;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.paginationButton:hover {
+    background-color: #f0f0f0;
+}
+
+
+.loadingMessage {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #333; /* You can adjust this color */
+  }
+  
+  .errorMessage {
+    font-size: 16px;
+    margin-left: 10px;
+    color: red; /* For error messages */
+  }
+  
+  .emptyMessage {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #666; /* For no data messages */
+  }
+
+
+.noticeList {
+    width: 100%;
+}
+
+.searchResultInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f7fb;
+  border: 1px solid #d0e2f2;
+  padding: 0.75rem 1rem;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333;
+}
+
+.resetButton {
+  padding: 0.3rem 0.8rem;
+  font-size: 14px;
+  background-color: #e3ecf6;
+  color: #1a4e89;
+  border: 1px solid #b6d1f2;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.resetButton:hover {
+  background-color: #d6e7f7;
+}
+
+.tabDropdownContainer {
+    display: none;
+    padding-left: 0.5rem;
+}
+
+.tabDropdown {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    background-color: #f9f9f9;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+
+.tabDropdown:focus {
+    outline: none;
+    border: none;
+}
+
+.topContainer {
+    padding-right: 1rem;
+}
+
+.mobileSearchButton {
+    display: none;
+}

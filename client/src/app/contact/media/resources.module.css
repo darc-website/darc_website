@@ -15,10 +15,11 @@
 
 .header {
     max-width: 1200px;
-    width: 80%;
-    height: 80px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
+    padding: 1rem;
 }
 
 .title {
@@ -105,10 +106,16 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
 }
 
-
+.loadingMessage {
+    padding-left: 1rem;
+}
 
 
 @media (max-width: 450px) {
+    .title {
+        margin-bottom: 10px;
+    }
+
     .content {
         margin-top: 100px;
         overflow: hidden;
@@ -117,10 +124,12 @@
     .header {
         flex-direction: column; /* Stack the link and title vertically */
         align-items: flex-start; /* Align both link and title to the left */
-        width: 85%;
-        max-width: 1200px;
         height: auto;
         margin-bottom: 10px;
+
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .link {
@@ -174,9 +183,7 @@
     .content {
         margin-top: 110px;
     }
-    .header {
-        width: 85%;
-    }
+
 
     .leftLink {
         width: 180px;
@@ -202,10 +209,6 @@
 
 
 @media (min-width: 768px) and (max-width: 1194px) {
-    .header {
-        width: 85%;
-    }
-
 
     .leftLink {
         width: 200px;
@@ -226,4 +229,12 @@
         transform: none; /* Disable the lift effect */
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
     }
+}
+
+.noticeWrapper {
+  width: 100%;
+  max-width: 1200px; /* or 1400px, depending on desired width */
+  margin: 0 auto;
+  /* padding: 1rem; */
+  box-sizing: border-box;
 }

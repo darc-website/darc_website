@@ -1,4 +1,5 @@
 'use client'
+
 import { useEffect } from "react";
 import Navigation from "../../../components/navigation";
 import styles from "./about.module.css"

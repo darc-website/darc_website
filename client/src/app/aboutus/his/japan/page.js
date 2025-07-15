@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState } from 'react';
 import Navigation from "../../../../../components/navigation";
 import styles from "../korea/history.module.css";
@@ -7,7 +8,7 @@ import { GoX } from "react-icons/go";
 import Footer from '../../../../../components/footer';
 import ScrollToTop from '../../../../../components/ScrollToTop';
 
-export default function Mission() {
+export default function Japan() {
     const [showPopup, setShowPopup] = useState(false);
 
     const handlePopup = () => {

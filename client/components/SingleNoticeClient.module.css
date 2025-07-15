@@ -1,0 +1,67 @@
+.singleNoticeContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    margin-left: -26px;
+    width: 100%;
+}
+
+.fullLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.fullLink:hover {
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.linkContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.singleNoticeContainer:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.singleTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.singleCategory {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.singleDate {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.highlightedContent {
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.singleTitle mark,
+.highlightedContent mark {
+  background-color: #fff59d;
+  font-weight: bold;
+}

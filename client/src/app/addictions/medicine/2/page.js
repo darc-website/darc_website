@@ -1,4 +1,6 @@
 'use client'
+
+
 import { useState } from 'react';
 import Navigation from "../../../../../components/navigation";
 import styles from "./medicine2.module.css"
@@ -9,7 +11,7 @@ import { HiChevronDown } from "react-icons/hi2";
 import Footer from '../../../../../components/footer';
 import ScrollToTop from '../../../../../components/ScrollToTop';
 
-export default function Medicine1() {
+export default function Medicine2() {
     const [showEffects, setShowEffects] = useState(false);
 
     const toggleEffects = () => {

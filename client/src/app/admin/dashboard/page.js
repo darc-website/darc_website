@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
 import Link from 'next/link';
@@ -11,8 +12,11 @@ import { Password } from 'primereact/password';
 import { FloatLabel } from 'primereact/floatlabel';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import styles from './dashboard.module.css';
-import MemoEditor from '../../../../components/memo';
+import dynamic from 'next/dynamic';
 
+const MemoEditor = dynamic(() => import('../../../../components/memo'), { ssr: false });
+const Announcements = dynamic(() => import('../../../../components/announcement'), { ssr: false });
+const Resource = dynamic(() => import('../../../../components/resource'), { ssr: false });
 
 export default function Dashboard() {
     const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -442,6 +446,18 @@ export default function Dashboard() {
                     추천서
                 </button>
                 <button
+                    className={`${styles.sidebarLink} ${selectedSection === '공지사항' ? styles.active : ''}`}
+                    onClick={() => handleSectionSelect('공지사항')}
+                >
+                    공지사항
+                </button>
+                <button
+                    className={`${styles.sidebarLink} ${selectedSection === '자료실' ? styles.active : ''}`}
+                    onClick={() => handleSectionSelect('자료실')}
+                >
+                    자료실
+                </button>
+                <button
                     className={`${styles.sidebarLink} ${selectedSection === '시간표' ? styles.active : ''}`}
                     onClick={() => handleSectionSelect('시간표')}
                 >
@@ -714,6 +730,18 @@ export default function Dashboard() {
                 {selectedSection === '시간표' && (
                     <>
                         <MemoEditor />
+                    </>
+                )}
+
+                {selectedSection === '공지사항' && (
+                    <>
+                        <Announcements />
+                    </>
+                )}
+
+                {selectedSection === '자료실' && (
+                    <>
+                        <Resource />
                     </>
                 )}
             </main>

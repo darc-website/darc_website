@@ -1,0 +1,94 @@
+.detailContainer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.detailHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detailCategory {
+  font-size: 16px;
+  color: #333;
+}
+
+.detailTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.detailDate {
+  font-size: 16px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.copyButton {
+  background-color: #f9f9f9;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: 500;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copyButton:hover {
+  background-color: #d2e3fc;
+}
+
+.editorStyledContent {
+  font-size: 16px;
+  color: #333;
+  padding: 10px 5px;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.editorStyledContent img {
+  max-width: 100% !important;
+  height: auto;
+}
+
+.detailFooter {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.listButton {
+  background-color: #5187c2;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  width: 130px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.listButton:hover {
+  background-color: #0056b3;
+}
+
+.listButton:active {
+  background-color: #004494;
+}
+
