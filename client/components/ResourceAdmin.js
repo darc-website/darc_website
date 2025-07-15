@@ -15,6 +15,7 @@ const ResourceAdmin = ({ isAdmin }) => {
     const [notices, setNotices] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [searchInput, setSearchInput] = useState(""); // 입력창 상태
 
     const noticesPerPage = 5;
 
@@ -51,12 +52,25 @@ const ResourceAdmin = ({ isAdmin }) => {
         fetchNotices();
     }, []);
 
+    const stripHtml = (html) => {
+        return html
+            .replace(/<(img|script|style|meta|link)[^>]*?>/gi, "") // 이미지 및 특정 태그 제거
+            .replace(/(src|href|alt|title|content)=["'][^"']*["']/gi, "") // 속성 제거
+            .replace(/<[^>]+>/g, "") // 남은 태그 제거
+            .replace(/&nbsp;/gi, " ") // HTML 엔티티 제거
+            .replace(/\s+/g, " ") // 공백 정리
+            .trim();
+    };
+
     const filteredData = notices.filter((notice) => {
         const tabMatch =
             currTab === "전체" || notice.category.trim() === currTab.trim();
+
+        const cleanContent = stripHtml(notice.content);
         const searchMatch =
             notice.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            notice.content.toLowerCase().includes(searchTerm.toLowerCase());
+            cleanContent.toLowerCase().includes(searchTerm.toLowerCase());
+
         return tabMatch && searchMatch;
     });
 
@@ -82,10 +96,20 @@ const ResourceAdmin = ({ isAdmin }) => {
         }
     };
 
-    const handleSearch = (e) => {
-        setSearchTerm(e.target.value);
-        setError(null); // Reset error message on search input change
-        setCurrentPage(1); // Reset to first page on search
+    // const handleSearch = (e) => {
+    //     setSearchTerm(e.target.value);
+    //     setError(null); // Reset error message on search input change
+    //     setCurrentPage(1); // Reset to first page on search
+    // };
+
+    const handleSearchInputChange = (e) => {
+        setSearchInput(e.target.value); // 검색창에는 실시간 반영
+    };
+
+    const handleSearchButtonClick = () => {
+        setSearchTerm(searchInput);     // 버튼 눌렀을 때만 필터 적용
+        setError(null);
+        setCurrentPage(1);
     };
 
     return (
@@ -112,14 +136,38 @@ const ResourceAdmin = ({ isAdmin }) => {
                                 className={styles.searchInput}
                                 type="text"
                                 placeholder="검색어를 입력하세요."
-                                value={searchTerm}
-                                onChange={handleSearch}
+                                value={searchInput}
+                                onChange={handleSearchInputChange}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter") {
+                                        handleSearchButtonClick();
+                                    }
+                                }}
                             />
-                            <button className={styles.searchButton}>
+                            <button className={styles.searchButton}
+                                onClick={handleSearchButtonClick}>
                                 <i className="pi pi-search" style={{ color: "black" }} />
                             </button>
                         </div>
                     </div>
+
+                    {searchTerm && (
+                        <div className={styles.searchResultInfo}>
+                            <span>
+                                <strong>"{searchTerm}"</strong> 검색결과입니다.
+                            </span>
+                            <button
+                                className={styles.resetButton}
+                                onClick={() => {
+                                    setSearchInput("");
+                                    setSearchTerm("");
+                                    setCurrentPage(1);
+                                }}
+                            >
+                                전체 목록 보기
+                            </button>
+                        </div>
+                    )}
 
                     {loading ? (
                         <p className={styles.loadingMessage}>자료실을 불러오는 중...</p>
@@ -148,6 +196,7 @@ const ResourceAdmin = ({ isAdmin }) => {
                                     showDetail={showDetail}
                                     setShowDetail={setShowDetail}
                                     setSelectedResource={setSelectedNotice}
+                                    searchTerm={searchTerm}
                                 />
                             ))}
                         </ul>

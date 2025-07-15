@@ -81,44 +81,57 @@ export default function NoticeDetail({
         {editing ? (
           <div className={styles.editableHeader}>
             {/* Editable category */}
-            <select
-              value={selectedCurrentNotice.category}
-              onChange={(e) =>
-                setSelectedCurrentNotice({
-                  ...selectedCurrentNotice,
-                  category: e.target.value,
-                })
-              }
-            >
-              <option value="이벤트">이벤트</option>
-              <option value="업데이트">업데이트</option>
-              <option value="서비스">서비스</option>
-              <option value="공고">공고</option>
-              <option value="기타">기타</option>
-            </select>
-            {/* Editable title */}
-            <input
-              type="text"
-              value={selectedCurrentNotice.title}
-              onChange={(e) =>
-                setSelectedCurrentNotice({
-                  ...selectedCurrentNotice,
-                  title: e.target.value,
-                })
-              }
-              placeholder="제목을 입력하세요"
-            />
-            {/* Editable date */}
-            <input
-              type="date"
-              value={selectedCurrentNotice.date}
-              onChange={(e) =>
-                setSelectedCurrentNotice({
-                  ...selectedCurrentNotice,
-                  date: e.target.value,
-                })
-              }
-            />
+            <div className={styles.editorHeader}>
+              <div className={styles.inputGroup}>
+                <label htmlFor="category">카테고리</label>
+                <select
+                  value={selectedCurrentNotice.category}
+                  onChange={(e) =>
+                    setSelectedCurrentNotice({
+                      ...selectedCurrentNotice,
+                      category: e.target.value,
+                    })
+                  }
+                >
+                  <option value="이벤트">이벤트</option>
+                  <option value="업데이트">업데이트</option>
+                  <option value="서비스">서비스</option>
+                  <option value="공고">공고</option>
+                  <option value="기타">기타</option>
+                </select>
+              </div>
+
+              <div className={styles.inputGroup3}>
+                <label htmlFor="date">날짜</label>
+                {/* Editable date */}
+                <input
+                  type="date"
+                  value={selectedCurrentNotice.date}
+                  onChange={(e) =>
+                    setSelectedCurrentNotice({
+                      ...selectedCurrentNotice,
+                      date: e.target.value,
+                    })
+                  }
+                />
+              </div>
+            </div>
+
+            <div className={styles.inputGroup2}>
+              <label htmlFor="title">제목</label>
+              {/* Editable title */}
+              <input
+                type="text"
+                value={selectedCurrentNotice.title}
+                onChange={(e) =>
+                  setSelectedCurrentNotice({
+                    ...selectedCurrentNotice,
+                    title: e.target.value,
+                  })
+                }
+                placeholder="제목을 입력하세요"
+              />
+            </div>
           </div>
         ) : (
           <div className={styles.detailHeader}>

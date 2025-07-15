@@ -1,5 +1,6 @@
 .detailContainer {
-  padding-left: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .detailHeader {
@@ -90,3 +91,4 @@
 .listButton:active {
   background-color: #004494;
 }
+

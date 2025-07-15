@@ -82,43 +82,55 @@ export default function ResourceDetail({
         {editing ? (
           <div className={styles.editableHeader}>
             {/* Editable category */}
-            <select
-              value={selectedCurrentResource.category || "기타"}
-              onChange={(e) =>
-                setSelectedCurrentResource({
-                  ...selectedCurrentResource,
-                  category: e.target.value,
-                })
-              }
-            >
-              <option value="언론보도">언론보도</option>
-              <option value="출판물">출판물</option>
-              <option value="교육자료">교육자료</option>
-              <option value="기타">기타</option>
-            </select>
-            {/* Editable title */}
-            <input
-              type="text"
-              value={selectedCurrentResource.title || ""}
-              onChange={(e) =>
-                setSelectedCurrentResource({
-                  ...selectedCurrentResource,
-                  title: e.target.value,
-                })
-              }
-              placeholder="제목을 입력하세요"
-            />
-            {/* Editable date */}
-            <input
-              type="date"
-              value={selectedCurrentResource.date || ""}
-              onChange={(e) =>
-                setSelectedCurrentResource({
-                  ...selectedCurrentResource,
-                  date: e.target.value,
-                })
-              }
-            />
+            <div className={styles.editorHeader}>
+              <div className={styles.inputGroup}>
+                <label htmlFor="category">카테고리</label>
+                <select
+                  value={selectedCurrentResource.category || "기타"}
+                  onChange={(e) =>
+                    setSelectedCurrentResource({
+                      ...selectedCurrentResource,
+                      category: e.target.value,
+                    })
+                  }
+                >
+                  <option value="언론보도">언론보도</option>
+                  <option value="출판물">출판물</option>
+                  <option value="교육자료">교육자료</option>
+                  <option value="기타">기타</option>
+                </select>
+              </div>
+              {/* Editable title */}
+
+              {/* Editable date */}
+              <div className={styles.inputGroup3}>
+                <label htmlFor="date">날짜</label>
+                <input
+                  type="date"
+                  value={selectedCurrentResource.date || ""}
+                  onChange={(e) =>
+                    setSelectedCurrentResource({
+                      ...selectedCurrentResource,
+                      date: e.target.value,
+                    })
+                  }
+                />
+              </div>
+            </div>
+            <div className={styles.inputGroup2}>
+              <label htmlFor="title">제목</label>
+              <input
+                type="text"
+                value={selectedCurrentResource.title || ""}
+                onChange={(e) =>
+                  setSelectedCurrentResource({
+                    ...selectedCurrentResource,
+                    title: e.target.value,
+                  })
+                }
+                placeholder="제목을 입력하세요"
+              />
+            </div>
           </div>
         ) : (
           <div className={styles.detailHeader}>

@@ -47,7 +47,7 @@ export default function NoticeDetailPage() {
                     </div>
                     <div className={styles.noticeWrapper}>
                         {loading ? (
-                            <p>자료를 불러오는 중...</p>
+                            <p className={styles.loadingMessage}>자료를 불러오는 중...</p>
                         ) : (
                             <NoticeDetailClient selectedNotice={notice} />
                         )}

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import styles from "./NoticeAdmin.module.css";
+import styles from "./NoticeClient.module.css";
 import "primeicons/primeicons.css";
 import NoticeDetail from "./NoticeDetail";
 import SingleNoticeClient from "./SingleNoticeClient";
@@ -15,6 +15,8 @@ const NoticeClient = ({ isAdmin }) => {
   const [notices, setNotices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
+  const [searchInput, setSearchInput] = useState(""); // 입력창 상태
 
   const noticesPerPage = 5;
 
@@ -51,14 +53,29 @@ const NoticeClient = ({ isAdmin }) => {
     fetchNotices();
   }, []);
 
+  const stripHtml = (html) => {
+    return html
+      .replace(/<(img|script|style|meta|link)[^>]*?>/gi, "") // 이미지 및 특정 태그 제거
+      .replace(/(src|href|alt|title|content)=["'][^"']*["']/gi, "") // 속성 제거
+      .replace(/<[^>]+>/g, "") // 남은 태그 제거
+      .replace(/&nbsp;/gi, " ") // HTML 엔티티 제거
+      .replace(/\s+/g, " ") // 공백 정리
+      .trim();
+  };
+
   const filteredData = notices.filter((notice) => {
     const tabMatch =
       currTab === "전체" || notice.category.trim() === currTab.trim();
+
+    const cleanContent = stripHtml(notice.content);
     const searchMatch =
       notice.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      notice.content.toLowerCase().includes(searchTerm.toLowerCase());
+      cleanContent.toLowerCase().includes(searchTerm.toLowerCase());
+
     return tabMatch && searchMatch;
   });
+
+
 
   console.log("📌 필터링된 데이터:", filteredData);
 
@@ -79,13 +96,24 @@ const NoticeClient = ({ isAdmin }) => {
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-    setError(null); // Reset error message on search input change
-    setCurrentPage(1); // Reset to first page on search
+  // const handleSearch = (e) => {
+  //   setSearchTerm(e.target.value);
+  //   setError(null); // Reset error message on search input change
+  //   setCurrentPage(1); // Reset to first page on search
+  // };
+
+  const handleSearchInputChange = (e) => {
+    setSearchInput(e.target.value); // 검색창에는 실시간 반영
+  };
+
+  const handleSearchButtonClick = () => {
+    setSearchTerm(searchInput);     // 버튼 눌렀을 때만 필터 적용
+    setError(null);
+    setCurrentPage(1);
   };
 
   return (
@@ -107,19 +135,84 @@ const NoticeClient = ({ isAdmin }) => {
                 )
               )}
             </div>
+
+            <div className={styles.tabDropdownContainer}>
+              <select
+                value={currTab}
+                onChange={(e) => setCurrTab(e.target.value)}
+                className={styles.tabDropdown}
+              >
+                {["전체", "이벤트", "업데이트", "서비스", "공고", "기타"].map((tab) => (
+                  <option key={tab} value={tab}>
+                    {tab}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* ✅ 모바일 검색 입력창 (애니메이션 포함) */}
+            {showMobileSearch && (
+              <div className={styles.mobileSearchContainer}>
+                <input
+                  className={styles.mobileSearchInput}
+                  type="text"
+                  placeholder="검색어를 입력하세요."
+                  value={searchInput}
+                  onChange={handleSearchInputChange}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      handleSearchButtonClick();
+                      setShowMobileSearch(false);
+                    }
+                  }}
+                  autoFocus
+                />
+              </div>
+            )}
+
+            <div className={styles.mobileSearchButton} onClick={() => setShowMobileSearch(!showMobileSearch)}>
+              <i className="pi pi-search" style={{ color: "black" }} />
+            </div>
+
+
+
             <div className={styles.searchContainer}>
               <input
                 className={styles.searchInput}
                 type="text"
                 placeholder="검색어를 입력하세요."
-                value={searchTerm}
-                onChange={handleSearch}
+                value={searchInput}
+                onChange={handleSearchInputChange}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearchButtonClick();
+                  }
+                }}
               />
-              <button className={styles.searchButton}>
+              <button className={styles.searchButton}
+                onClick={handleSearchButtonClick}>
                 <i className="pi pi-search" style={{ color: "black" }} />
               </button>
             </div>
           </div>
+
+          {searchTerm && (
+            <div className={styles.searchResultInfo}>
+              <span>
+                <strong>"{searchTerm}"</strong> 검색결과입니다.
+              </span>
+              <button
+                className={styles.resetButton}
+                onClick={() => {
+                  setSearchInput("");
+                  setSearchTerm("");
+                  setCurrentPage(1);
+                }}
+              >
+                전체 목록 보기
+              </button>
+            </div>
+          )}
 
           {loading ? (
             <p className={styles.loadingMessage}>공지사항을 불러오는 중...</p>
@@ -136,7 +229,7 @@ const NoticeClient = ({ isAdmin }) => {
           ) : (
             <ul className={styles.noticeList}>
               {paginatedNotices.map((notice) => (
-                <SingleNoticeClient key={notice.id} notice={notice} />
+                <SingleNoticeClient key={notice.id} notice={notice} searchTerm={searchTerm} />
               ))}
             </ul>
           )}
